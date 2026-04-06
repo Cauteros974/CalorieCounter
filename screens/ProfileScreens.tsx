@@ -1,10 +1,7 @@
-import React from "react";
-import { useUserStore } from "@/store/useUserStore";
-import {useForm, Controller} from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 
-const profileSchema = () => {
-    fullName: 
-}
+const profileSchema = z.object ({
+    fullName: z.string().min(1, 'The name is too short'),
+    weight: z.string().transform(Number).pipe(z.number().min(30).max(300)),
+    height: z.string().transform(Number).pipe(z.number().min(100).max(250)),
+})
