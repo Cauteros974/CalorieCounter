@@ -51,7 +51,17 @@ export default function profileScreen() {
 
             <Text>
                 <Controller
-
+                    control={control}
+                    name="height"
+                    render={({ field: {onChange, value }}) => (
+                        <TextInput 
+                            style={[styles.input, errors.height && styles.errorInput]} 
+                            placeholder="180" 
+                            keyboardType="numeric"
+                            onChangeText={onChange} 
+                            value={value} 
+                        />
+                    )}
                 />
 
                 
