@@ -1,4 +1,4 @@
-import {create} from 'zustand';
+import { create } from 'zustand';
 interface UserState{
     fullName: string;
     weight: number;
@@ -6,9 +6,13 @@ interface UserState{
     dailyCalories: number;
     dailyWeight: number;   
     dailyWater: number;
-    etProfile: (data: { fullName: string; weight: number; height: number }) => void;
+    setProfile: (data: { fullName: string; weight: number; height: number }) => void;
 }
 
-export const useUserStore = create () => {
-
-}
+export const useUserStore = create<UserState> ((state) => ({
+    fullName: '',
+    weight: 0,
+    height: 0,
+    dailyCalories: 0,
+    dailyWater: 0,
+}))
