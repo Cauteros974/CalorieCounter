@@ -5,4 +5,5 @@ interface UserState{
     height: number;
     dailyCalories: number;
     dailyWeight: number;   
+    dailyWater: number;
 }
