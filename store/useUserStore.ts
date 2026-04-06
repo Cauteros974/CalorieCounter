@@ -18,5 +18,10 @@ export const useUserStore = create<UserState> ((state) => ({
     dailyWeight: 0,
     setProfile: (data) => {
         const calories = Math.round(10 * data.weight + 6.25 * data.height - 125);
+        const water = parseFloat((data.weight * 0.035).toFixed(1));
     }
+
+    set({
+        ...data,
+    })
 }));
