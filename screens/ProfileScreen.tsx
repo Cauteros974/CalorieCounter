@@ -1,6 +1,7 @@
 import { useUserStore } from "@/store/useUserStore";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
+import { Alert } from 'react-native';
 import * as z from 'zod';
 
 const profileSchema = z.object ({
@@ -16,5 +17,14 @@ export default function profileScreen() {
 
     const {control, handleSubmit, formState: {errors} } = useForm<ProfileFormData>({
         resolver: zodResolver(profileSchema),
-    })
+    });
+
+    const onSubmit = (data: any) => {
+        setProfile({
+          fullName: data.fullName,
+          weight: Number(data.weight),
+          height: Number(data.height),
+        });
+        Alert.alert('Success', 'Data saved, norms calculated!');
+    };
 }
