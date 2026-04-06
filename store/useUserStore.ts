@@ -15,4 +15,8 @@ export const useUserStore = create<UserState> ((state) => ({
     height: 0,
     dailyCalories: 0,
     dailyWater: 0,
-}))
+    dailyWeight: 0,
+    setProfile: {
+        
+    }
+}));
