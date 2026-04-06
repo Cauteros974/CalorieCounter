@@ -16,7 +16,7 @@ export const useUserStore = create<UserState> ((state) => ({
     dailyCalories: 0,
     dailyWater: 0,
     dailyWeight: 0,
-    setProfile: {
-        
+    setProfile: (data) => {
+        const calories = Math.round(10 * data.weight + 6.25 * data.height - 125);
     }
 }));
