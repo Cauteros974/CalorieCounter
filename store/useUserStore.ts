@@ -22,6 +22,8 @@ export const useUserStore = create<UserState> ((set) => ({
         
         set({
             ...data,
+            dailyCalories: calories,
+            dailyWater: water,
         })
     },
 }));
