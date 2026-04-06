@@ -1,5 +1,6 @@
 import { useUserStore } from "@/store/useUserStore";
 import { zodResolver } from '@hookform/resolvers/zod';
+import React from "react";
 import { useForm } from 'react-hook-form';
 import { Alert } from 'react-native';
 import * as z from 'zod';
@@ -27,4 +28,10 @@ export default function profileScreen() {
         });
         Alert.alert('Success', 'Data saved, norms calculated!');
     };
+
+    return(
+        <View style = {styles.container}>
+            <Text style = {styles.title}>Personal account</Text>
+        </View>
+    )
 }
