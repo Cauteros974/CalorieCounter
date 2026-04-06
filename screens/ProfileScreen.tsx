@@ -1,4 +1,6 @@
 import { useUserStore } from "@/store/useUserStore";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 
 const profileSchema = z.object ({
@@ -11,4 +13,8 @@ type ProfileFormData = z.infer<typeof profileSchema>;
 
 export default function profileScreen() {
     const setProfile = useUserStore((state) => state.setProfile);
+
+    const {control, handleSubmit, formState: {errors} } = useForm<ProfileFormData>({
+        resolver: zodResolver(profileSchema),
+    })
 }
