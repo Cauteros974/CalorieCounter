@@ -1,3 +1,4 @@
+import { useUserStore } from "@/store/useUserStore";
 import * as z from 'zod';
 
 const profileSchema = z.object ({
@@ -5,3 +6,9 @@ const profileSchema = z.object ({
     weight: z.string().transform(Number).pipe(z.number().min(30).max(300)),
     height: z.string().transform(Number).pipe(z.number().min(100).max(250)),
 });
+
+type ProfileFormData = z.infer<typeof profileSchema>;
+
+export default function profileScreen() {
+    const setProfile = useUserStore((state) => state.setProfile);
+}
