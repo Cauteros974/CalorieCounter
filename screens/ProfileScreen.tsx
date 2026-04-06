@@ -1,10 +1,11 @@
-import { useUserStore } from "@/store/useUserStore";
 import { zodResolver } from '@hookform/resolvers/zod';
-import React from "react";
-import { useForm } from 'react-hook-form';
-import { Alert } from 'react-native';
+import React from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import { Alert, Text, View } from 'react-native';
 import * as z from 'zod';
+import { useUserStore } from '../store/useUserStore';
 
+//Validation Scheme
 const profileSchema = z.object ({
     fullName: z.string().min(1, 'The name is too short'),
     weight: z.string().transform(Number).pipe(z.number().min(30).max(300)),
@@ -32,6 +33,15 @@ export default function profileScreen() {
     return(
         <View style = {styles.container}>
             <Text style = {styles.title}>Personal account</Text>
+
+            <Text style = {styles.title}>Full Name</Text>
+            <Controller
+                control={control}
+                name="fullName"
+                
+            >
+
+            </Controller>
         </View>
     )
 }
