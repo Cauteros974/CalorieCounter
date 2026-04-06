@@ -17,6 +17,8 @@ export const useUserStore = create<UserState> ((set) => ({
     dailyWater: 0,
     dailyWeight: 0,
     setProfile: (data) => {
+        //We are using Mifflin-St. Geor Formula
+        //Calories: (10 * weight) + (6,25 * height) - (5 * age) + S
         const calories = Math.round(10 * data.weight + 6.25 * data.height - 125);
         const water = parseFloat((data.weight * 0.035).toFixed(1));
         
