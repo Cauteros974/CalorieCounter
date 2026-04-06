@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { Alert, Text, View } from 'react-native';
+import { Alert, Text, TextInput, View } from 'react-native';
 import * as z from 'zod';
 import { useUserStore } from '../store/useUserStore';
 
@@ -38,7 +38,14 @@ export default function profileScreen() {
             <Controller
                 control={control}
                 name="fullName"
-                
+                render={({ field: { onChange, value } }) => (
+                    <TextInput 
+                      style={[styles.input, errors.fullName && styles.errorInput]} 
+                      placeholder="Иван Иванов" 
+                      onChangeText={onChange} 
+                      value={value} 
+                    />
+                )}
             >
 
             </Controller>
