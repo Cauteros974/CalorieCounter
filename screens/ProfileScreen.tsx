@@ -1,7 +1,7 @@
-import React from 'react';
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, Alert } from 'react-native';
-import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import React from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import { Alert, Text, TextInput, View } from 'react-native';
 import * as z from 'zod';
 import { useUserStore } from '../store/useUserStore';
 
@@ -47,7 +47,15 @@ export default function profileScreen() {
                     />
                 )}
             />
-            {errors.fullName && <Text style = {styles.errorsText}>{errors.fullName.message</Text>}
+            {errors.fullName && <Text style={styles.errorText}>{errors.fullName.message}</Text>}
+
+            <Text>
+                <Controller
+
+                />
+
+                
+            </Text>
             
         </View>
     )
