@@ -59,4 +59,6 @@ const styles = StyleSheet.create({
     cardInfo:{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 },
     cardLabel: { fontSize: 14, color: '#888', fontWeight: '500' },
     caloriesCount: { fontSize: 28, fontWeight: '800', color: '#1A1A1A' },
+    progressBarBg: { height: 10, backgroundColor: '#EFEFEF', borderRadius: 5, overflow: 'hidden' },
+    progressBarFill: { height: '100%', backgroundColor: '#4CAF50', borderRadius: 5 },
 })
