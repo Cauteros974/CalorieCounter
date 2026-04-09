@@ -1,6 +1,6 @@
-import { useUserStore } from "@/store/useUserStore";
-import React from "react";
-import { ScrollView } from "react-native";
+import React from 'react';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useUserStore } from '../store/useUserStore';
 
 export default function HomeScreen() {
     const { fullName, dailyCalories, consumedCalories, dailyWater, consumedWater, addWater } = useUserStore();
@@ -17,3 +17,9 @@ export default function HomeScreen() {
         </ScrollView>
     )
 }
+
+const style = StyleSheet.create({
+    container: { flex: 1, backgroundColor: '#F8F9FA', paddingHorizontal: 20 },
+    header: { marginTop: 60, marginBottom: 20 },
+    greeting: { fontSize: 22, fontWeight: '700', color: '#1A1A1A' },
+})
