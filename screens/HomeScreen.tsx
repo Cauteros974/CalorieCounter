@@ -48,7 +48,13 @@ export default function HomeScreen() {
             </View>
 
             <Text style={styles.sectionTitle}>Meals</Text>
-
+            {['Breakfast', 'Lunch', 'Dinner'].map((meal) => (
+                <TouchableOpacity key={meal} style={styles.mealItem}>
+                    <View style={styles.mealIconPlaceholder}>
+                        <Utensils color="#888" size={20} />
+                    </View>
+                </TouchableOpacity>
+            ))}
         </ScrollView>
     )
 }
