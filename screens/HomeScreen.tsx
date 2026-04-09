@@ -46,6 +46,9 @@ export default function HomeScreen() {
                     <Text style={styles.cameraText}>Take a photo</Text>
                 </TouchableOpacity>
             </View>
+
+            <Text style={styles.sectionTitle}>Meals</Text>
+
         </ScrollView>
     )
 }
@@ -78,4 +81,5 @@ const styles = StyleSheet.create({
     plusBtn: { backgroundColor: '#2196F3', padding: 5, borderRadius: 10 },
     cameraCard: { flex: 1, backgroundColor: '#1A1A1A', borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
     cameraText: { color: '#fff', fontSize: 14, fontWeight: '600', marginTop: 8 },
+    sectionTitle: { fontSize: 18, fontWeight: '700', marginBottom: 15 },
 })
