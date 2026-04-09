@@ -55,7 +55,9 @@ export default function HomeScreen() {
                     </View>
                     <View style={{flex: 1}}>
                         <Text style={styles.mealName}{meal}></Text>
+                        <Text style={styles.mealStatus}>Click here to add photo</Text>
                     </View>
+                    <Plus color="#ccc" size={20}/>
                 </TouchableOpacity>
             ))}
         </ScrollView>
@@ -101,4 +103,5 @@ const styles = StyleSheet.create({
     },
     mealIconPlaceholder: {width: 45, height: 45, backgroundColor: '#F0F0F0', borderRadius: 12, justifyContent: 'center', alignItems: 'center', marginRight: 15},
     mealName: { fontSize: 16, fontWeight: '600' },
+    mealStatus: {}
 })
