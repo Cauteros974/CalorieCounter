@@ -50,21 +50,35 @@ export default function profileScreen() {
             {errors.fullName && <Text style={styles.errorText}>{errors.fullName.message}</Text>}
 
             <Text style={styles.label}>Height(cm)</Text>
-                <Controller
-                    control={control}
-                    name="height"
-                    render={({ field: {onChange, value }}) => (
-                        <TextInput 
-                            style={[styles.input, errors.height && styles.errorInput]} 
-                            placeholder="180" 
-                            keyboardType="numeric"
-                            onChangeText={onChange} 
-                            value={value} 
-                        />
-                    )}
-                />
-                {errors.height && <Text style={styles.errorText}>Please enter the correct height</Text>}
-            
+            <Controller
+                control={control}
+                name="height"
+                render={({ field: {onChange, value }}) => (
+                    <TextInput 
+                        style={[styles.input, errors.height && styles.errorInput]} 
+                        placeholder="180" 
+                        keyboardType="numeric"
+                        onChangeText={onChange} 
+                        value={value} 
+                    />
+                )}
+            />
+            {errors.height && <Text style={styles.errorText}>Please enter the correct height</Text>}
+
+            <Text style = {styles.label}>Weight(kg)</Text>
+            <Controller
+                control={control}
+                name="weight"
+                render={({ field: { onChange, value } }) => (
+                    <TextInput 
+                      style={[styles.input, errors.weight && styles.errorInput]} 
+                      placeholder="75" 
+                      keyboardType="numeric"
+                      onChangeText={onChange} 
+                      value={value} 
+                    />
+                  )}
+            />
             
         </View>
     )
