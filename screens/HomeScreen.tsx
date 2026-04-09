@@ -88,4 +88,8 @@ const styles = StyleSheet.create({
     cameraCard: { flex: 1, backgroundColor: '#1A1A1A', borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
     cameraText: { color: '#fff', fontSize: 14, fontWeight: '600', marginTop: 8 },
     sectionTitle: { fontSize: 18, fontWeight: '700', marginBottom: 15 },
+    mealItem: { 
+        flexDirection: 'row', 
+        alignItems: 'center', 
+    },
 })
