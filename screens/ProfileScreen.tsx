@@ -90,5 +90,14 @@ export default function profileScreen() {
 
 const styles = StyleSheet.create({
     container: { flex: 1, padding: 20, backgroundColor: '#fff', justifyContent: 'center' },
-  title: { fontSize: 24, fontWeight: 'bold', marginBottom: 30, textAlign: 'center' },}
+    title: { fontSize: 24, fontWeight: 'bold', marginBottom: 30, textAlign: 'center' },
+    label: { fontSize: 16, marginBottom: 5, color: '#333' },
+    input: { 
+        borderWidth: 1, 
+        borderColor: '#ddd', 
+        padding: 15, 
+        borderRadius: 10, 
+        marginBottom: 15,
+        fontSize: 16
+    },
 });
