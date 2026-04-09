@@ -16,6 +16,7 @@ export default function HomeScreen() {
                 <Text style={styles.subGreeting}>Your progress today:</Text>
             </View>
             
+            {/*Basic Calorie Card */}
             <View style={styles.mainCard}>
                 <View style={styles.cardInfo}>
                     <View>
