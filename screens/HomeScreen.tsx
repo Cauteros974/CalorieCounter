@@ -40,6 +40,10 @@ export default function HomeScreen() {
                         <Plus color="#fff" size={20} />
                     </TouchableOpacity>
                 </View>
+
+                <TouchableOpacity style={styles.cameraCard}>
+
+                </TouchableOpacity>
             </View>
         </ScrollView>
     )
@@ -71,4 +75,5 @@ const styles = StyleSheet.create({
     smallCard: {backgroundColor: '#fff', borderRadius: 20, padding: 10, alignItems: 'center', justifyContent: 'center'},
     smallCardValue: { fontSize: 14, fontWeight: '600', marginVertical: 8 },
     plusBtn: { backgroundColor: '#2196F3', padding: 5, borderRadius: 10 },
+    cameraCard: { flex: 1, backgroundColor: '#1A1A1A', borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
 })
