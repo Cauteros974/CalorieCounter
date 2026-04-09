@@ -1,4 +1,4 @@
-import { Droplets, Plus, Utensils } from 'lucide-react-native';
+import { Camera, Droplets, Plus, Utensils } from 'lucide-react-native';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useUserStore } from '../store/useUserStore';
 
@@ -42,7 +42,8 @@ export default function HomeScreen() {
                 </View>
 
                 <TouchableOpacity style={styles.cameraCard}>
-
+                    <Camera color="#fff" size={28} />
+                    <Text style={styles.cameraText}>Take a photo</Text>
                 </TouchableOpacity>
             </View>
         </ScrollView>
@@ -76,4 +77,5 @@ const styles = StyleSheet.create({
     smallCardValue: { fontSize: 14, fontWeight: '600', marginVertical: 8 },
     plusBtn: { backgroundColor: '#2196F3', padding: 5, borderRadius: 10 },
     cameraCard: { flex: 1, backgroundColor: '#1A1A1A', borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
+    cameraText: { color: '#fff', fontSize: 14, fontWeight: '600', marginTop: 8 },
 })
