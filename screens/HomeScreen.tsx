@@ -1,6 +1,8 @@
-import { Camera, Droplets, Plus, Utensils } from 'lucide-react-native';
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { useUserStore } from '../store/useUserStore';
+import { Utensils, Droplets, Camera, Plus } from 'lucide-react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function HomeScreen() {
     const { fullName, dailyCalories, consumedCalories, dailyWater, consumedWater, addWater } = useUserStore();
