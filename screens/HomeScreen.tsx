@@ -61,4 +61,6 @@ const styles = StyleSheet.create({
     caloriesCount: { fontSize: 28, fontWeight: '800', color: '#1A1A1A' },
     progressBarBg: { height: 10, backgroundColor: '#EFEFEF', borderRadius: 5, overflow: 'hidden' },
     progressBarFill: { height: '100%', backgroundColor: '#4CAF50', borderRadius: 5 },
+    progressText: { fontSize: 12, color: '#888', marginTop: 8, textAlign: 'right' },
+    waterRow: { flexDirection: 'row', gap: 15, marginBottom: 30 },
 })
