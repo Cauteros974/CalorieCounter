@@ -1,7 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import React from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { Alert, Text, TextInput, View } from 'react-native';
+import { Alert, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import * as z from 'zod';
 import { useUserStore } from '../store/useUserStore';
 
@@ -80,7 +80,10 @@ export default function profileScreen() {
                 )}
             />
             {errors.weight && <Text style={styles.errorText}>Please enter the correct weight</Text>}
-            
+
+            <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Calculate the standards</Text>
+            </TouchableOpacity>
         </View>
     )
 }
