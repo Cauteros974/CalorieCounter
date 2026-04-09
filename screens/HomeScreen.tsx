@@ -1,7 +1,7 @@
-import { Droplets, Utensils } from 'lucide-react-native';
-import React from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
 import { useUserStore } from '../store/useUserStore';
+import { Utensils, Droplets, Camera, Plus } from 'lucide-react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function HomeScreen() {
     const { fullName, dailyCalories, consumedCalories, dailyWater, consumedWater, addWater } = useUserStore();
@@ -36,6 +36,10 @@ export default function HomeScreen() {
             <View style={styles.waterRow}>
                 <View style={[styles.smallCard, {flex: 1}]}>
                     <Droplets color="#2196F3" size={24} />
+                    <Text style={styles.smallCardValue}>{consumedWater} л / {dailyWater} л</Text
+                    <TouchableOpacity style={styles.plusBtn} onPress={() => addWater(0.25)}>
+                        <Plus color="#fff" size={20} />
+                    </TouchableOpacity>
                 </View>
             </View>
         </ScrollView>
