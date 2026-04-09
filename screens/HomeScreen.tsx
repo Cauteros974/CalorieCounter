@@ -1,8 +1,6 @@
-import React from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { Camera, Droplets, Plus, Utensils } from 'lucide-react-native';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useUserStore } from '../store/useUserStore';
-import { Utensils, Droplets, Camera, Plus } from 'lucide-react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 
 export default function HomeScreen() {
     const { fullName, dailyCalories, consumedCalories, dailyWater, consumedWater, addWater } = useUserStore();
@@ -56,7 +54,7 @@ export default function HomeScreen() {
                         <Utensils color="#888" size={20} />
                     </View>
                     <View style={{flex: 1}}>
-                        <Text style={styles.mealName}{meal}></Text>
+                        <Text style={styles.mealName}>{meal}</Text>
                         <Text style={styles.mealStatus}>Click here to add photo</Text>
                     </View>
                     <Plus color="#ccc" size={20}/>
