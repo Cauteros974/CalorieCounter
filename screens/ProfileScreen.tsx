@@ -102,4 +102,12 @@ const styles = StyleSheet.create({
     },
     errorInput: { borderColor: 'red' },
     errorText: { color: 'red', marginBottom: 10, fontSize: 12 },
+    button: { 
+        backgroundColor: '#4CAF50', 
+        padding: 18, 
+        borderRadius: 12, 
+        alignItems: 'center',
+        marginTop: 20 
+    },
+    buttonText: { color: '#fff', fontSize: 18, fontWeight: '600' }
 });
