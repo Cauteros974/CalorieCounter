@@ -1,3 +1,4 @@
+import { Utensils } from 'lucide-react-native';
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useUserStore } from '../store/useUserStore';
@@ -13,6 +14,16 @@ export default function HomeScreen() {
             <View style={styles.header}>
                 <Text style={styles.greeting}>Привет, {fullName || 'User'} 👋</Text>
                 <Text style={styles.subGreeting}>Your progress today:</Text>
+            </View>
+            
+            <View style={styles.mainCard}>
+                <View style={styles.cardInfo}>
+                    <View>
+                        <Text style={styles.cardLabel}>There are left to eat</Text>
+                        <Text style={styles.caloriesCount}>{dailyCalories - consumedCalories} kcal</Text>
+                    </View>
+                    <Utensils color="#4CAF50" size={32} />
+                </View>
             </View>
         </ScrollView>
     )
