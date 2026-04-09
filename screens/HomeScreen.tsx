@@ -53,6 +53,10 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 4 }, 
         shadowOpacity: 0.05, 
         shadowRadius: 10,
-        
-    }
+        elevation: 2,
+        marginBottom: 20
+    },
+    cardInfo:{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 },
+    cardLabel: { fontSize: 14, color: '#888', fontWeight: '500' },
+    caloriesCount: { fontSize: 28, fontWeight: '800', color: '#1A1A1A' },
 })
