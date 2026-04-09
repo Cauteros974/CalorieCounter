@@ -12,6 +12,10 @@ const profileSchema = z.object({
         const num = Number(val);
         return num >= 30 && num <= 300;
     }, 'Invalid weight'),
+    height: z.string().refine(val => {
+        const num = Number(val);
+        return num >= 100 && num <= 250;
+    }, 'Invalid height'),
 });
 
 type ProfileFormData = z.infer<typeof profileSchema>;
