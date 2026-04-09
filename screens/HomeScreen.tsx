@@ -31,12 +31,24 @@ export default function HomeScreen() {
                 </View>
                 <Text style={styles.progressText}>{consumedCalories} / {dailyCalories} kcal</Text>
             </View>
+
+            {/*Water block*/}
+            <View style={styles.waterRow}>
+
+            </View>
         </ScrollView>
     )
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: '#F8F9FA', paddingHorizontal: 20 },
     header: { marginTop: 60, marginBottom: 20 },
     greeting: { fontSize: 22, fontWeight: '700', color: '#1A1A1A' },
+    subGreeting: { fontSize: 16, color: '#666', marginTop: 4 },
+    mainCard:{
+        backgroundColor: '#fff', 
+        borderRadius: 24, 
+        padding: 24, 
+        shadowColor: '#000',
+    }
 })
