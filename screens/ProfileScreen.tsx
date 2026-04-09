@@ -100,4 +100,6 @@ const styles = StyleSheet.create({
         marginBottom: 15,
         fontSize: 16
     },
+    errorInput: { borderColor: 'red' },
+    errorText: { color: 'red', marginBottom: 10, fontSize: 12 },
 });
