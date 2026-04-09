@@ -41,7 +41,7 @@ export default function profileScreen() {
                 render={({ field: { onChange, value } }) => (
                     <TextInput 
                       style={[styles.input, errors.fullName && styles.errorInput]} 
-                      placeholder="Иван Иванов" 
+                      placeholder="Mike Henson" 
                       onChangeText={onChange} 
                       value={value} 
                     />
