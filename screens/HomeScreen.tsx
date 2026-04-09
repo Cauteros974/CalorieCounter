@@ -53,6 +53,9 @@ export default function HomeScreen() {
                     <View style={styles.mealIconPlaceholder}>
                         <Utensils color="#888" size={20} />
                     </View>
+                    <View style={{flex: 1}}>
+                        <Text style={styles.mealName}{meal}></Text>
+                    </View>
                 </TouchableOpacity>
             ))}
         </ScrollView>
@@ -96,5 +99,6 @@ const styles = StyleSheet.create({
         borderRadius: 18, 
         marginBottom: 12,
     },
-    mealIconPlaceholder: {width: 45, height: 45, backgroundColor: '#F0F0F0', borderRadius: 12, justifyContent: 'center', alignItems: 'center', marginRight: 15}
+    mealIconPlaceholder: {width: 45, height: 45, backgroundColor: '#F0F0F0', borderRadius: 12, justifyContent: 'center', alignItems: 'center', marginRight: 15},
+    mealName: { fontSize: 16, fontWeight: '600' },
 })
