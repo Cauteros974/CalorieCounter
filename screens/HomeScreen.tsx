@@ -24,6 +24,11 @@ export default function HomeScreen() {
                     </View>
                     <Utensils color="#4CAF50" size={32} />
                 </View>
+
+                <View style={styles.progressBarBg}>
+                    <View style={[styles.progressBarFill, { width: `${calProgress * 100}%` }]} />
+                </View>
+                <Text style={styles.progressText}>{consumedCalories} / {dailyCalories} kcal</Text>
             </View>
         </ScrollView>
     )
