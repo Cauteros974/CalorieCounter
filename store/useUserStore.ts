@@ -34,4 +34,6 @@ export const useUserStore = create<UserState> ((set) => ({
     },
     consumedCalories: 0,
     consumedWater: 0,
+    addCalories: (amount) => set((state) => ({ consumedCalories: state.consumedCalories + amount })),
+    addWater: (amount) => set((state) => ({ consumedWater: state.consumedWater + amount })),
 }));
