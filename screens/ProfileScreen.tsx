@@ -63,6 +63,7 @@ export default function profileScreen() {
                         />
                     )}
                 />
+                {errors.height && <Text style={styles.errorText}>Please enter the correct height</Text>}
 
                 
             </Text>
