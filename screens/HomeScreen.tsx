@@ -1,7 +1,6 @@
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { Droplets, Plus, Utensils } from 'lucide-react-native';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useUserStore } from '../store/useUserStore';
-import { Utensils, Droplets, Camera, Plus } from 'lucide-react-native';
-import { LinearGradient } from 'expo-linear-gradient';
 
 export default function HomeScreen() {
     const { fullName, dailyCalories, consumedCalories, dailyWater, consumedWater, addWater } = useUserStore();
@@ -36,7 +35,7 @@ export default function HomeScreen() {
             <View style={styles.waterRow}>
                 <View style={[styles.smallCard, {flex: 1}]}>
                     <Droplets color="#2196F3" size={24} />
-                    <Text style={styles.smallCardValue}>{consumedWater} л / {dailyWater} л</Text
+                    <Text style={styles.smallCardValue}>{consumedWater} l / {dailyWater} l</Text>
                     <TouchableOpacity style={styles.plusBtn} onPress={() => addWater(0.25)}>
                         <Plus color="#fff" size={20} />
                     </TouchableOpacity>
@@ -70,4 +69,6 @@ const styles = StyleSheet.create({
     progressText: { fontSize: 12, color: '#888', marginTop: 8, textAlign: 'right' },
     waterRow: { flexDirection: 'row', gap: 15, marginBottom: 30 },
     smallCard: {backgroundColor: '#fff', borderRadius: 20, padding: 10, alignItems: 'center', justifyContent: 'center'},
+    smallCardValue: { fontSize: 14, fontWeight: '600', marginVertical: 8 },
+    plusBtn: { backgroundColor: '#2196F3', padding: 5, borderRadius: 10 },
 })
