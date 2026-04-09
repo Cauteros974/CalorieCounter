@@ -77,8 +77,9 @@ export default function profileScreen() {
                       onChangeText={onChange} 
                       value={value} 
                     />
-                  )}
+                )}
             />
+            {errors.weight && <Text style={styles.errorText}>Please enter the correct weight</Text>}
             
         </View>
     )
