@@ -1,4 +1,4 @@
-import { Utensils } from 'lucide-react-native';
+import { Droplets, Utensils } from 'lucide-react-native';
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useUserStore } from '../store/useUserStore';
@@ -34,7 +34,9 @@ export default function HomeScreen() {
 
             {/*Water block*/}
             <View style={styles.waterRow}>
-
+                <View style={[styles.smallCard, {flex: 1}]}>
+                    <Droplets color="#2196F3" size={24} />
+                </View>
             </View>
         </ScrollView>
     )
@@ -63,4 +65,5 @@ const styles = StyleSheet.create({
     progressBarFill: { height: '100%', backgroundColor: '#4CAF50', borderRadius: 5 },
     progressText: { fontSize: 12, color: '#888', marginTop: 8, textAlign: 'right' },
     waterRow: { flexDirection: 'row', gap: 15, marginBottom: 30 },
+    smallCard: {backgroundColor: '#fff', borderRadius: 20, padding: 10, alignItems: 'center', justifyContent: 'center'},
 })
