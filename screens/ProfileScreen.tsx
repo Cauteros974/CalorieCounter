@@ -49,7 +49,7 @@ export default function profileScreen() {
             />
             {errors.fullName && <Text style={styles.errorText}>{errors.fullName.message}</Text>}
 
-            <Text>
+            <Text style={styles.label}>
                 <Controller
                     control={control}
                     name="height"
@@ -64,6 +64,7 @@ export default function profileScreen() {
                     )}
                 />
                 {errors.height && <Text style={styles.errorText}>Please enter the correct height</Text>}
+
 
                 
             </Text>
