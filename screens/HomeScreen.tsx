@@ -94,5 +94,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff', 
         padding: 15, 
         borderRadius: 18, 
+        marginBottom: 12,
     },
+    mealIconPlaceholder: {width: 45, height: 45, backgroundColor: '#F0F0F0', borderRadius: 12, justifyContent: 'center', alignItems: 'center', marginRight: 15}
 })
