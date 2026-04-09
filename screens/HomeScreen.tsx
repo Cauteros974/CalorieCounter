@@ -1,4 +1,5 @@
 import { Camera, Droplets, Plus, Utensils } from 'lucide-react-native';
+import React from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useUserStore } from '../store/useUserStore';
 
