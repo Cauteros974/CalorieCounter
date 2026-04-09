@@ -7,6 +7,10 @@ interface UserState{
     dailyWeight: number;   
     dailyWater: number;
     setProfile: (data: { fullName: string; weight: number; height: number }) => void;
+    consumedCalories: number;
+    consumedWater: number;
+    addCalories: (amount: number) => void;
+    addWater: (amount: number) => void;
 }
 
 export const useUserStore = create<UserState> ((set) => ({
@@ -28,4 +32,6 @@ export const useUserStore = create<UserState> ((set) => ({
             dailyWater: water,
         })
     },
+    consumedCalories: 0,
+    consumedWater: 0,
 }));
