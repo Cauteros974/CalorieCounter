@@ -1,8 +1,8 @@
 import HomeScreen from '@/screens/HomeScreen';
+import ProfileScreen from '@/screens/ProfileScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { Home } from 'lucide-react-native';
-
 const Tab = createBottomTabNavigator();
 
 export default  function App() {
@@ -17,9 +17,13 @@ export default  function App() {
           name='Home'
           component={HomeScreen}
           options={{ tabBarIcon: ({ color }) => <Home color={color} size={24} /> }}
-        >
-          
-        </Tab.Screen>
+        />
+        
+        <Tab.Screen 
+          name='Profile'
+          component={ProfileScreen}
+          options={{ tabBarIcon: ({ color }) => <User color={color} size={24} /> }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   )
