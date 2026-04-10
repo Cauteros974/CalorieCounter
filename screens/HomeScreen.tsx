@@ -104,5 +104,5 @@ const styles = StyleSheet.create({
     },
     mealIconPlaceholder: {width: 45, height: 45, backgroundColor: '#F0F0F0', borderRadius: 12, justifyContent: 'center', alignItems: 'center', marginRight: 15},
     mealName: { fontSize: 16, fontWeight: '600' },
-    mealStatus: {}
-})
+    mealStatus: { fontSize: 13, color: '#AAA' }
+});
