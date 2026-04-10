@@ -20,7 +20,7 @@ const profileSchema = z.object({
 
 type ProfileFormData = z.infer<typeof profileSchema>;
 
-export default function profileScreen() {
+export default function ProfileScreen() {
     const setProfile = useUserStore((state) => state.setProfile);
 
     const {control, handleSubmit, formState: {errors} } = useForm<ProfileFormData>({
