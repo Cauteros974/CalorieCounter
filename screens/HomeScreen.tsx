@@ -12,7 +12,7 @@ export default function HomeScreen() {
     return(
         <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
             <View style={styles.header}>
-                <Text style={styles.greeting}>Привет, {fullName || 'User'} 👋</Text>
+                <Text style={styles.greeting}>Hello, {fullName || 'User'} 👋</Text>
                 <Text style={styles.subGreeting}>Your progress today:</Text>
             </View>
             
