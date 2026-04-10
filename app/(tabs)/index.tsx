@@ -1,13 +1,12 @@
 import HomeScreen from '@/screens/HomeScreen';
 import ProfileScreen from '@/screens/ProfileScreen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
-import { Home } from 'lucide-react-native';
+import { Home, User } from 'lucide-react-native';
+
 const Tab = createBottomTabNavigator();
 
 export default  function App() {
   return(
-    <NavigationContainer>
       <Tab.Navigator screenOptions={{
         headerShown: false,
         tabBarStyle: { height: 90, paddingTop: 10 },
@@ -25,6 +24,5 @@ export default  function App() {
           options={{ tabBarIcon: ({ color }) => <User color={color} size={24} /> }}
         />
       </Tab.Navigator>
-    </NavigationContainer>
   )
 }
