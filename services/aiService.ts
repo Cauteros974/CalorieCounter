@@ -44,6 +44,10 @@ export const analyzeFoodImage = async (uri: string): Promise<FoodAnalysisResult 
         const jsonStart = text.indexOf('{');
         const jsonEnd = text.lastIndexOf('}') + 1;
 
+        const jsonString = text.slice(jsonStart, jsonEnd);
+    
+        const parsed = JSON.parse(jsonString);
+
     } catch (error) {
         console.error("AI Analysis Error:", error);
         return null;
