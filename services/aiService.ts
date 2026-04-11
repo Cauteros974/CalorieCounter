@@ -26,6 +26,9 @@ export const analyzeFoodImage = async(uri: string) => {
                     ]
                 }]
             })
-        })
+        });
+    } catch {
+        console.error("AI Analysis Error:");
+        return(null);
     }
-}
+};
