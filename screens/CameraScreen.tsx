@@ -1,9 +1,9 @@
+import { useUserStore } from '@/store/useUserStore';
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import { X } from 'lucide-react-native';
 import React, { useRef, useState } from 'react';
 import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { analyzeFoodImage } from '../services/aiService';
-import { useUserStore } from '../store/useUserStore';
 
 export default function CameraScreen({onClose}: {onClose: () => void}) {
     const [permission, requestPermission] = useCameraPermissions();
