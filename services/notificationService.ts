@@ -13,3 +13,12 @@ export async function requestPermissions() {
     const { status } = await Notifications.requestPermissionsAsync();
     return status === 'granted';
 }
+
+export async function scheduleWaterReminder() {
+    const granted = await requestPermissions();
+
+    if(!granted) {
+        console.log('Permision not granted');
+        return;
+    }
+}
