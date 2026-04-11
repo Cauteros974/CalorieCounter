@@ -4,6 +4,7 @@ import { Camera, Droplets, Plus, Utensils } from 'lucide-react-native';
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useUserStore } from '../store/useUserStore';
+import { daysInWeek } from 'date-fns/constants';
 
 
 export default function HomeScreen() {
@@ -28,6 +29,20 @@ export default function HomeScreen() {
             {/*Horizontal calendar */}
             <View style={styles.calendarContainer}>
                 <Text style={styles.monthText}>{format(selectedDate, 'LLLL yyyy', { locale: enUS })}</Text>
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.calendarScroll}>
+                    {weekDays.map(day) => {
+                        const isSelected = isSameDay(day, selectedDate);
+                        return(
+                            <TouchableOpacity
+                                key={day.toString()}
+                                style={[styles.dayCard, isSelected && styles.selectedDayCard]}
+                                onPress={() => setSelectedDate(day)}
+                            >
+
+                            </TouchableOpacity>
+                        )
+                    }}
+                </ScrollView>
             </View>
             
             {/*Basic Calorie Card */}
@@ -121,4 +136,5 @@ const styles = StyleSheet.create({
     mealStatus: { fontSize: 13, color: '#AAA' },
     calendarContainer: { marginVertical: 20 },
     monthText: { fontSize: 16, fontWeight: '600', marginBottom: 10, textTransform: 'capitalize' },
+    calendarScroll: {gap: 10},
 });
