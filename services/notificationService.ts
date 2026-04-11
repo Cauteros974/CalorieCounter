@@ -21,4 +21,9 @@ export async function scheduleWaterReminder() {
         console.log('Permision not granted');
         return;
     }
+
+    //Clean old notifications
+    await Notifications.cancelAllScheduledNotificationsAsync();
+
+    
 }
