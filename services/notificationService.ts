@@ -30,6 +30,8 @@ export async function scheduleWaterReminder() {
             title: "It's time to drink some water! 💧",
             body: "Maintain hydration for optimal well-being",
         },
-        
+        trigger: {
+            second: 7200 //2 hours
+        } as Notifications.TimeIntervalTriggerInput,
     });
 };
