@@ -1,10 +1,12 @@
 import { Camera, Droplets, Plus, Utensils } from 'lucide-react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useUserStore } from '../store/useUserStore';
 
 export default function HomeScreen() {
     const { fullName, dailyCalories, consumedCalories, dailyWater, consumedWater, addWater } = useUserStore();
+    const [selectedDate, setSelectedDate] = useState(new Date());
+    const [showCamera, setShowCamera] = useState(false);
     
     const calProgress = Math.min(consumedCalories / dailyCalories, 1) || 0;
     const waterProgress = Math.min(consumedWater / dailyWater, 1) || 0;
