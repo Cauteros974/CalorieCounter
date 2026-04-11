@@ -61,4 +61,6 @@ export default function CameraScreen({onClose}: {onClose: () => void}) {
 
 const styles = StyleSheet.create({
     container: {flex: 2, backgroundColor: '#000'},
+    camera: { flex: 1 },
+    overlay: { flex: 1, justifyContent: 'space-between', alignItems: 'center', paddingVertical: 50 },
 })
