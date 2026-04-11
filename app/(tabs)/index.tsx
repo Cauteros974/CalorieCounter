@@ -1,11 +1,19 @@
 import HomeScreen from '@/screens/HomeScreen';
 import ProfileScreen from '@/screens/ProfileScreen';
+import { requestPermissions } from '@/services/notificationService';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home, User } from 'lucide-react-native';
+import { useEffect } from 'react';
 
 const Tab = createBottomTabNavigator();
 
 export default  function App() {
+
+  useEffect(() => {
+    requestPermissions();
+  }, []);
+
+
   return(
       <Tab.Navigator screenOptions={{
         headerShown: false,
