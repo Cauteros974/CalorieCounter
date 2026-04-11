@@ -1,7 +1,7 @@
 import { CameraView, useCameraPermissions } from 'expo-camera';
 import { X } from 'lucide-react-native';
 import React, { useRef, useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { analyzeFoodImage } from '../services/aiService';
 import { useUserStore } from '../store/useUserStore';
 
@@ -45,6 +45,14 @@ export default function CameraScreen({onClose}: {onClose: () => void}) {
                     <TouchableOpacity style={styles.closeBtn} onPress={onClose}>
                         <X color="#fff" size={30} />
                     </TouchableOpacity>
+
+                    {loading ? (
+                        <ActivityIndicator size="large" />
+                    ) : (
+                        <TouchableOpacity style={styles.captureBtn} onPress={takePhoto}>
+                            <View style={styles.captureInner} />
+                        </TouchableOpacity>
+                    )}
                 </View>
             </CameraView>
         </View>
