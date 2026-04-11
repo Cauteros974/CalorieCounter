@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useUserStore } from '../store/useUserStore';
 import { daysInWeek } from 'date-fns/constants';
+import { en } from 'zod/v4/locales';
 
 
 export default function HomeScreen() {
@@ -38,7 +39,9 @@ export default function HomeScreen() {
                                 style={[styles.dayCard, isSelected && styles.selectedDayCard]}
                                 onPress={() => setSelectedDate(day)}
                             >
-
+                                <Text style={[styles.dayName, isSelected && styles.selectedText]}>
+                                    {format(day, 'eee', {locale: en})}
+                                </Text>
                             </TouchableOpacity>
                         )
                     }}
