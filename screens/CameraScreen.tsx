@@ -1,4 +1,5 @@
-import { useCameraPermissions } from 'expo-camera';
+import { CameraView, useCameraPermissions } from 'expo-camera';
+import { X } from 'lucide-react-native';
 import React, { useRef, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { analyzeFoodImage } from '../services/aiService';
@@ -36,6 +37,18 @@ export default function CameraScreen({onClose}: {onClose: () => void}) {
             setLoading(false);
         }
     };
+
+    return(
+        <View style={styles.container}>
+            <CameraView style={styles.camera} ref={cameraRef}>
+                <View style={styles.overlay}>
+                    <TouchableOpacity style={styles.closeBtn} onPress={onClose}>
+                        <X color="#fff" size={30} />
+                    </TouchableOpacity>
+                </View>
+            </CameraView>
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({
