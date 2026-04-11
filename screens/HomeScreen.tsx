@@ -1,8 +1,10 @@
-import { addDays, startOfWeek } from 'date-fns';
+import { addDays, format, startOfWeek } from 'date-fns';
 import { Camera, Droplets, Plus, Utensils } from 'lucide-react-native';
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { en } from 'zod/v4/locales';
 import { useUserStore } from '../store/useUserStore';
+
 
 export default function HomeScreen() {
     const { fullName, dailyCalories, consumedCalories, dailyWater, consumedWater, addWater } = useUserStore();
@@ -21,6 +23,11 @@ export default function HomeScreen() {
             <View style={styles.header}>
                 <Text style={styles.greeting}>Hello, {fullName || 'User'} 👋</Text>
                 <Text style={styles.subGreeting}>Your progress today:</Text>
+            </View>
+
+            {/*Horizontal calendar */}
+            <View style={styles.calendarContainer}>
+                <Text style={styles.monthText}>{format(selectedDate, 'LLLL yyyy', { locale: en })}</Text>
             </View>
             
             {/*Basic Calorie Card */}
@@ -111,5 +118,7 @@ const styles = StyleSheet.create({
     },
     mealIconPlaceholder: {width: 45, height: 45, backgroundColor: '#F0F0F0', borderRadius: 12, justifyContent: 'center', alignItems: 'center', marginRight: 15},
     mealName: { fontSize: 16, fontWeight: '600' },
-    mealStatus: { fontSize: 13, color: '#AAA' }
+    mealStatus: { fontSize: 13, color: '#AAA' },
+    calendarContainer: { marginVertical: 20 },
+    monthText: { fontSize: 16, fontWeight: '600', marginBottom: 10, textTransform: 'capitalize' },
 });
