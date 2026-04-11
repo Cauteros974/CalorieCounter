@@ -64,4 +64,5 @@ const styles = StyleSheet.create({
     camera: { flex: 1 },
     overlay: { flex: 1, justifyContent: 'space-between', alignItems: 'center', paddingVertical: 50 },
     closeBtn: { alignSelf: 'flex-start', marginLeft: 20 },
+    captureBtn: { width: 80, height: 80, borderRadius: 40, borderWidth: 4, borderColor: '#fff', justifyContent: 'center', alignItems: 'center' },
 })
