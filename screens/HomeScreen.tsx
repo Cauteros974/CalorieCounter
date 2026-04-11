@@ -42,6 +42,9 @@ export default function HomeScreen() {
                                 <Text style={[styles.dayName, isSelected && styles.selectedText]}>
                                     {format(day, 'eee', {locale: en})}
                                 </Text>
+                                <Text style={[styles.dayNumber, isSelected && styles.selectedText]}>
+                                    {format(day, 'd')}
+                                </Text>
                             </TouchableOpacity>
                         )
                     }}
