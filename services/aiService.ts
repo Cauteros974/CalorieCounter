@@ -33,6 +33,8 @@ export const analyzeFoodImage = async (uri: string): Promise<FoodAnalysisResult 
                 }]
             })
         });
+
+        const data = await response.json();
     } catch (error) {
         console.error("AI Analysis Error:", error);
         return null;
