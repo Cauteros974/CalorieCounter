@@ -1,6 +1,6 @@
 import { useCameraPermissions } from 'expo-camera';
 import React, { useRef, useState } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { analyzeFoodImage } from '../services/aiService';
 import { useUserStore } from '../store/useUserStore';
 
@@ -34,3 +34,7 @@ export default function CameraScreen({onClose}: {onClose: () => void}) {
         }
     }
 }
+
+const styles = StyleSheet.create({
+    container: {flex: 2, backgroundColor: '#000'},
+})
