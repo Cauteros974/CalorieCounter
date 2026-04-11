@@ -48,6 +48,11 @@ export const analyzeFoodImage = async (uri: string): Promise<FoodAnalysisResult 
     
         const parsed = JSON.parse(jsonString);
 
+        return{
+            dishName: parsed.dishName,
+            calories: Number(parsed.calories),
+        };
+
     } catch (error) {
         console.error("AI Analysis Error:", error);
         return null;
