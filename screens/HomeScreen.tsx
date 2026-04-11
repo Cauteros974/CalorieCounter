@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Modal } from 'react-native';
-import { useUserStore } from '../store/useUserStore';
-import { Utensils, Droplets, Camera, Plus } from 'lucide-react-native';
-import { format, startOfWeek, addDays, isSameDay } from 'date-fns';
+import { addDays, format, isSameDay, startOfWeek } from 'date-fns';
 import { enUS } from 'date-fns/locale';
+import { Camera, Droplets, Plus, Utensils } from 'lucide-react-native';
+import React, { useState } from 'react';
+import { Modal, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useUserStore } from '../store/useUserStore';
 import CameraScreen from './CameraScreen';
-import { en } from 'zod/v4/locales';
-
 
 export default function HomeScreen() {
     const { fullName, dailyCalories, consumedCalories, dailyWater, consumedWater, addWater } = useUserStore();
@@ -14,94 +12,112 @@ export default function HomeScreen() {
     const [showCamera, setShowCamera] = useState(false);
     
     const calProgress = Math.min(consumedCalories / dailyCalories, 1) || 0;
-    const waterProgress = Math.min(consumedWater / dailyWater, 1) || 0;
 
-    //Generating days of the week for the calendar
-    const startDate = startOfWeek(new Date(), {weekStartsOn: 1});
+    const startDate = startOfWeek(new Date(), { weekStartsOn: 1 });
     const weekDays = Array.from({ length: 7 }).map((_, i) => addDays(startDate, i));
 
-    return(
-        <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-            <View style={styles.header}>
-                <Text style={styles.greeting}>Hello, {fullName || 'User'} 👋</Text>
-                <Text style={styles.subGreeting}>Your progress today:</Text>
-            </View>
+    return (
+        <View style={{ flex: 1 }}>
+            <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+                
+                <View style={styles.header}>
+                    <Text style={styles.greeting}>Hello, {fullName || 'User'} 👋</Text>
+                    <Text style={styles.subGreeting}>Your progress today:</Text>
+                </View>
 
-            {/*Horizontal calendar */}
-            <View style={styles.calendarContainer}>
-                <Text style={styles.monthText}>{format(selectedDate, 'LLLL yyyy', { locale: enUS })}</Text>
-                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.calendarScroll}>
-                    {weekDays.map((day) => {
-                        const isSelected = isSameDay(day, selectedDate);
-                        return (
-                            <TouchableOpacity 
-                                key={day.toString()} 
-                                style={[styles.dayCard, isSelected && styles.selectedDayCard]}
-                                onPress={() => setSelectedDate(day)}
-                            >
-                                <Text style={[styles.dayName, isSelected && styles.selectedText]}>
-                                    {format(day, 'eee', { locale: en })}
-                                </Text>
-                                <Text style={[styles.dayNumber, isSelected && styles.selectedText]}>
-                                    {format(day, 'd')}
-                                </Text>
-                            </TouchableOpacity>
-                         );
-                    })}
-                </ScrollView>
-            </View>
-            
-            {/*Basic Calorie Card */}
-            <View style={styles.mainCard}>
-                <View style={styles.cardInfo}>
-                    <View>
-                        <Text style={styles.cardLabel}>There are left to eat</Text>
-                        <Text style={styles.caloriesCount}>{dailyCalories - consumedCalories} kcal</Text>
+                {/* Calendar */}
+                <View style={styles.calendarContainer}>
+                    <Text style={styles.monthText}>
+                        {format(selectedDate, 'LLLL yyyy', { locale: enUS })}
+                    </Text>
+
+                    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.calendarScroll}>
+                        {weekDays.map((day) => {
+                            const isSelected = isSameDay(day, selectedDate);
+
+                            return (
+                                <TouchableOpacity
+                                    key={day.toString()}
+                                    style={[styles.dayCard, isSelected && styles.selectedDayCard]}
+                                    onPress={() => setSelectedDate(day)}
+                                >
+                                    <Text style={[styles.dayName, isSelected && styles.selectedText]}>
+                                        {format(day, 'eee', { locale: enUS })}
+                                    </Text>
+                                    <Text style={[styles.dayNumber, isSelected && styles.selectedText]}>
+                                        {format(day, 'd')}
+                                    </Text>
+                                </TouchableOpacity>
+                            );
+                        })}
+                    </ScrollView>
+                </View>
+
+                {/* Calories */}
+                <View style={styles.mainCard}>
+                    <View style={styles.cardInfo}>
+                        <View>
+                            <Text style={styles.cardLabel}>There are left to eat</Text>
+                            <Text style={styles.caloriesCount}>
+                                {dailyCalories - consumedCalories} kcal
+                            </Text>
+                        </View>
+                        <Utensils color="#4CAF50" size={32} />
                     </View>
-                    <Utensils color="#4CAF50" size={32} />
+
+                    <View style={styles.progressBarBg}>
+                        <View style={[styles.progressBarFill, { width: `${calProgress * 100}%` }]} />
+                    </View>
+
+                    <Text style={styles.progressText}>
+                        {consumedCalories} / {dailyCalories} kcal
+                    </Text>
                 </View>
 
-                <View style={styles.progressBarBg}>
-                    <View style={[styles.progressBarFill, { width: `${calProgress * 100}%` }]} />
-                </View>
-                <Text style={styles.progressText}>{consumedCalories} / {dailyCalories} kcal</Text>
-            </View>
+                {/* Water */}
+                <View style={styles.waterRow}>
+                    <View style={[styles.smallCard, { flex: 1 }]}>
+                        <Droplets color="#2196F3" size={24} />
+                        <Text style={styles.smallCardValue}>
+                            {consumedWater} l / {dailyWater} l
+                        </Text>
+                        <TouchableOpacity style={styles.plusBtn} onPress={() => addWater(0.25)}>
+                            <Plus color="#fff" size={20} />
+                        </TouchableOpacity>
+                    </View>
 
-            {/*Water block*/}
-            <View style={styles.waterRow}>
-                <View style={[styles.smallCard, {flex: 1}]}>
-                    <Droplets color="#2196F3" size={24} />
-                    <Text style={styles.smallCardValue}>{consumedWater} l / {dailyWater} l</Text>
-                    <TouchableOpacity style={styles.plusBtn} onPress={() => addWater(0.25)}>
-                        <Plus color="#fff" size={20} />
+                    <TouchableOpacity 
+                        style={styles.cameraCard}
+                        onPress={() => setShowCamera(true)}
+                    >
+                        <Camera color="#fff" size={28} />
+                        <Text style={styles.cameraText}>Take a photo</Text>
                     </TouchableOpacity>
                 </View>
 
-                <TouchableOpacity style={styles.cameraCard}>
-                    <Camera color="#fff" size={28} />
-                    <Text style={styles.cameraText}>Take a photo</Text>
-                </TouchableOpacity>
-            </View>
+                {/* Meals */}
+                <Text style={styles.sectionTitle}>Meals</Text>
 
-            <Text style={styles.sectionTitle}>Meals</Text>
-            {['Breakfast', 'Lunch', 'Dinner'].map((meal) => (
-                <TouchableOpacity key={meal} style={styles.mealItem}>
-                    <View style={styles.mealIconPlaceholder}>
-                        <Utensils color="#888" size={20} />
-                    </View>
-                    <View style={{flex: 1}}>
-                        <Text style={styles.mealName}>{meal}</Text>
-                        <Text style={styles.mealStatus}>Click here to add photo</Text>
-                    </View>
-                    <Plus color="#ccc" size={20}/>
-                </TouchableOpacity>
-            ))}
-        </ScrollView>
+                {['Breakfast', 'Lunch', 'Dinner'].map((meal) => (
+                    <TouchableOpacity key={meal} style={styles.mealItem}>
+                        <View style={styles.mealIconPlaceholder}>
+                            <Utensils color="#888" size={20} />
+                        </View>
+                        <View style={{ flex: 1 }}>
+                            <Text style={styles.mealName}>{meal}</Text>
+                            <Text style={styles.mealStatus}>Click here to add photo</Text>
+                        </View>
+                        <Plus color="#ccc" size={20} />
+                    </TouchableOpacity>
+                ))}
 
-        {/*Camera modal window */}
-        <Modal visible={showCamera} animationType="slide">
-            <CameraScreen onClose={() => setShowCamera(false)} />
-        </Modal>
+            </ScrollView>
+
+            {/* Camera Modal */}
+            <Modal visible={showCamera} animationType="slide">
+                <CameraScreen onClose={() => setShowCamera(false)} />
+            </Modal>
+        </View>
     );
 }
 
@@ -150,4 +166,7 @@ const styles = StyleSheet.create({
     calendarScroll: {gap: 10},
     dayCard: { width: 60, height: 80, backgroundColor: '#fff', borderRadius: 15, justifyContent: 'center', alignItems: 'center', elevation: 2 },
     selectedDayCard: { backgroundColor: '#4CAF50' },
+    dayName: { fontSize: 12, color: '#666' },
+    dayNumber: { fontSize: 18, fontWeight: '700' },
+    selectedText: { color: '#fff' },
 });
