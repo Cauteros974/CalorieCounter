@@ -1,3 +1,4 @@
+import { addDays, startOfWeek } from 'date-fns';
 import { Camera, Droplets, Plus, Utensils } from 'lucide-react-native';
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -10,6 +11,10 @@ export default function HomeScreen() {
     
     const calProgress = Math.min(consumedCalories / dailyCalories, 1) || 0;
     const waterProgress = Math.min(consumedWater / dailyWater, 1) || 0;
+
+    //Generating days of the week for the calendar
+    const startDate = startOfWeek(new Date(), {weekStartsOn: 1});
+    const weekDays = Array.from({ length: 7 }).map((_, i) => addDays(startDate, i));
 
     return(
         <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
