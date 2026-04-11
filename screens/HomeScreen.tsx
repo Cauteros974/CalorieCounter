@@ -1,11 +1,9 @@
 import { addDays, format, startOfWeek } from 'date-fns';
-import { enUS } from 'date-fns/locale/en-US';
 import { Camera, Droplets, Plus, Utensils } from 'lucide-react-native';
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { useUserStore } from '../store/useUserStore';
-import { daysInWeek } from 'date-fns/constants';
 import { en } from 'zod/v4/locales';
+import { useUserStore } from '../store/useUserStore';
 
 
 export default function HomeScreen() {
@@ -29,25 +27,25 @@ export default function HomeScreen() {
 
             {/*Horizontal calendar */}
             <View style={styles.calendarContainer}>
-                <Text style={styles.monthText}>{format(selectedDate, 'LLLL yyyy', { locale: enUS })}</Text>
+                <Text style={styles.monthText}>{format(selectedDate, 'LLLL yyyy', { locale: en })}</Text>
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.calendarScroll}>
-                    {weekDays.map(day) => {
+                    {weekDays.map((day) => {
                         const isSelected = isSameDay(day, selectedDate);
-                        return(
-                            <TouchableOpacity
-                                key={day.toString()}
+                        return (
+                            <TouchableOpacity 
+                                key={day.toString()} 
                                 style={[styles.dayCard, isSelected && styles.selectedDayCard]}
                                 onPress={() => setSelectedDate(day)}
                             >
                                 <Text style={[styles.dayName, isSelected && styles.selectedText]}>
-                                    {format(day, 'eee', {locale: en})}
+                                    {format(day, 'eee', { locale: ru })}
                                 </Text>
                                 <Text style={[styles.dayNumber, isSelected && styles.selectedText]}>
                                     {format(day, 'd')}
                                 </Text>
                             </TouchableOpacity>
-                        )
-                    }}
+                         );
+                    })}
                 </ScrollView>
             </View>
             
