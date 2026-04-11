@@ -56,7 +56,7 @@ export default function CameraScreen({onClose}: {onClose: () => void}) {
                 </View>
             </CameraView>
         </View>
-    )
+    );
 }
 
 const styles = StyleSheet.create({
@@ -66,4 +66,4 @@ const styles = StyleSheet.create({
     closeBtn: { alignSelf: 'flex-start', marginLeft: 20 },
     captureBtn: { width: 80, height: 80, borderRadius: 40, borderWidth: 4, borderColor: '#fff', justifyContent: 'center', alignItems: 'center' },
     captureInner: { width: 60, height: 60, borderRadius: 30, backgroundColor: '#fff' }
-})
+});
