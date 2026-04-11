@@ -10,7 +10,9 @@ export async function scheduleWaterRemindername() {
 
     await Notifications.scheduleNotificationAsync({
         content: {
-            title: "Time to drink wate"
-        }
-    })
+            title: "It's time to drink some water! 💧",
+            body: "Maintain hydration for optimal well-being",
+        },
+        trigger: {seconds: 7200, repeats: true},
+    });
 }
