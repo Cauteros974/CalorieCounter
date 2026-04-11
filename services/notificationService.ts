@@ -31,7 +31,8 @@ export async function scheduleWaterReminder() {
             body: "Maintain hydration for optimal well-being",
         },
         trigger: {
-            second: 7200 //2 hours
+            second: 7200, //2 hours
+            repeats: true,
         } as Notifications.TimeIntervalTriggerInput,
     });
-};
+}
