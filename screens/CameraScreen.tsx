@@ -30,9 +30,12 @@ export default function CameraScreen({onClose}: {onClose: () => void}) {
                 addCalories(result.calories);
                 alert(`Added: ${result.dishName} (${result.calories} kcal)`);
                 onClose();
+            } else{
+                alert("Failed to recognize food");
             }
+            setLoading(false);
         }
-    }
+    };
 }
 
 const styles = StyleSheet.create({
