@@ -1,8 +1,8 @@
-import { addDays, format, startOfWeek } from 'date-fns';
+import { addDays, format, isSameDay, startOfWeek } from 'date-fns';
+import { enUS } from 'date-fns/locale';
 import { Camera, Droplets, Plus, Utensils } from 'lucide-react-native';
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { en } from 'zod/v4/locales';
 import { useUserStore } from '../store/useUserStore';
 
 
@@ -27,7 +27,7 @@ export default function HomeScreen() {
 
             {/*Horizontal calendar */}
             <View style={styles.calendarContainer}>
-                <Text style={styles.monthText}>{format(selectedDate, 'LLLL yyyy', { locale: en })}</Text>
+                <Text style={styles.monthText}>{format(selectedDate, 'LLLL yyyy', { locale: enUS })}</Text>
                 <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.calendarScroll}>
                     {weekDays.map((day) => {
                         const isSelected = isSameDay(day, selectedDate);
