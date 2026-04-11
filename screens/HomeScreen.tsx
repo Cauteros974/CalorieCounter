@@ -1,9 +1,11 @@
-import { addDays, format, isSameDay, startOfWeek } from 'date-fns';
-import { enUS } from 'date-fns/locale';
-import { Camera, Droplets, Plus, Utensils } from 'lucide-react-native';
 import React, { useState } from 'react';
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Modal } from 'react-native';
 import { useUserStore } from '../store/useUserStore';
+import { Utensils, Droplets, Camera, Plus } from 'lucide-react-native';
+import { format, startOfWeek, addDays, isSameDay } from 'date-fns';
+import { enUS } from 'date-fns/locale';
+import CameraScreen from './CameraScreen';
+import { en } from 'zod/v4/locales';
 
 
 export default function HomeScreen() {
@@ -38,7 +40,7 @@ export default function HomeScreen() {
                                 onPress={() => setSelectedDate(day)}
                             >
                                 <Text style={[styles.dayName, isSelected && styles.selectedText]}>
-                                    {format(day, 'eee', { locale: ru })}
+                                    {format(day, 'eee', { locale: en })}
                                 </Text>
                                 <Text style={[styles.dayNumber, isSelected && styles.selectedText]}>
                                     {format(day, 'd')}
@@ -95,7 +97,12 @@ export default function HomeScreen() {
                 </TouchableOpacity>
             ))}
         </ScrollView>
-    )
+
+        {/*Camera modal window */}
+        <Modal visible={showCamera} animationType="slide">
+            <CameraScreen onClose={() => setShowCamera(false)} />
+        </Modal>
+    );
 }
 
 const styles = StyleSheet.create({
