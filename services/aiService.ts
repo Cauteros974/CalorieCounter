@@ -35,6 +35,15 @@ export const analyzeFoodImage = async (uri: string): Promise<FoodAnalysisResult 
         });
 
         const data = await response.json();
+
+        //Get the text of the model's response
+        const text = data?.candidates?.[0]?.calories?.parts?.[0]?.text;
+
+        if(!text) return null;
+
+        const jsonStart = text.indexOf('{');
+        const jsonEnd = text.lastIndexOf('}') + 1;
+
     } catch (error) {
         console.error("AI Analysis Error:", error);
         return null;
