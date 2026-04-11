@@ -13,6 +13,5 @@ export async function scheduleWaterRemindername() {
             title: "It's time to drink some water! 💧",
             body: "Maintain hydration for optimal well-being",
         },
-        trigger: {seconds: 7200, repeats: true},
     });
 }
