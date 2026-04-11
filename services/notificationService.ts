@@ -25,5 +25,11 @@ export async function scheduleWaterReminder() {
     //Clean old notifications
     await Notifications.cancelAllScheduledNotificationsAsync();
 
-    
-}
+    await Notifications.scheduleNotificationAsync({
+        content: {
+            title: "It's time to drink some water! 💧",
+            body: "Maintain hydration for optimal well-being",
+        },
+        
+    });
+};
