@@ -47,7 +47,7 @@ export default function CameraScreen({onClose}: {onClose: () => void}) {
                     </TouchableOpacity>
 
                     {loading ? (
-                        <ActivityIndicator size="large" />
+                        <ActivityIndicator size="large" color="#4CAF50"/>
                     ) : (
                         <TouchableOpacity style={styles.captureBtn} onPress={takePhoto}>
                             <View style={styles.captureInner} />
