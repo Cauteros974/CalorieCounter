@@ -8,7 +8,7 @@ type FoodAnalysisResult = {
     dishName: string;
 };
 
-export const analyzeFoodImage = async(uri: string) => {
+export const analyzeFoodImage = async (uri: string): Promise<FoodAnalysisResult | null> => {
     //Compress photos before sending
     const manipulatedImage = await ImageManipulator.manipulateAsync(
         uri,
@@ -17,7 +17,8 @@ export const analyzeFoodImage = async(uri: string) => {
     );
     const base64Data = manipulatedImage.base64;
 
-    const promt = "Identify this dish. Return ONLY the JSON object: { 'dishName': 'name', 'calories': number, 'protein': number, 'carbs': number, 'fat': number }. Estimate the calorie content of a serving by eye.";
+    const prompt = `Identify this dish. Return ONLY JSON:
+    { "dishName": "name", "calories": number }`;
 
     try{
         const response = await fetch(API_URL, {
