@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 
+type ThemeMode = 'light' | 'dark';
 
 interface UserState {
   fullName: string;
@@ -13,8 +14,31 @@ interface UserState {
   setProfile: (data: { fullName: string; weight: number; height: number }) => void;
   addCalories: (amount: number) => void;
   addWater: (amount: number) => void;
-  
+
+  theme: ThemeMode;
+  toggleTheme: () => void;
 }
+
+export const Colors = {
+    light: {
+      background: '#F8F9FA',
+      card: '#FFFFFF',
+      text: '#1A1A1A',
+      subText: '#888888',
+      primary: '#4CAF50',
+      accent: '#2196F3',
+      border: '#EFEFEF',
+    },
+    dark: {
+      background: '#121212',
+      card: '#1E1E1E',
+      text: '#FFFFFF',
+      subText: '#AAAAAA',
+      primary: '#81C784',
+      accent: '#64B5F6',
+      border: '#333333',
+    }
+};
 
 export const useUserStore = create<UserState>((set) => ({
   fullName: '',
@@ -41,4 +65,7 @@ export const useUserStore = create<UserState>((set) => ({
 
   addWater: (amount) =>
     set((state) => ({ consumedWater: state.consumedWater + amount })),
+
+  theme: 'light',
+  toggleTheme: () => set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light' })),
 }));
