@@ -1,4 +1,7 @@
 import { create } from 'zustand';
+
+type ThemeMode = 'light' | 'dark';
+
 interface UserState{
     fullName: string;
     weight: number;
@@ -11,6 +14,8 @@ interface UserState{
     consumedWater: number;
     addCalories: (amount: number) => void;
     addWater: (amount: number) => void;
+    theme: ThemeMode;
+    toggleTheme: () => void;
 }
 
 export const useUserStore = create<UserState> ((set) => ({
