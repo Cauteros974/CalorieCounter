@@ -1,3 +1,6 @@
+import React from 'react';
+import { Dimensions, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { LineChart } from 'react-native-chart-kit';
 import { Colors, useUserStore } from '../store/useUserStore';
 
 export default function StatisticsScreen() {
@@ -21,5 +24,12 @@ export default function StatisticsScreen() {
         backgroundGradientFrom: currentColors.card,
         backgroundGradientTo: currentColors.card,
         decimalPlaces: 0,
+        color: (opacity = 1) => currentColors.text,
+        labelColor: (opacity = 1) => currentColors.subText,
+        style: { borderRadius: 16 },
+        propsForDots: {
+          r: "6",
+          strokeWidth: "2",
+          stroke: currentColors.primary
     }
 }
