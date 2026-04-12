@@ -69,4 +69,6 @@ export default function StatisticsScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 20 },
   title: { fontSize: 24, fontWeight: 'bold', marginTop: 40, marginBottom: 20 },
+  chartCard: { borderRadius: 24, paddingVertical: 20, alignItems: 'center', elevation: 2 },
+  chart: { marginVertical: 8, borderRadius: 16 },
 });
