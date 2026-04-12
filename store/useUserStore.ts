@@ -2,66 +2,50 @@ import { create } from 'zustand';
 
 type ThemeMode = 'light' | 'dark';
 
-interface UserState{
-    fullName: string;
-    weight: number;
-    height: number;
-    dailyCalories: number;
-    dailyWeight: number;   
-    dailyWater: number;
-    setProfile: (data: { fullName: string; weight: number; height: number }) => void;
-    consumedCalories: number;
-    consumedWater: number;
-    addCalories: (amount: number) => void;
-    addWater: (amount: number) => void;
-    theme: ThemeMode;
-    toggleTheme: () => void;
+interface UserState {
+  fullName: string;
+  weight: number;
+  height: number;
+  dailyCalories: number;
+  dailyWater: number;
+  consumedCalories: number;
+  consumedWater: number;
+
+  setProfile: (data: { fullName: string; weight: number; height: number }) => void;
+  addCalories: (amount: number) => void;
+  addWater: (amount: number) => void;
+
+  theme: ThemeMode;
+  toggleTheme: () => void;
 }
 
-export const Colors = {
-    light: {
-        background: '#F8F9FA',
-        card: '#FFFFFF',
-        text: '#1A1A1A',
-        subText: '#888888',
-        primary: '#4CAF50',
-        accent: '#2196F3',
-        border: '#EFEFEF',
-    },
-    dark: {
-        background: '#121212',
-        card: '#1E1E1E',
-        text: '#FFFFFF',
-        subText: '#AAAAAA',
-        primary: '#81C784',
-        accent: '#64B5F6',
-        border: '#333333',
-    }
-}
+export const useUserStore = create<UserState>((set) => ({
+  fullName: '',
+  weight: 0,
+  height: 0,
+  dailyCalories: 0,
+  dailyWater: 0,
+  consumedCalories: 0,
+  consumedWater: 0,
 
-export const useUserStore = create<UserState> ((set) => ({
-    fullName: '',
-    weight: 0,
-    height: 0,
-    dailyCalories: 0,
-    dailyWater: 0,
-    dailyWeight: 0,
-    setProfile: (data) => {
-        //We are using Mifflin-St. Geor Formula.
-        //Calories: (10 * weight) + (6,25 * height) - (5 * age) + S.
-        const calories = Math.round(10 * data.weight + 6.25 * data.height - 125);
-        const water = parseFloat((data.weight * 0.035).toFixed(1));
-        
-        set({
-            ...data,
-            dailyCalories: calories,
-            dailyWater: water,
-        })
-    },
-    consumedCalories: 0,
-    consumedWater: 0,
-    addCalories: (amount) => set((state) => ({ consumedCalories: state.consumedCalories + amount })),
-    addWater: (amount) => set((state) => ({ consumedWater: state.consumedWater + amount })),
-    theme: 'light',
-    toggleTheme:() => set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light'})),
+  setProfile: (data) => {
+    const calories = Math.round(10 * data.weight + 6.25 * data.height - 125);
+    const water = parseFloat((data.weight * 0.035).toFixed(1));
+
+    set({
+      ...data,
+      dailyCalories: calories,
+      dailyWater: water,
+    });
+  },
+
+  addCalories: (amount) =>
+    set((state) => ({ consumedCalories: state.consumedCalories + amount })),
+
+  addWater: (amount) =>
+    set((state) => ({ consumedWater: state.consumedWater + amount })),
+
+  theme: 'light',
+  toggleTheme: () =>
+    set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light' })),
 }));
