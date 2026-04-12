@@ -18,6 +18,9 @@ const profileSchema = z.object({
     }, 'Invalid height'),
 });
 
+const {theme, toggleTheme} = useUserStore();
+const currentColors = Colors[theme];
+
 type ProfileFormData = z.infer<typeof profileSchema>;
 
 export default function ProfileScreen() {
