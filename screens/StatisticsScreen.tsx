@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, ScrollView, Text, View } from 'react-native';
+import { Dimensions, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
 import { Colors, useUserStore } from '../store/useUserStore';
 
@@ -65,3 +65,8 @@ export default function StatisticsScreen() {
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1, padding: 20 },
+  title: { fontSize: 24, fontWeight: 'bold', marginTop: 40, marginBottom: 20 },
+});
