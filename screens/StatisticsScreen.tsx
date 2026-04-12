@@ -37,5 +37,13 @@ export default function StatisticsScreen() {export default function StatisticsSc
 return(
     <ScrollView style={[styles.container, { backgroundColor: currentColors.background }]}>
         <Text style={[styles.title, { color: currentColors.text }]}>Statistics of the week</Text>
+
+        <View style={[styles.chartCard, { backgroundColor: currentColors.card }]}>
+        <LineChart
+          data={data}
+          width={Dimensions.get("window").width - 40}
+          height={220}
+        />
+      </View>
     </ScrollView>
 )
