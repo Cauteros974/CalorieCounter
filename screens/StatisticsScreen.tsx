@@ -48,5 +48,13 @@ return(
           style={styles.chart}
         />
       </View>
+
+      <View style={styles.statsRow}>
+        <View style={[styles.statBox, { backgroundColor: currentColors.card }]}>
+            <Text style={{ color: currentColors.subText }}>Average</Text>
+            <Text style={[styles.statValue, { color: currentColors.text }]}>2021</Text>
+            
+        </View>
+      </View>
     </ScrollView>
 )
