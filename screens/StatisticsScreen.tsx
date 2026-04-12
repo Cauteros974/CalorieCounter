@@ -71,4 +71,7 @@ const styles = StyleSheet.create({
   title: { fontSize: 24, fontWeight: 'bold', marginTop: 40, marginBottom: 20 },
   chartCard: { borderRadius: 24, paddingVertical: 20, alignItems: 'center', elevation: 2 },
   chart: { marginVertical: 8, borderRadius: 16 },
+  statsRow: { flexDirection: 'row', gap: 15, marginTop: 20 },
+  statBox: { flex: 1, padding: 20, borderRadius: 20, alignItems: 'center', elevation: 2 },
+  statValue: { fontSize: 22, fontWeight: '800', marginVertical: 5 }
 });
