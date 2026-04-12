@@ -53,7 +53,7 @@ return(
         <View style={[styles.statBox, { backgroundColor: currentColors.card }]}>
             <Text style={{ color: currentColors.subText }}>Average</Text>
             <Text style={[styles.statValue, { color: currentColors.text }]}>2021</Text>
-            
+            <Text style={{ color: currentColors.primary }}>kcal/day</Text>
         </View>
       </View>
     </ScrollView>
