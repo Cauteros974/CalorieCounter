@@ -43,6 +43,9 @@ return(
           data={data}
           width={Dimensions.get("window").width - 40}
           height={220}
+          chartConfig={chartConfig}
+          bezier // Makes the line smooth
+          style={styles.chart}
         />
       </View>
     </ScrollView>
