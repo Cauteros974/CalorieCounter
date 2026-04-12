@@ -41,4 +41,6 @@ export const useUserStore = create<UserState> ((set) => ({
     consumedWater: 0,
     addCalories: (amount) => set((state) => ({ consumedCalories: state.consumedCalories + amount })),
     addWater: (amount) => set((state) => ({ consumedWater: state.consumedWater + amount })),
+    theme: 'light',
+    toggleTheme:() => set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light'})),
 }));
