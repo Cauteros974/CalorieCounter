@@ -32,4 +32,10 @@ export default function StatisticsScreen() {
           strokeWidth: "2",
           stroke: currentColors.primary
     }
-}
+};
+
+return(
+    <ScrollView style={[styles.container, { backgroundColor: currentColors.background }]}>
+        <Text style={[styles.title, { color: currentColors.text }]}>Statistics of the week</Text>
+    </ScrollView>
+)
