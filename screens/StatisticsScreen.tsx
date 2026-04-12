@@ -12,6 +12,14 @@ export default function StatisticsScreen() {
                 color: (opacity = 1) => currentColors.primary, 
                 strokeWidth: 3
             }
-        ]
+        ],
+        legend: ["Calorie consumption"]
+    };
+
+    const chartConfig = {
+        backgroundColor: currentColors.card,
+        backgroundGradientFrom: currentColors.card,
+        backgroundGradientTo: currentColors.card,
+        decimalPlaces: 0,
     }
 }
