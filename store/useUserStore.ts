@@ -116,5 +116,9 @@ export const useUserStore = create<UserState>((set) => ({
     const yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
     const isConsecutive = state.lastActiveDate === yesterday.toDateString();
+
+    return(
+      streak: isConsecutive ? state.streak + 1 : 1,
+    )
   })
 }));
