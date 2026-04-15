@@ -101,6 +101,11 @@ export const useUserStore = create<UserState>((set) => ({
 
   addXP: (amount) => set((state) => {
     const newXP = state.xp + amount;
-    const nextLevelUP = state.level + 1000; 
-  })
+    const nextLevelXP = state.level + 1000; //Level every 1000 XP
+    if (newXP >= nextLevelXP) {
+      return {xp: newXP - nextLevelXP, level: state.level + 1};
+    }
+    return {xp: newXP};
+  }),
+  
 }));
