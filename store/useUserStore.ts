@@ -108,4 +108,8 @@ export const useUserStore = create<UserState>((set) => ({
     return {xp: newXP};
   }),
   
+  updateStreak: () => set((state) => {
+    const today = new Date().toDateString();
+    if (state.lastActiveDate === today);
+  })
 }));
