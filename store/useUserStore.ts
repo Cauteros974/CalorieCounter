@@ -119,6 +119,7 @@ export const useUserStore = create<UserState>((set) => ({
 
     return(
       streak: isConsecutive ? state.streak + 1 : 1,
-    )
-  })
+      lastActiveDate: today
+    );
+  });
 }));
