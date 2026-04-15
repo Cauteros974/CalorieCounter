@@ -99,5 +99,8 @@ export const useUserStore = create<UserState>((set) => ({
   theme: 'light',
   toggleTheme: () => set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light' })),
 
-  
+  addXP: (amount) => set((state) => {
+    const newXP = state.xp + amount;
+    const nextLevelUP = state.level + 1000; 
+  })
 }));
