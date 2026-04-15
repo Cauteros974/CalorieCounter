@@ -17,6 +17,10 @@ interface UserState {
 
   theme: ThemeMode;
   toggleTheme: () => void;
+
+  xp: string;
+  level: number;
+  streak: number
 }
 
 interface Achievement {
