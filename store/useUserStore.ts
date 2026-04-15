@@ -110,6 +110,9 @@ export const useUserStore = create<UserState>((set) => ({
   
   updateStreak: () => set((state) => {
     const today = new Date().toDateString();
-    if (state.lastActiveDate === today) return false;
+    if (state.lastActiveDate === today) return false; //If already visited today
+
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
   })
 }));
