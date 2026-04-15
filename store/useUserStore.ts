@@ -25,6 +25,8 @@ interface UserState {
   achievements: Achievement[];
 
   addXP: (amount: number) => void;
+  updateStreak: () => void;
+  unlockAchievement: (id: string) => void;
 }
 
 interface Achievement {
