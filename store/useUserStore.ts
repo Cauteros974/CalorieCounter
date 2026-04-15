@@ -58,6 +58,11 @@ export const Colors = {
     }
 };
 
+const initialAchievements: Achievement[] = [
+  {id: '1', isUnlocked: false},
+  {id: '2', isUnlocked: false},
+]
+
 export const useUserStore = create<UserState>((set) => ({
   fullName: '',
   weight: 0,
