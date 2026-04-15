@@ -19,6 +19,13 @@ interface UserState {
   toggleTheme: () => void;
 }
 
+interface Achievement {
+  id: string,
+  title: string,
+  description: string,
+  icon: string,
+}
+
 export const Colors = {
     light: {
       background: '#F8F9FA',
