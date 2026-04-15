@@ -73,6 +73,11 @@ export const useUserStore = create<UserState>((set) => ({
   dailyWater: 0,
   consumedCalories: 0,
   consumedWater: 0,
+  xp: 0,
+  level: 1,
+  streak: 0,
+  lastActiveDate: null,
+  achievements: initialAchievements,
 
   setProfile: (data) => {
     const calories = Math.round(10 * data.weight + 6.25 * data.height - 125);
@@ -93,4 +98,6 @@ export const useUserStore = create<UserState>((set) => ({
 
   theme: 'light',
   toggleTheme: () => set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light' })),
+
+  
 }));
