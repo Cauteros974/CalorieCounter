@@ -18,6 +18,8 @@ const profileSchema = z.object({
     }, 'Invalid height'),
 });
 
+const { theme, toggleTheme } = useUserStore();
+const currentColors = Colors[theme];
 
 type ProfileFormData = z.infer<typeof profileSchema>;
 
@@ -111,7 +113,7 @@ const styles = StyleSheet.create({
     errorText: { color: 'red', marginBottom: 10, fontSize: 12 },
     button: { 
         backgroundColor: '#4CAF50', 
-        padding: 18, 
+        padding: 15, 
         borderRadius: 12, 
         alignItems: 'center',
         marginTop: 20 
