@@ -23,6 +23,8 @@ interface UserState {
   streak: number;
   lastActiveDate: string | null;
   achievements: Achievement[];
+
+  addXP: (amount: number) => void;
 }
 
 interface Achievement {
