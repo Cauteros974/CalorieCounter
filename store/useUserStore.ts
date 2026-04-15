@@ -112,7 +112,9 @@ export const useUserStore = create<UserState>((set) => ({
     const today = new Date().toDateString();
     if (state.lastActiveDate === today) return false; //If already visited today
 
+    //If logged in yesterday, we increase the streak; if not, we reset it.
     const yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
+    const isConsecutive = state.lastActiveDate === yesterday.toDateString();
   })
 }));
