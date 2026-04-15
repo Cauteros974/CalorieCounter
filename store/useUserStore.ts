@@ -58,8 +58,9 @@ export const Colors = {
     }
 };
 
+//Initial list of achievements
 const initialAchievements: Achievement[] = [
-  {id: '1', isUnlocked: false},
+  { id: '1', title: 'Water Mage', description: 'Drink your water intake for 3 days in a row', icon: 'droplet', isUnlocked: false },
   {id: '2', isUnlocked: false},
 ]
 
