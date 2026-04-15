@@ -62,6 +62,7 @@ export const Colors = {
 const initialAchievements: Achievement[] = [
   { id: '1', title: 'Water Mage', description: 'Drink your water intake for 3 days in a row', icon: 'droplet', isUnlocked: false },
   {id: '2', title: 'Calorie Sniper', description: 'Hit the calorie target (+/- 50 kcal)', icon: 'target', isUnlocked: false},
+  { id: '3', title: 'Paparazzi', description: 'Photograph 10 dishes using AI', icon: 'camera', isUnlocked: false },
 ]
 
 export const useUserStore = create<UserState>((set) => ({
