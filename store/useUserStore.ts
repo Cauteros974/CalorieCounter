@@ -20,10 +20,11 @@ interface UserState {
 }
 
 interface Achievement {
-  id: string,
-  title: string,
-  description: string,
-  icon: string,
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  isUnlocked: boolean;
 }
 
 export const Colors = {
