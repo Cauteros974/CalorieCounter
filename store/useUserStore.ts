@@ -20,7 +20,9 @@ interface UserState {
 
   xp: string;
   level: number;
-  streak: number
+  streak: number;
+  lastActiveDate: string | null;
+  achievements: Achievement[];
 }
 
 interface Achievement {
