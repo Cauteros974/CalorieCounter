@@ -1,6 +1,6 @@
-import { Colors, useUserStore } from "@/store/useUserStore";
-import React from "react";
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Colors, useUserStore } from '../store/useUserStore';
 
 export default function AchievementsScreen() {
     const {achievements, level, xp, streak, theme} = useUserStore();
@@ -18,7 +18,7 @@ export default function AchievementsScreen() {
                     <View style={styles.xpBarBg}>
                         <View style={[styles.xpBarFill, { width: `${(xp / (level * 1000)) * 100}%` }]} />
                     </View>
-                    <Text style={[styles.xpText]}>{level * 100} XP</Text>
+                    <Text style={[styles.xpText]}>{level * 100}</Text>
                 </View>
             </View>
         </View>
