@@ -41,4 +41,5 @@ const styles = StyleSheet.create({
     xpBarBg: { height: 8, backgroundColor: '#EFEFEF', borderRadius: 4, marginTop: 8, overflow: 'hidden' },
     xpBarFill: { height: '100%', backgroundColor: '#4CAF50' },
     levelTitle: { fontSize: 18, fontWeight: '700' },
+    xpText: {fontSize: 12, color: '#888'},
 })
