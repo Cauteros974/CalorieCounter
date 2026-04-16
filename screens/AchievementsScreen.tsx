@@ -8,7 +8,7 @@ export default function AchievementsScreen() {
 
     return(
         <View style={[styles.container, {backgroundColor: currentColors.background}]}>
-            <View style={[styles.profileHeader, {backgroundColor: currentColors.background}]}></View>
+            <View style={[styles.profileHeader, { backgroundColor: currentColors.card }]}></View>
         </View>
     );
 }
