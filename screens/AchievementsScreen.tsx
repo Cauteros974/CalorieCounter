@@ -70,5 +70,9 @@ const styles = StyleSheet.create({
         flex: 1,
         margin: 0,
         borderRadius: 20,
+        padding: 15,
+        alignItems: 'center', 
+        justifyContent: 'center',
+        textAlign: 'center'
     }
 })
