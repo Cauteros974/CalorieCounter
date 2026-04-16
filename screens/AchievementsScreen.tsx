@@ -47,4 +47,5 @@ const styles = StyleSheet.create({
     xpBarFill: { height: '100%', backgroundColor: '#4CAF50' },
     levelTitle: { fontSize: 18, fontWeight: '700' },
     xpText: {fontSize: 12, color: '#888', marginTop: 4},
+    streakInfo: {padding: 10, alignItems: 'center'},
 })
