@@ -9,7 +9,8 @@ export default function AchievementsScreen() {
 
     return(
         <View style={[styles.container, {backgroundColor: currentColors.background}]}>
-            <View style={[styles.profileHeader, { backgroundColor: currentColors.card }]}>\
+            {/*Level and Progression Section*/}
+            <View style={[styles.profileHeader, { backgroundColor: currentColors.card }]}>
                 <View style={styles.levelBadge}>
                     <Text style={styles.levelText}>{level}</Text>
                 </View>
