@@ -37,4 +37,5 @@ const styles = StyleSheet.create({
     levelBadge: { width: 50, height: 50, borderRadius: 25, backgroundColor: '#4CAF50', justifyContent: 'center', alignItems: 'center' },
     levelText: { color: '#fff', fontSize: 22, fontWeight: 'bold' },
     xpBarBg: { height: 8, backgroundColor: '#EFEFEF', borderRadius: 4, marginTop: 8, overflow: 'hidden' },
+    xpBarFill: { height: '100%',},
 })
