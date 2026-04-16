@@ -41,6 +41,7 @@ export default function AchievementsScreen() {
                          <Trophy color={item.isUnlocked ? '#FBC02D' : '#9E9E9E'} size={32} />
                       </View>
                       <Text style={[styles.badgeTitle, { color: currentColors.text }]}>{item.title}</Text>
+                      <Text style={styles.badgeDesc}>{item.description}</Text>
                     </View>
                 )}
             />
@@ -78,4 +79,5 @@ const styles = StyleSheet.create({
     },
     iconCircle: { width: 60, height: 60, borderRadius: 30, justifyContent: 'center', alignItems: 'center', marginBottom: 10 },
     badgeTitle: { fontSize: 14, textAlign: 'center', fontWeight: '700' },
-})
+    badgeDesc: { fontSize: 11, color: '#888', textAlign: 'center', marginTop: 5 }
+});
