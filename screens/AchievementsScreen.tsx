@@ -13,6 +13,11 @@ export default function AchievementsScreen() {
                 <View style={styles.levelBadge}>
                     <Text style={styles.levelText}>{level}</Text>
                 </View>
+                <View style={{flex: 1, marginLeft: 15}}>
+                    <View style={styles.xpBarBg}>
+                        <View style={[styles.xpBarFill, { width: `${(xp / (level * 1000)) * 100}%` }]} />
+                    </View>
+                </View>
             </View>
         </View>
     );
@@ -31,4 +36,5 @@ const styles = StyleSheet.create({
     },
     levelBadge: { width: 50, height: 50, borderRadius: 25, backgroundColor: '#4CAF50', justifyContent: 'center', alignItems: 'center' },
     levelText: { color: '#fff', fontSize: 22, fontWeight: 'bold' },
+    xpBarBg: { height: 8, backgroundColor: '#EFEFEF', borderRadius: 4,},
 })
