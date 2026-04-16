@@ -35,6 +35,10 @@ interface UserState {
   addXP: (amount: number) => void;
   updateStreak: () => void;
   unlockAchievement: (id: string) => void;
+
+  newlyUnlockedAchievement: Achievement | null;
+
+  closeCongratulation: () => void;
 }
 
 export const Colors = {
@@ -73,6 +77,7 @@ export const useUserStore = create<UserState>((set) => ({
   dailyWater: 0,
   consumedCalories: 0,
   consumedWater: 0,
+  
 
   xp: 0,
   level: 1,
@@ -149,4 +154,6 @@ export const useUserStore = create<UserState>((set) => ({
         a.id === id ? { ...a, isUnlocked: true } : a
       )
     })),
+
+  newlyUnlockedAchievement: null,
 }));
