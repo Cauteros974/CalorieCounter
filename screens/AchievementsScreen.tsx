@@ -48,4 +48,5 @@ const styles = StyleSheet.create({
     levelTitle: { fontSize: 18, fontWeight: '700' },
     xpText: {fontSize: 12, color: '#888', marginTop: 4},
     streakInfo: {padding: 10, alignItems: 'center'},
+    streakText: {fontWeight: 'bold',}
 })
