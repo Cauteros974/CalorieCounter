@@ -1,7 +1,6 @@
 import { Flame } from 'lucide-react-native';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { FlatList } from 'react-native-reanimated/lib/typescript/Animated';
+import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { Colors, useUserStore } from '../store/useUserStore';
 
 export default function AchievementsScreen() {
@@ -32,6 +31,17 @@ export default function AchievementsScreen() {
                 data={achievements}
                 numColumns={10}
                 keyExtractor={(item) => item.id}
+                renderItem={({ item }) => (
+                    <View style={[
+                      styles.badgeCard, 
+                      { backgroundColor: currentColors.card, opacity: item.isUnlocked ? 1 : 0.4 }
+                    ]}>
+                      <View style={[styles.iconCircle, { backgroundColor: item.isUnlocked ? '#FFF9C4' : '#E0E0E0' }]}>
+                         <Trophy color={item.isUnlocked ? '#FBC02D' : '#9E9E9E'} size={32} />
+                      </View>
+                      
+                    </View>
+                )}
             />
         </View>
     );
