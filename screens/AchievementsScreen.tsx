@@ -1,6 +1,7 @@
-import { Colors, useUserStore } from "@/store/useUserStore";
 import React from "react";
-import { StyleSheet, View } from 'react-native';
+import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
+import { Colors, useUserStore } from "@/store/useUserStore";
+import { Trophy, Star, Flame } from 'lucide-react-native';
 
 export default function AchievementsScreen() {
     const {achievements, level, xp, streak, theme} = useUserStore();
@@ -8,7 +9,11 @@ export default function AchievementsScreen() {
 
     return(
         <View style={[styles.container, {backgroundColor: currentColors.background}]}>
-            <View style={[styles.profileHeader, { backgroundColor: currentColors.card }]}></View>
+            <View style={[styles.profileHeader, { backgroundColor: currentColors.card }]}>\
+                <View style={styles.levelBadge}>
+                    <Text style={styles.levelText}>{level}</Text>
+                </View>
+            </View>
         </View>
     );
 }
@@ -16,8 +21,18 @@ export default function AchievementsScreen() {
 const styles = StyleSheet.create({
     container: {padding: 20},
     profileHeader: {
-        margin: 40,
-        padding: 20,
-        borderRadius: 24,
+        marginTop: 40, 
+        padding: 20, 
+        borderRadius: 24, 
+        flexDirection: 'row', 
+        alignItems: 'center',
+        marginBottom: 30,
+        elevation: 2
+    },
+    levelBadge:{
+        width: 50,
+    },
+    levelText{
+        color: '#fff',
     }
 })
