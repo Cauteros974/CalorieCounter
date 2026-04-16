@@ -1,7 +1,8 @@
-import { Flame } from 'lucide-react-native';
+import { Flame, Trophy } from 'lucide-react-native';
 import React from 'react';
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { Colors, useUserStore } from '../store/useUserStore';
+
 
 export default function AchievementsScreen() {
     const {achievements, level, xp, streak, theme} = useUserStore();
