@@ -1,7 +1,6 @@
-import React from "react";
-import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
 import { Colors, useUserStore } from "@/store/useUserStore";
-import { Trophy, Star, Flame } from 'lucide-react-native';
+import React from "react";
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function AchievementsScreen() {
     const {achievements, level, xp, streak, theme} = useUserStore();
@@ -30,10 +29,6 @@ const styles = StyleSheet.create({
         marginBottom: 30,
         elevation: 2
     },
-    levelBadge:{
-        width: 50,
-    },
-    levelText{
-        color: '#fff',
-    }
+    levelBadge: { width: 50, height: 50, borderRadius: 25, backgroundColor: '#4CAF50', justifyContent: 'center', alignItems: 'center' },
+    levelText: { color: '#fff', fontSize: 22, fontWeight: 'bold' },
 })
