@@ -75,5 +75,6 @@ const styles = StyleSheet.create({
         alignItems: 'center', 
         justifyContent: 'center',
         textAlign: 'center'
-    }
+    },
+    iconCircle: { width: 60, height: 60, borderRadius: 30, justifyContent: 'center'},
 })
