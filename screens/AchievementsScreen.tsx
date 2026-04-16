@@ -1,3 +1,4 @@
+import { Flame } from 'lucide-react-native';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Colors, useUserStore } from '../store/useUserStore';
@@ -18,7 +19,11 @@ export default function AchievementsScreen() {
                     <View style={styles.xpBarBg}>
                         <View style={[styles.xpBarFill, { width: `${(xp / (level * 1000)) * 100}%` }]} />
                     </View>
-                    <Text style={[styles.xpText]}>{level * 100}</Text>
+                    <Text style={[styles.xpText]}>{level * 1000} XP</Text>
+                </View>
+                <View style={styles.streakInfo}>
+                    <Flame color="#FF5722" size={24} />
+                    <Text style={styles.streakText}>{streak}</Text>
                 </View>
             </View>
         </View>
