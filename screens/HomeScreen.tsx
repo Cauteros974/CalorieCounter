@@ -16,13 +16,14 @@ export default function HomeScreen() {
     const startDate = startOfWeek(new Date(), { weekStartsOn: 1 });
     const weekDays = Array.from({ length: 7 }).map((_, i) => addDays(startDate, i));
 
+
     return (
         <View style={{ flex: 1 }}>
+            
             <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-                
                 <View style={styles.header}>
                     <Text style={styles.greeting}>Hello, {fullName || 'User'} 👋</Text>
-                    <Text style={styles.subGreeting}>Your progress today:</Text>
+                    <Text style={styles.subGreeting}>Your progress today:</Text>          
                 </View>
 
                 {/* Calendar */}
