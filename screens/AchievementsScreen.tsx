@@ -40,7 +40,7 @@ export default function AchievementsScreen() {
                       <View style={[styles.iconCircle, { backgroundColor: item.isUnlocked ? '#FFF9C4' : '#E0E0E0' }]}>
                          <Trophy color={item.isUnlocked ? '#FBC02D' : '#9E9E9E'} size={32} />
                       </View>
-                      
+                      <Text style={[styles.badgeTitle, { color: currentColors.text }]}>{item.title}</Text>
                     </View>
                 )}
             />
@@ -77,4 +77,5 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     iconCircle: { width: 60, height: 60, borderRadius: 30, justifyContent: 'center', alignItems: 'center', marginBottom: 10 },
+    badgeTitle: { fontSize: 14, textAlign: 'center' },
 })
