@@ -1,3 +1,4 @@
+import AchievementsScreen from '@/screens/AchievementsScreen';
 import HomeScreen from '@/screens/HomeScreen';
 import ProfileScreen from '@/screens/ProfileScreen';
 import StatisticsScreen from '@/screens/StatisticsScreen';
@@ -36,6 +37,11 @@ export default  function App() {
         <Tab.Screen
           name='Graph'
           component={StatisticsScreen}
+          options={{ tabBarIcon: ({ color }) => <ChartColumn color={color} size={24} /> }}
+        />
+        <Tab.Screen
+          name='Achive'
+          component={AchievementsScreen}
           options={{ tabBarIcon: ({ color }) => <ChartColumn color={color} size={24} /> }}
         />
       </Tab.Navigator>
