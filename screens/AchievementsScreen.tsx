@@ -14,6 +14,7 @@ export default function AchievementsScreen() {
                     <Text style={styles.levelText}>{level}</Text>
                 </View>
                 <View style={{flex: 1, marginLeft: 15}}>
+                    <Text style={[styles.levelTitle, { color: currentColors.text }]}>Level {level}</Text>
                     <View style={styles.xpBarBg}>
                         <View style={[styles.xpBarFill, { width: `${(xp / (level * 1000)) * 100}%` }]} />
                     </View>
@@ -38,4 +39,5 @@ const styles = StyleSheet.create({
     levelText: { color: '#fff', fontSize: 22, fontWeight: 'bold' },
     xpBarBg: { height: 8, backgroundColor: '#EFEFEF', borderRadius: 4, marginTop: 8, overflow: 'hidden' },
     xpBarFill: { height: '100%', backgroundColor: '#4CAF50' },
+    levelTitle: { fontSize: 18, fontWeight: '700' },
 })
