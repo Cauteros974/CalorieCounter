@@ -8,11 +8,16 @@ export default function AchievementsScreen() {
 
     return(
         <View style={[styles.container, {backgroundColor: currentColors.background}]}>
-            
+            <View style={[styles.profileHeader, {backgroundColor: currentColors.background}]}></View>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    container: {padding: 10}
+    container: {padding: 20},
+    profileHeader: {
+        margin: 40,
+        padding: 20,
+        borderRadius: 24,
+    }
 })
