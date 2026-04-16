@@ -77,5 +77,5 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
     iconCircle: { width: 60, height: 60, borderRadius: 30, justifyContent: 'center', alignItems: 'center', marginBottom: 10 },
-    badgeTitle: { fontSize: 14, textAlign: 'center' },
+    badgeTitle: { fontSize: 14, textAlign: 'center', fontWeight: '500' },
 })
