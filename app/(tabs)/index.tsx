@@ -4,7 +4,7 @@ import ProfileScreen from '@/screens/ProfileScreen';
 import StatisticsScreen from '@/screens/StatisticsScreen';
 import { requestPermissions } from '@/services/notificationService';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { ChartColumn, Home, User } from 'lucide-react-native';
+import { ChartColumn, Home, Trophy, User } from 'lucide-react-native';
 import { useEffect } from 'react';
 
 const Tab = createBottomTabNavigator();
@@ -39,10 +39,11 @@ export default  function App() {
           component={StatisticsScreen}
           options={{ tabBarIcon: ({ color }) => <ChartColumn color={color} size={24} /> }}
         />
+
         <Tab.Screen
           name='Achive'
           component={AchievementsScreen}
-          options={{ tabBarIcon: ({ color }) => <ChartColumn color={color} size={24} /> }}
+          options={{ tabBarIcon: ({ color }) => <Trophy color={color} size={24} /> }}
         />
       </Tab.Navigator>
   )
