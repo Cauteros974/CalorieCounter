@@ -18,6 +18,7 @@ export default function AchievementsScreen() {
                     <View style={styles.xpBarBg}>
                         <View style={[styles.xpBarFill, { width: `${(xp / (level * 1000)) * 100}%` }]} />
                     </View>
+                    <Text style={[styles.xpText]}>{level * 100} XP</Text>
                 </View>
             </View>
         </View>
