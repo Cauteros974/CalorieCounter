@@ -66,4 +66,9 @@ const styles = StyleSheet.create({
     xpText: {fontSize: 12, color: '#888', marginTop: 4},
     streakInfo: {padding: 10, alignItems: 'center'},
     streakText: {fontWeight: 'bold', color: '#FF5722'},
+    badgeCard: {
+        flex: 1,
+        margin: 0,
+        borderRadius: 20,
+    }
 })
