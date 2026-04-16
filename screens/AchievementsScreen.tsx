@@ -2,6 +2,7 @@ import { Flame } from 'lucide-react-native';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Colors, useUserStore } from '../store/useUserStore';
+import { FlatList } from 'react-native-reanimated/lib/typescript/Animated';
 
 export default function AchievementsScreen() {
     const {achievements, level, xp, streak, theme} = useUserStore();
@@ -26,6 +27,12 @@ export default function AchievementsScreen() {
                     <Text style={styles.streakText}>{streak}</Text>
                 </View>
             </View>
+
+            <FlatList
+                data={achievements}
+                numColumns={10}
+                keyExtractor={({item} => item.id)}
+            />
         </View>
     );
 }
