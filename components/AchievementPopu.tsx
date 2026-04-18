@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
     congratsText: { 
         fontSize: 14, 
         fontWeight: '600', 
-        opacity: 0.6,
+        opacity: 0.6, 
+        textTransform: 'uppercase' 
     },
 })
