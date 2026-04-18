@@ -156,4 +156,9 @@ export const useUserStore = create<UserState>((set) => ({
     })),
 
   newlyUnlockedAchievement: null,
+
+  closeCongratulation: () =>
+    set(() => ({
+      newlyUnlockedAchievement: null
+    })),
 }));
