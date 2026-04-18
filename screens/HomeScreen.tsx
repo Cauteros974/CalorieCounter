@@ -235,5 +235,13 @@ const styles = StyleSheet.create({
     mealData: { 
         flexDirection: 'row', alignItems: 'center', gap: 10 
     },
-   
+    mealCals: { 
+        fontSize: 14, fontWeight: '600', color: '#444' 
+    },
+    tipCard: {
+        padding: 20,
+        borderRadius: 20,
+        marginTop: 20,
+        marginBottom: 100,
+    },
 });
