@@ -96,6 +96,15 @@ const styles = StyleSheet.create({
         textTransform: 'uppercase' 
     },
     title: { 
-        fontSize: 26, fontWeight: '800', textAlign: 'center', marginVertical: 10 
+        fontSize: 26, 
+        fontWeight: '800', 
+        textAlign: 'center', 
+        marginVertical: 10 
+    },
+    description: {
+        fontSize: 20,
+        color: '#777',
+        textAlign: 'center',
+        marginBottom: 20
     },
 })
