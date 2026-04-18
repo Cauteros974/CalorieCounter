@@ -1,8 +1,8 @@
-import { Colors, useUserStore } from '@/store/useUserStore';
 import { Trophy } from 'lucide-react-native';
 import React, { useEffect, useRef } from 'react';
-import { Animated, Dimensions, Modal, StyleSheet, View } from 'react-native';
+import { Animated, Dimensions, Modal, StyleSheet, Text, View } from 'react-native';
 import ConfettiCannon from 'react-native-confetti-cannon';
+import { Colors, useUserStore } from '../store/useUserStore';
 
 
 const { width } = Dimensions.get('window');
@@ -82,5 +82,10 @@ const styles = StyleSheet.create({
         padding: 20,
         backgroundColor: '#FFF9C4',
         borderRadius: 60
-    }
+    },
+    congratsText: { 
+        fontSize: 14, 
+        fontWeight: '600', 
+        opacity: 0.6,
+    },
 })
