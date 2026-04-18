@@ -29,7 +29,7 @@ export default function HomeScreen() {
                     <Text style={{ fontSize: 12, color: currentColors.text }}>{current}g</Text>
                 </View>
                 <View style={{height: 6, backgroundColor: '#F0F0F0', borderRadius: 3, overflow: 'hidden'}}>
-                    
+                    <View style={{ height: '100%', width: `${progress * 100}%`, backgroundColor: color }} />
                 </View>
             </View>
         )
