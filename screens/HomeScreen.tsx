@@ -124,14 +124,12 @@ export default function HomeScreen() {
                 
                 <View style={[styles.tipCard, { backgroundColor: '#E8F5E9' }]}>
                     <Text style={styles.tipTitle}>💡 Tip of the day</Text>
-                    <Text style={styles.tiptext}>
+                    <Text style={styles.tipText}>
                         Try drinking a glass of water 20 minutes before meals. This improves digestion and helps prevent overeating.
                     </Text>
                 </View>
 
                 {/* Meals */}
-                <Text style={styles.sectionTitle}>Meals</Text>
-
                 {['Breakfast', 'Lunch', 'Dinner'].map((meal) => (
                     <TouchableOpacity key={meal} style={styles.mealItem}>
                         <View style={styles.mealIconPlaceholder}>
@@ -264,5 +262,8 @@ const styles = StyleSheet.create({
         fontSize: 14, 
         color: '#4E342E', 
         lineHeight: 20 
+    },
+    mealInfo: {
+        flex: 1
     },
 });

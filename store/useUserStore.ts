@@ -39,6 +39,14 @@ interface UserState {
   newlyUnlockedAchievement: Achievement | null;
 
   closeCongratulation: () => void;
+
+  consumed: {
+    calories: number;
+    protein: number;
+    fat: number;
+    carbs: number;
+  };
+  
 }
 
 export const Colors = {
