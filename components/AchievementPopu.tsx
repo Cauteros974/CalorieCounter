@@ -120,5 +120,10 @@ const styles = StyleSheet.create({
         paddingVertical: 5, 
         borderRadius: 20,
         marginBottom: 25
-    }
+    },
+    xpText: { 
+        color: '#4CAF50', 
+        fontWeight: '700', 
+        marginLeft: 5 
+    },
 })
