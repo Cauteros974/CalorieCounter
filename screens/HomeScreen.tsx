@@ -175,4 +175,9 @@ const styles = StyleSheet.create({
     dayName: { fontSize: 12, color: '#666' },
     dayNumber: { fontSize: 18, fontWeight: '700' },
     selectedText: { color: '#fff' },
+    mealsHeaderRow: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
 });
