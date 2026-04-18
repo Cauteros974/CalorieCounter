@@ -56,6 +56,9 @@ export default function AchievementPopup() {
                     <Text style={[styles.title, { color: currentColors.text }]}>
                         {newlyUnlockedAchievement.title}
                     </Text>
+                    <Text style={styles.description}>
+                        {newlyUnlockedAchievement.description}
+                    </Text>
                 </Animated.View>
             </View>
         </Modal>
