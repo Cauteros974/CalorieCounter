@@ -174,4 +174,7 @@ export const useUserStore = create<UserState>((set) => ({
     set(() => ({
       newlyUnlockedAchievement: null
     })),
+
+  consumed: { calories: 0, protein: 0, fat: 0, carbs: 0 },
+  targets: { calories: 2200, protein: 140, fat: 75, carbs: 240 },
 }));
