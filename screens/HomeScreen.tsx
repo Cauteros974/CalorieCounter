@@ -177,7 +177,9 @@ const styles = StyleSheet.create({
     selectedText: { color: '#fff' },
     mealsHeaderRow: {
         flexDirection: 'row',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
         alignItems: 'center',
+        marginTop: 25,
+        marginBottom: 15
     }
 });
