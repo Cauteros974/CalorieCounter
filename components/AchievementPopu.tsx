@@ -1,7 +1,9 @@
 import { Colors, useUserStore } from '@/store/useUserStore';
+import { Trophy } from 'lucide-react-native';
 import React, { useEffect, useRef } from 'react';
 import { Animated, Dimensions, Modal, StyleSheet, View } from 'react-native';
 import ConfettiCannon from 'react-native-confetti-cannon';
+
 
 const { width } = Dimensions.get('window');
 
@@ -46,7 +48,9 @@ export default function AchievementPopup() {
                     styles.card,
                     {backgroundColor: currentColors.card, transform: [{scale}]}
                 ]}>
-
+                    <View style={styles.iconContainer}>
+                        <Trophy color="#FFD700" size={80} />
+                    </View>
                 </Animated.View>
             </View>
         </Modal>
