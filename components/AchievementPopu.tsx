@@ -18,6 +18,10 @@ export default function AchievementPopup() {
                 friction: 5,
                 useNativeDriver: true,
             }).start();
+
+            setTimeout(() => {
+                confettiRef.current.start();
+            }, 100);
         }
     })
 }
