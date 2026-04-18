@@ -1,6 +1,6 @@
 import { Colors, useUserStore } from '@/store/useUserStore';
-import { useEffect, useRef } from 'react';
-import { Animated, Dimensions } from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import { Animated, Dimensions, Modal, StyleSheet, View } from 'react-native';
 
 const { width } = Dimensions.get('window');
 
@@ -29,4 +29,19 @@ export default function AchievementPopup() {
     }, [newlyUnlockedAchievement]);
 
     if(!newlyUnlockedAchievement) return null;
-}
+
+    return(
+        <Modal visible={true} transparent={true} animationType="fade">
+            <View style={styles.overlay}>
+
+            </View>
+        </Modal>
+    )
+};
+
+const styles = StyleSheet.create({
+    overlay:{
+        flex: 1,
+        alignItems: 'center'
+    }
+})
