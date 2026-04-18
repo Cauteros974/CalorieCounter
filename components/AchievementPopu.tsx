@@ -42,6 +42,8 @@ export default function AchievementPopup() {
 const styles = StyleSheet.create({
     overlay:{
         flex: 1,
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: 'rgba(0,0,0,0.7)', 
+        justifyContent: 'center',
     }
 })
