@@ -222,6 +222,7 @@ const styles = StyleSheet.create({
         borderLeftWidth: 5,
         elevation: 2,
         shadowColor: '#000',
-        
+        shadowOpacity: 0.05,
+        shadowRadius: 10,
     }
 });
