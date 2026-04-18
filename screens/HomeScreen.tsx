@@ -17,9 +17,8 @@ export default function HomeScreen() {
     const startDate = startOfWeek(new Date(), { weekStartsOn: 1 });
     const weekDays = Array.from({ length: 7 }).map((_, i) => addDays(startDate, i));
 
-    const { theme } = useUserStore();
+    const { consumed, targets, theme } = useUserStore();
     const currentColors = Colors[theme];
-
 
     return (
         <View style={{ flex: 1 }}>
