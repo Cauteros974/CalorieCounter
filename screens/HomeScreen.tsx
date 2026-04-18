@@ -94,7 +94,7 @@ export default function HomeScreen() {
                     </Text>
                 </View>
 
-                
+                {/*Water */}
                 <View style={styles.waterRow}>
                     <View style={[styles.smallCard, { flex: 1 }]}>
                         <Droplets color="#2196F3" size={24} />
