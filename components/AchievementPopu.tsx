@@ -1,6 +1,7 @@
 import { Colors, useUserStore } from '@/store/useUserStore';
 import React, { useEffect, useRef } from 'react';
 import { Animated, Dimensions, Modal, StyleSheet, View } from 'react-native';
+import ConfettiCannon from 'react-native-confetti-cannon';
 
 const { width } = Dimensions.get('window');
 
@@ -33,7 +34,11 @@ export default function AchievementPopup() {
     return(
         <Modal visible={true} transparent={true} animationType="fade">
             <View style={styles.overlay}>
-
+                <ConfettiCannon 
+                    ref={confettiRef}
+                    count={150} 
+                    origin={{x: width / 2, y: -20}} 
+                />
             </View>
         </Modal>
     )
