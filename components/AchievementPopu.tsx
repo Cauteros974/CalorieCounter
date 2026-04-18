@@ -53,6 +53,9 @@ export default function AchievementPopup() {
                     </View>
 
                     <Text style={[styles.congratsText, { color: currentColors.text }]}>New achievement!</Text>
+                    <Text style={[styles.title, { color: currentColors.text }]}>
+                        {newlyUnlockedAchievement.title}
+                    </Text>
                 </Animated.View>
             </View>
         </Modal>
@@ -88,5 +91,8 @@ const styles = StyleSheet.create({
         fontWeight: '600', 
         opacity: 0.6, 
         textTransform: 'uppercase' 
+    },
+    title: { 
+        fontSize: 26, fontWeight: '800', textAlign: 'center'
     },
 })
