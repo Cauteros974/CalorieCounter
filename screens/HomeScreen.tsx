@@ -83,6 +83,10 @@ export default function HomeScreen() {
                             </Text>
                         </View>
                         <Utensils color="#4CAF50" size={32} />
+
+                        <View style={{ flexDirection: 'row', marginTop: 20, justifyContent: 'space-between' }}>
+                            <MacroBar label="Proteins" current={consumed.protein} target={targets.protein} color="#FF5252" />
+                        </View>
                     </View>
 
                     <View style={styles.progressBarBg}>
