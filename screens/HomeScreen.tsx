@@ -87,6 +87,7 @@ export default function HomeScreen() {
                         <View style={{ flexDirection: 'row', marginTop: 20, justifyContent: 'space-between' }}>
                             <MacroBar label="Proteins" current={consumed.protein} target={targets.protein} color="#FF5252" />
                             <MacroBar label="Fats" current={consumed.fat} target={targets.fat} color="#FFD740"/>
+                            <MacroBar label="Carbohydrates" current={consumed.carbs} target={targets.carbs} color="#448AFF" />
                         </View>
                     </View>
 
