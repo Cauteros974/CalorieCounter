@@ -31,6 +31,7 @@ export default function HomeScreen() {
                 <View style={{height: 6, backgroundColor: '#F0F0F0', borderRadius: 3, overflow: 'hidden'}}>
                     <View style={{ height: '100%', width: `${progress * 100}%`, backgroundColor: color }} />
                 </View>
+                <Text style={{ fontSize: 10, color: '#BBB', marginTop: 2, textAlign: 'right' }}>target {target}g</Text>
             </View>
         )
     }
