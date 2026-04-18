@@ -57,7 +57,7 @@ export default function StatisticsScreen() {
           <Text style={{ color: currentColors.primary }}>kcal/day</Text>
         </View>
         <View style={[styles.statBox, { backgroundColor: currentColors.card }]}>
-          <Text style={{ color: currentColors.subText }}>Всего воды</Text>
+          <Text style={{ color: currentColors.subText }}>Total water</Text>
           <Text style={[styles.statValue, { color: currentColors.text }]}>15.4</Text>
           <Text style={{ color: currentColors.accent }}>liters</Text>
         </View>
