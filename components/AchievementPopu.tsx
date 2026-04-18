@@ -39,6 +39,13 @@ export default function AchievementPopup() {
                     count={150} 
                     origin={{x: width / 2, y: -20}} 
                 />
+
+                <Animated.View style = {[
+                    styles.card,
+                    {backgroundColor: currentColors.card, transform: [{scale}]}
+                ]}>
+
+                </Animated.View>
             </View>
         </Modal>
     )
