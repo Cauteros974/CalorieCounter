@@ -46,7 +46,12 @@ interface UserState {
     fat: number;
     carbs: number;
   };
-  
+  targets: {
+    calories: number;
+    protein: number; // ~1.6g per kg of body weight
+    fat: number; // ~1g per kg of body weight
+    carbs: number; // remainder
+  };
 }
 
 export const Colors = {
