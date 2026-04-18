@@ -20,6 +20,18 @@ export default function HomeScreen() {
     const { consumed, targets, theme } = useUserStore();
     const currentColors = Colors[theme];
 
+    const MacroBar = ({ label, current, target, color }: any) => {
+        const progress = Math.min(current / target, 1);
+        return(
+            <View style={{ flex: 1, marginHorizontal: 5 }}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 4 }}>
+                    <Text style={{ fontSize: 12, fontWeight: '700', color: currentColors.subText }}>{label}</Text>
+                    <Text style={{ fontSize: 12, color: currentColors.text }}>{current}g</Text>
+                </View>
+            </View>
+        )
+    }
+
     return (
         <View style={{ flex: 1 }}>
             
