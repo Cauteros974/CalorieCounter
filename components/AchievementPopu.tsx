@@ -142,5 +142,6 @@ const styles = StyleSheet.create({
         width: '100%',
         padding: 18, 
         borderRadius: 15,
+        alignItems: 'center'
     }
 })
