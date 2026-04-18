@@ -15,6 +15,7 @@ export default function AchievementPopup() {
         if (newlyUnlockedAchievement){
             Animated.spring(scale, {
                 toValue: 1,
+                friction: 5,
                 useNativeDriver: true,
             }).start();
         }
