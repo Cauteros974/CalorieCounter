@@ -115,5 +115,8 @@ const styles = StyleSheet.create({
     xpBadge: {
         flexDirection: 'row', 
         alignItems: 'center', 
+        backgroundColor: '#E8F5E9', 
+        paddingHorizontal: 15, 
+        paddingVertical: 5, 
     }
 })
