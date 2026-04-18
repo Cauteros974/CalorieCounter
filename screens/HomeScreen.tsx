@@ -220,5 +220,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 12,
         borderLeftWidth: 5,
+        elevation: 2,
+        shadowColor: '#000',
     }
 });
