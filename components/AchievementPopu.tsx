@@ -93,6 +93,6 @@ const styles = StyleSheet.create({
         textTransform: 'uppercase' 
     },
     title: { 
-        fontSize: 26, fontWeight: '800', textAlign: 'center'
+        fontSize: 26, fontWeight: '800', textAlign: 'center', marginVertical: 10 
     },
 })
