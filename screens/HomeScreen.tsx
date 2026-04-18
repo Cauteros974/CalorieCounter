@@ -102,7 +102,9 @@ export default function HomeScreen() {
                 </View>
 
                 {[
-                    {id: 'breakfast', title: 'Breakfast', time: '08:00 - 10: 00', icon: 'coffee', cals: 450, color: '#FF9800'}
+                    { id: 'breakfast', title: 'Breakfast', time: '08:00 - 10: 00', icon: 'coffee', cals: 450, color: '#FF9800'},
+                    { id: 'lunch', title: 'Lunch', time: '12:00 - 14:00', icon: 'utensils', cals: 700, color: '#2196F3' },
+                    { id: 'dinner', title: 'Dinner', time: '18:00 - 20:00', icon: 'moon', cals: 500, color: '#9C27B0' }, 
                 ]}
 
                 {/* Meals */}
