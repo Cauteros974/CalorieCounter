@@ -3,8 +3,9 @@ import { enUS } from 'date-fns/locale';
 import { Camera, Droplets, Plus, Utensils } from 'lucide-react-native';
 import React, { useState } from 'react';
 import { Modal, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { useUserStore } from '../store/useUserStore';
+import { Colors, useUserStore } from '../store/useUserStore';
 import CameraScreen from './CameraScreen';
+
 
 export default function HomeScreen() {
     const { fullName, dailyCalories, consumedCalories, dailyWater, consumedWater, addWater } = useUserStore();
@@ -15,6 +16,9 @@ export default function HomeScreen() {
 
     const startDate = startOfWeek(new Date(), { weekStartsOn: 1 });
     const weekDays = Array.from({ length: 7 }).map((_, i) => addDays(startDate, i));
+
+    const { theme } = useUserStore();
+    const currentColors = Colors[theme];
 
 
     return (
