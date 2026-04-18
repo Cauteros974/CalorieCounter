@@ -82,13 +82,15 @@ export default function HomeScreen() {
                                 {dailyCalories - consumedCalories} kcal
                             </Text>
                         </View>
-                        <Utensils color="#4CAF50" size={32} />
+                        
 
                         <View style={{ flexDirection: 'row', marginTop: 20, justifyContent: 'space-between' }}>
                             <MacroBar label="Proteins" current={consumed.protein} target={targets.protein} color="#FF5252" />
                             <MacroBar label="Fats" current={consumed.fat} target={targets.fat} color="#FFD740"/>
                             <MacroBar label="Carbohydrates" current={consumed.carbs} target={targets.carbs} color="#448AFF" />
                         </View>
+
+                        <Utensils color="#4CAF50" size={32} />
                     </View>
 
                     <View style={styles.progressBarBg}>
