@@ -22,6 +22,8 @@ export default function AchievementPopup() {
             setTimeout(() => {
                 confettiRef.current.start();
             }, 100);
+        } else{
+            scale.setValue(0);
         }
     })
 }
