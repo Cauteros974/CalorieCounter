@@ -101,6 +101,10 @@ export default function HomeScreen() {
                     <Text style={styles.totalStats}>Total: {consumedCalories} kcal</Text>
                 </View>
 
+                {[
+                    {id: 'breakfast', title: 'Breakfast', time: '08:00 - 10: 00', icon: 'coffee', cals: 450, color: '#FF9800'}
+                ]}
+
                 {/* Meals */}
                 <Text style={styles.sectionTitle}>Meals</Text>
 
