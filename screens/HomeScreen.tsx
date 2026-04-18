@@ -211,4 +211,11 @@ const styles = StyleSheet.create({
         color: '#888', 
         fontWeight: '500'
     },
+    mealCard: {
+        backgroundColor: '#fff',
+        borderRadius: 18,
+        padding: 18,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    }
 });
