@@ -107,10 +107,10 @@ export default function HomeScreen() {
                     { id: 'dinner', title: 'Dinner', time: '18:00 - 20:00', icon: 'moon', cals: 500, color: '#9C27B0' }, 
                 ].map((meal) => {
                     <TouchableOpacity key={meal.id} style={[styles.mealCard, {borderLeftColor: meal.color}]}>
-                        <view style={styles.mealInfo}>
+                        <View style={styles.mealInfo}>
                             <Text style={styles.mealTitle}>{meal.title}</Text>
                             <Text style={styles.mealTime}>{meal.time}</Text>
-                        </view>
+                        </View>
                         <View style={styles.mealData}>
                             <Text style={styles.mealCals}>{meal.cals} kcal</Text>
                             <Plus size={20} color={currentColors.subText} />
@@ -224,5 +224,9 @@ const styles = StyleSheet.create({
         shadowColor: '#000',
         shadowOpacity: 0.05,
         shadowRadius: 10,
+    },
+    mealTitle: {
+        fontSize: 16, 
+        fontWeight: '700'
     }
 });
