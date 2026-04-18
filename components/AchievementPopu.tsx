@@ -51,6 +51,8 @@ export default function AchievementPopup() {
                     <View style={styles.iconContainer}>
                         <Trophy color="#FFD700" size={80} />
                     </View>
+
+                    <Text style={[styles.congratsText, { color: currentColors.text }]}>New achievement!</Text>
                 </Animated.View>
             </View>
         </Modal>
