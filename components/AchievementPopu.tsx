@@ -66,7 +66,8 @@ export default function AchievementPopup() {
                     </View>
 
                     <TouchableOpacity
-
+                        style={[styles.button, { backgroundColor: currentColors.primary }]} 
+                        onPress={closeCongratulation}
                     >
                         <Text style={styles.buttonText}>Super!</Text>
                     </TouchableOpacity>
@@ -136,5 +137,10 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 18,
         fontWeight: '700'
+    },
+    button: {
+        width: '100%',
+        padding: 18, 
+        borderRadius: 15,
     }
 })
