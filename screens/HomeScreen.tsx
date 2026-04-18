@@ -117,6 +117,11 @@ export default function HomeScreen() {
                         </View>
                     </TouchableOpacity>
                 })}
+                
+                <View style={[styles.tipCard, { backgroundColor: '#E8F5E9' }]}>
+                    <Text style={style.tipTitle}>💡 Tip of the day</Text>
+                    
+                </View>
 
                 {/* Meals */}
                 <Text style={styles.sectionTitle}>Meals</Text>
