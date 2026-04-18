@@ -106,14 +106,14 @@ export default function HomeScreen() {
                     { id: 'lunch', title: 'Lunch', time: '12:00 - 14:00', icon: 'utensils', cals: 700, color: '#2196F3' },
                     { id: 'dinner', title: 'Dinner', time: '18:00 - 20:00', icon: 'moon', cals: 500, color: '#9C27B0' }, 
                 ].map((meal) => {
-                    <TouchableOpacity key={meal.id} style={[styles.mealCard, {borderLeftColor: meal.color}]}>
+                    <TouchableOpacity key={meal.id} style={[styles.mealCard, { borderLeftColor: meal.color }]}>
                         <View style={styles.mealInfo}>
                             <Text style={styles.mealTitle}>{meal.title}</Text>
                             <Text style={styles.mealTime}>{meal.time}</Text>
                         </View>
                         <View style={styles.mealData}>
                             <Text style={styles.mealCals}>{meal.cals} kcal</Text>
-                            <Plus size={20} color={currentColors.subText} />
+                            <Plus size={20} color="#888" />
                         </View>
                     </TouchableOpacity>
                 })}
