@@ -135,6 +135,6 @@ const styles = StyleSheet.create({
     buttonText: {
         color: '#fff',
         fontSize: 18,
-        fontWeight: '500'
+        fontWeight: '700'
     }
 })
