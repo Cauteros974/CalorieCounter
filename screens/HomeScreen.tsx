@@ -119,8 +119,10 @@ export default function HomeScreen() {
                 })}
                 
                 <View style={[styles.tipCard, { backgroundColor: '#E8F5E9' }]}>
-                    <Text style={style.tipTitle}>💡 Tip of the day</Text>
-                    
+                    <Text style={styles.tipTitle}>💡 Tip of the day</Text>
+                    <Text style={styles.tiptext}>
+                        Try drinking a glass of water 20 minutes before meals. This improves digestion and helps prevent overeating.
+                    </Text>
                 </View>
 
                 {/* Meals */}
@@ -208,5 +210,5 @@ const styles = StyleSheet.create({
         fontSize: 14, 
         color: '#888', 
         fontWeight: '500'
-    }
+    },
 });
