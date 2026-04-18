@@ -217,5 +217,8 @@ const styles = StyleSheet.create({
         padding: 18,
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 12,
+        borderLeftWidth: 5,
     }
 });
