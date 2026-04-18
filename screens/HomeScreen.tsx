@@ -96,6 +96,11 @@ export default function HomeScreen() {
                     </TouchableOpacity>
                 </View>
 
+                <View style={styles.mealsHeaderRow}>
+                    <Text style={styles.sectionTitle}>Meals</Text>
+                    <Text style={styles.totalStats}>Total: {consumedCalories} kcal</Text>
+                </View>
+
                 {/* Meals */}
                 <Text style={styles.sectionTitle}>Meals</Text>
 
