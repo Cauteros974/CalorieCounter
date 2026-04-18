@@ -1,4 +1,4 @@
-import { Trophy } from 'lucide-react-native';
+import { Star, Trophy } from 'lucide-react-native';
 import React, { useEffect, useRef } from 'react';
 import { Animated, Dimensions, Modal, StyleSheet, Text, View } from 'react-native';
 import ConfettiCannon from 'react-native-confetti-cannon';
@@ -59,6 +59,11 @@ export default function AchievementPopup() {
                     <Text style={styles.description}>
                         {newlyUnlockedAchievement.description}
                     </Text>
+
+                    <View style={styles.xpBadge}>
+                        <Star color="#4CAF50" size={16} />
+                        <Text style={styles.xpText}>+100 XP</Text>
+                    </View>
                 </Animated.View>
             </View>
         </Modal>
@@ -107,4 +112,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         marginBottom: 20
     },
+    xpBadge: {
+        flexDirection: 'row', 
+        alignItems: 'center', 
+    }
 })
