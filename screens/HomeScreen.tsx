@@ -230,18 +230,35 @@ const styles = StyleSheet.create({
         fontWeight: '700'
     },
     mealTime: { 
-        fontSize: 12, color: '#AAA', marginTop: 2 
+        fontSize: 12, 
+        color: '#AAA', 
+        marginTop: 2 
     },
     mealData: { 
-        flexDirection: 'row', alignItems: 'center', gap: 10 
+        flexDirection: 'row', 
+        alignItems: 'center', 
+        gap: 10 
     },
     mealCals: { 
-        fontSize: 14, fontWeight: '600', color: '#444' 
+        fontSize: 14, 
+        fontWeight: '600', 
+        color: '#444' 
     },
     tipCard: {
         padding: 20,
         borderRadius: 20,
         marginTop: 20,
         marginBottom: 100,
+    },
+    tipTitle: { 
+        fontSize: 16, 
+        fontWeight: '800', 
+        color: '#2E7D32', 
+        marginBottom: 5 
+    },
+    tipText: { 
+        fontSize: 14, 
+        color: '#4E342E', 
+        lineHeight: 20 
     },
 });
