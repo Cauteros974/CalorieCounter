@@ -38,6 +38,8 @@ export default function AchievementPopup() {
                     ref={confettiRef}
                     count={150} 
                     origin={{x: width / 2, y: -20}} 
+                    autoStart={false}
+                    fadeOut={true}
                 />
 
                 <Animated.View style = {[
@@ -61,6 +63,8 @@ const styles = StyleSheet.create({
     card: {
         width: '85%',
         borderRadius: 30,
-        padding: 20,
+        padding: 30,
+        alignItems: 'center',
+        elevation: 20,
     }
 })
