@@ -181,5 +181,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginTop: 25,
         marginBottom: 15
+    },
+    totalStats: {
+        fontSize: 14, 
+        color: '#888', 
+        fontWeight: '500'
     }
 });
