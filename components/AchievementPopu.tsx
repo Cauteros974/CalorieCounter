@@ -1,6 +1,6 @@
 import { Star, Trophy } from 'lucide-react-native';
 import React, { useEffect, useRef } from 'react';
-import { Animated, Dimensions, Modal, StyleSheet, Text, View } from 'react-native';
+import { Animated, Dimensions, Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import ConfettiCannon from 'react-native-confetti-cannon';
 import { Colors, useUserStore } from '../store/useUserStore';
 
@@ -64,6 +64,10 @@ export default function AchievementPopup() {
                         <Star color="#4CAF50" size={16} />
                         <Text style={styles.xpText}>+100 XP</Text>
                     </View>
+
+                    <TouchableOpacity>
+                        
+                    </TouchableOpacity>
                 </Animated.View>
             </View>
         </Modal>
