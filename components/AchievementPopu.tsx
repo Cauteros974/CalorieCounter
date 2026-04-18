@@ -65,8 +65,10 @@ export default function AchievementPopup() {
                         <Text style={styles.xpText}>+100 XP</Text>
                     </View>
 
-                    <TouchableOpacity>
-                        
+                    <TouchableOpacity
+
+                    >
+                        <Text style={styles.buttonText}>Super!</Text>
                     </TouchableOpacity>
                 </Animated.View>
             </View>
