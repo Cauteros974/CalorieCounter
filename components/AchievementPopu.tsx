@@ -9,6 +9,7 @@ export default function AchievementPopup() {
     const currentColors = Colors[theme];
     const confettiRef = useRef<any>(null);
 
+    //Appearance animation
     const scale = useRef(new Animated.Value(0)).current;
 
     useEffect(() => {
@@ -25,5 +26,7 @@ export default function AchievementPopup() {
         } else{
             scale.setValue(0);
         }
-    })
+    }, [newlyUnlockedAchievement]);
+
+    if(!newlyUnlockedAchievement) return null;
 }
