@@ -64,4 +64,12 @@ function XpBar ({xp, level}: {xp: number; level: number}) {
     const animWidth = useRef(new Animated.Value(0)).current;
     const XP_MAX = 1000;
     const progress = Math.min(xp / XP_MAX, 1);
+
+    useEffect(() => {
+        Animated.timing(animWidth, {
+            toValue: progress,
+            duration: 1000,
+            delay: 200,
+        })
+    })
 }
