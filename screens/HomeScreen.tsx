@@ -20,6 +20,11 @@ function CalorieRing({progress}: {progress: number}){
             duration: 1200,
             easing: Easing.out(Easing.cubic),
             useNativeDriver: false,
-        })
-    })
+        }).start();
+    }, [progress]);
+
+    const strokeDashoffset = animatedValue.interpolate({
+        inputRange: [0, 1],
+        outputRange: [CIRCUMFERENCE, 0],
+    });
 }
