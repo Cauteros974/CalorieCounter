@@ -11,7 +11,7 @@ export default function CameraScreen({onClose}: {onClose: () => void}) {
     const cameraRef = useRef<any>(null);
     const addCalories = useUserStore(state => state.addCalories);
 
-    if(!permission) return <View />
+    if(!permission) { return <View /> }
     if (!permission.granted) {
         return (
           <View style={styles.container}>
@@ -60,7 +60,7 @@ export default function CameraScreen({onClose}: {onClose: () => void}) {
 }
 
 const styles = StyleSheet.create({
-    container: {flex: 2, backgroundColor: '#000'},
+    container: {flex: 1, backgroundColor: '#000'},
     camera: { flex: 1 },
     overlay: { flex: 1, justifyContent: 'space-between', alignItems: 'center', paddingVertical: 50 },
     closeBtn: { alignSelf: 'flex-start', marginLeft: 20 },
