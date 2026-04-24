@@ -1,9 +1,10 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
     Animated,
-    Easing
+    Easing,
+    View
 } from 'react-native';
-import { Circle } from 'react-native-svg';
+import Svg, { Circle } from 'react-native-svg';
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
@@ -27,4 +28,15 @@ function CalorieRing({progress}: {progress: number}){
         inputRange: [0, 1],
         outputRange: [CIRCUMFERENCE, 0],
     });
+
+    return(
+        <View style={{ alignItems: 'center', justifyContent: 'center', width: SIZE, height: SIZE }}>
+            <Svg width={SIZE} height={SIZE}>
+                <Circle
+                    cx={SIZE / 2}
+                    cy={SIZE / 2}
+                />
+            </Svg>
+        </View>
+    )
 }
