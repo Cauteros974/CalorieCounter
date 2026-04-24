@@ -31,7 +31,7 @@ function CalorieRing({progress}: {progress: number}){
 
     return(
         <View style={{ alignItems: 'center', justifyContent: 'center', width: SIZE, height: SIZE }}>
-            <Svg width={SIZE} height={SIZE}>
+            <Svg width={SIZE} height={SIZE} style={{ position: 'absolute' }}>
                 <Circle
                     cx={SIZE / 2}
                     cy={SIZE / 2}
