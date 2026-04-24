@@ -1,7 +1,9 @@
+import { Star } from 'lucide-react-native';
 import React, { useEffect, useRef } from 'react';
 import {
     Animated,
     Easing,
+    Text,
     View
 } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
@@ -73,5 +75,17 @@ function XpBar ({xp, level}: {xp: number; level: number}) {
             easing: Easing.out(Easing.quad),
             useNativeDriver: false
         }).start();
-    }, [xp])
+    }, [xp]);
+
+    return(
+        <View style={styles.xpCard}>
+            <View style={styles.xpHeader}>
+                <View style={styles.xpLeft}>
+                    <Star color="#FFD740" size={18} fill="#FFD740" />
+                    <Text style={styles.xpLevel}>Level {level}</Text>
+                </View>
+                <Text style={styles.xpCount}>{xp} / {XP_MAX} XP</Text>
+            </View>
+        </View>
+    )
 }
