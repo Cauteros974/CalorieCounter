@@ -35,6 +35,10 @@ function CalorieRing({progress}: {progress: number}){
                 <Circle
                     cx={SIZE / 2}
                     cy={SIZE / 2}
+                    r={R}
+                    stroke="#F0F0F0"
+                    strokeWidth={STROKE}
+                    fill="none"
                 />
             </Svg>
         </View>
