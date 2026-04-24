@@ -109,6 +109,7 @@ export const useUserStore = create<UserState>((set) => ({
       ...data,
       dailyCalories: calories,
       dailyWater: water,
+      targets: { calories, protein, fat, carbs: Math.max(carbs, 0) },
     });
   },
 
