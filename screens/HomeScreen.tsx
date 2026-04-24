@@ -122,7 +122,8 @@ export default function HomeScreen() {
                         <Text style={styles.cameraText}>Take a photo</Text>
                     </TouchableOpacity>
                 </View>
-
+                
+                {/* Meals */}
                 <View style={styles.mealsHeaderRow}>
                     <Text style={styles.sectionTitle}>Meals</Text>
                     <Text style={styles.totalStats}>Total: {consumedCalories} kcal</Text>
@@ -153,20 +154,6 @@ export default function HomeScreen() {
                         Try drinking a glass of water 20 minutes before meals. This improves digestion and helps prevent overeating.
                     </Text>
                 </View>
-
-                {/* Meals */}
-                {['Breakfast', 'Lunch', 'Dinner'].map((meal) => (
-                    <TouchableOpacity key={meal} style={styles.mealItem}>
-                        <View style={styles.mealIconPlaceholder}>
-                            <Utensils color="#888" size={20} />
-                        </View>
-                        <View style={{ flex: 1 }}>
-                            <Text style={styles.mealName}>{meal}</Text>
-                            <Text style={styles.mealStatus}>Click here to add photo</Text>
-                        </View>
-                        <Plus color="#ccc" size={20} />
-                    </TouchableOpacity>
-                ))}
 
             </ScrollView>
 
