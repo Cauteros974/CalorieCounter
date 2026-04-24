@@ -103,6 +103,7 @@ export const useUserStore = create<UserState>((set) => ({
     const water = parseFloat((data.weight * 0.035).toFixed(1));
     const protein = Math.round(data.weight * 1.6);
     const fat = Math.round(data.weight * 1.0);
+    const carbs = Math.round((calories - protein * 4 - fat * 9) / 4);
 
     set({
       ...data,
