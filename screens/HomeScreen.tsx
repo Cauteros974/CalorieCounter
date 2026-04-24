@@ -46,6 +46,9 @@ function CalorieRing({progress}: {progress: number}){
                     cx={SIZE / 2}
                     cy={SIZE / 2}
                     r={R}
+                    stroke="#4CAF50"
+                    strokeWidth={STROKE}
+                    fill="none"
                 />
             </Svg>
         </View>
