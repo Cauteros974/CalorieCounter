@@ -17,7 +17,7 @@ function CalorieRing({progress}: {progress: number}){
     useEffect (() => {
         Animated.timing(animatedValue, {
             toValue: progress,
-            duration: 1000,
+            duration: 1200,
             easing: Easing.out(Easing.cubic),
             useNativeDriver: false,
         })
