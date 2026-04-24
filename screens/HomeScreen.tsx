@@ -51,6 +51,9 @@ function CalorieRing({progress}: {progress: number}){
                     fill="none"
                     strokeDasharray={`${CIRCUMFERENCE}`}
                     strokeDashoffset={strokeDashoffset}
+                    strokeLinecap="round"
+                    rotation="-90"
+                    origin={`${SIZE / 2}, ${SIZE / 2}`}
                 />
             </Svg>
         </View>
