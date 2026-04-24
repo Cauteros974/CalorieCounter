@@ -32,6 +32,7 @@ function CalorieRing({progress}: {progress: number}){
     return(
         <View style={{ alignItems: 'center', justifyContent: 'center', width: SIZE, height: SIZE }}>
             <Svg width={SIZE} height={SIZE} style={{ position: 'absolute' }}>
+                {/*Track */}
                 <Circle
                     cx={SIZE / 2}
                     cy={SIZE / 2}
@@ -39,6 +40,12 @@ function CalorieRing({progress}: {progress: number}){
                     stroke="#F0F0F0"
                     strokeWidth={STROKE}
                     fill="none"
+                />
+
+                <AnimatedCircle 
+                    cx={SIZE / 2}
+                    cy={SIZE / 2}
+                    r={R}
                 />
             </Svg>
         </View>
