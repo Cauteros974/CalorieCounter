@@ -69,7 +69,9 @@ function XpBar ({xp, level}: {xp: number; level: number}) {
         Animated.timing(animWidth, {
             toValue: progress,
             duration: 1000,
-            delay: 200,
-        })
-    })
+            delay: 300,
+            easing: Easing.out(Easing.quad),
+            useNativeDriver: false
+        }).start();
+    }, [xp])
 }
