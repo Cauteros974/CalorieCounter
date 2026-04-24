@@ -116,7 +116,11 @@ export const useUserStore = create<UserState>((set) => ({
 
   addWater: (amount) =>
     set((state) => ({
-      consumedWater: state.consumedWater + amount
+      consumedWater: state.consumedWater + amount,
+      consumed: {
+        ...state.consumed,
+        calories: state.consumed.calories + amount,
+      }
     })),
 
   theme: 'light',
