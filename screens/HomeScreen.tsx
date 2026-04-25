@@ -203,7 +203,9 @@ export default function HomeScreen() {
                 <View style={{height: 6, backgroundColor: '#F0F0F0', borderRadius: 3, overflow: 'hidden'}}>
                     <Animated.View 
                         style={{
-                            height: '100%'
+                            height: '100%',
+                            width: animWidth.interpolate({inputRange: [0,1], outputRange: ['0%', '100%']}),
+                            backgroundColor: color
                         }}
                     />
                 </View>
