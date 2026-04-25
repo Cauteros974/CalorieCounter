@@ -112,7 +112,8 @@ function StreakCard({ streak }: {streak : number}) {
             Animated.spring(scale, {
                 toValue: 1,
                 friction: 4,
-                
+                tension: 120,
+                useNativeDriver: true,
             })
         ])
     }) 
