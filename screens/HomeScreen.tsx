@@ -2,6 +2,7 @@ import { addDays, startOfWeek } from 'date-fns';
 import { Flame, Star } from 'lucide-react-native';
 import React, { useEffect, useRef, useState } from 'react';
 import { Animated, Easing, StyleSheet, Text, View } from 'react-native';
+import { ScrollView } from 'react-native-reanimated/lib/typescript/Animated';
 import Svg, { Circle } from 'react-native-svg';
 import { Colors, useUserStore } from '../store/useUserStore';
 
@@ -212,8 +213,23 @@ export default function HomeScreen() {
                 </View>
                 <Text style={{ fontSize: 10, color: '#BBB', marginTop: 2, textAlign: 'right' }}>target {target}g</Text>
              </View>
-        )
-    }
+        );
+    };
+
+    return(
+        <View style={{ flex: 1 }}>
+            <ScrollView style={styles.container} showsHorizontalScrollIndicator={false}>
+
+                {/* Header */}
+                <FadeInView delay={0}>
+                    <View style={styles.header}>
+                        <Text style={styles.greeting}>Hello, {fullName || 'User'} 👋</Text>
+                        <Text style={styles.subGreeting}>Your progress today:</Text>
+                    </View>
+                </FadeInView>
+            </ScrollView>
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({
