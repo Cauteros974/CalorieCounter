@@ -218,7 +218,7 @@ export default function HomeScreen() {
 
     return(
         <View style={{ flex: 1 }}>
-            <ScrollView style={styles.container} showsHorizontalScrollIndicator={false}>
+            <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
 
                 {/* Header */}
                 <FadeInView delay={0}>
