@@ -179,6 +179,10 @@ export default function HomeScreen() {
     const startDate = startOfWeek(new Date(), { weekStartsOn: 1 });
     const weekDays = Array.from({ length: 7 }).map((_, i) => addDays(startDate, i));
     const currentColors = Colors[theme];
+
+    const MacroBar = ({ label, current, target, color }: any) => {
+        const animWidth = useRef(new Animated.Value(0)).current;
+    }
 }
 
 const styles = StyleSheet.create({
