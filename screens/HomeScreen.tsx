@@ -182,6 +182,7 @@ export default function HomeScreen() {
 
     const MacroBar = ({ label, current, target, color }: any) => {
         const animWidth = useRef(new Animated.Value(0)).current;
+        const progress = Math.min(current / target, 1);
     }
 }
 
