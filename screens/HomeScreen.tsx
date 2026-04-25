@@ -154,7 +154,8 @@ function FadeInView({ delay = 0, children }: { delay?: number; children: React.R
             Animated.timing(opacity, {
                 toValue: 1,
                 duration: 500,
-                
+                delay,
+                useNativeDriver: true,
             })
         ])
     })
