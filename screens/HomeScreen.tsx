@@ -132,4 +132,13 @@ function StreakCard({ streak }: {streak : number}) {
             ])
         ).start();
     }, []);
+
+    return(
+        <Animated.View style={[styles.streakCard, { opacity, transform: [{ scale }] }]}>
+            <Animated.View style={{ transform: [{ scale: flameScale }] }}>
+                <Flame color="#FF6B35" size={28} fill="#FF6B35" />
+            </Animated.View>
+            
+        </Animated.View>
+    )
 }
