@@ -188,5 +188,7 @@ const styles = StyleSheet.create({
     xpTrack: { height: 8, backgroundColor: '#F0F0F0', borderRadius: 4, overflow: 'hidden' },
     xpFill: { height: '100%', backgroundColor: '#FFD740', borderRadius: 4 },
 
-
+    streakCard: { flex: 1, backgroundColor: '#FFF3EE', borderRadius: 20, alignItems: 'center', justifyContent: 'center', paddingVertical: 12 },
+    streakNumber: { fontSize: 24, fontWeight: '900', color: '#FF6B35', marginTop: 4 },
+    streakLabel: { fontSize: 11, color: '#FF9068', fontWeight: '600' },
 })
