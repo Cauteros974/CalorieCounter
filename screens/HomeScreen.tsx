@@ -164,8 +164,8 @@ function FadeInView({ delay = 0, children }: { delay?: number; children: React.R
                 easing: Easing.out(Easing.quad),
                 useNativeDriver: true,
             }),
-        ])
-    })
+        ]).start();
+    }, []);
 }
 
 const styles = StyleSheet.create({
