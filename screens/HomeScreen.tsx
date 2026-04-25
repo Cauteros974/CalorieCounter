@@ -210,6 +210,7 @@ export default function HomeScreen() {
                         }}
                     />
                 </View>
+                <Text style={{ fontSize: 10, color: '#BBB', marginTop: 2, textAlign: 'right' }}>target {target}g</Text>
              </View>
         )
     }
