@@ -148,6 +148,7 @@ function StreakCard({ streak }: {streak : number}) {
 const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: '#F8F9FA', paddingHorizontal: 20 },
     header: { marginTop: 60, marginBottom: 20 },
-    
+    greeting: { fontSize: 22, fontWeight: '700', color: '#1A1A1A' },
+    subGreeting: { fontSize: 16, color: '#666', marginTop: 4 },
 
 })
