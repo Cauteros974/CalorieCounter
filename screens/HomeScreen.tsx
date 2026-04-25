@@ -114,6 +114,10 @@ function StreakCard({ streak }: {streak : number}) {
                 friction: 4,
                 tension: 120,
                 useNativeDriver: true,
+            }),
+            Animated.timing(opacity, {
+                toValue: 1,
+                duration: 400,
             })
         ])
     }) 
