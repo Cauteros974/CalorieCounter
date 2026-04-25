@@ -139,7 +139,7 @@ function StreakCard({ streak }: {streak : number}) {
                 <Flame color="#FF6B35" size={28} fill="#FF6B35" />
             </Animated.View>
             <Text style={styles.streakNumber}>{streak}</Text>
-            
+            <Text style={styles.streakLabel}>day streak</Text>
         </Animated.View>
     )
 }
