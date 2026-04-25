@@ -156,7 +156,14 @@ function FadeInView({ delay = 0, children }: { delay?: number; children: React.R
                 duration: 500,
                 delay,
                 useNativeDriver: true,
-            })
+            }),
+            Animated.timing(translateY, {
+                toValue: 0,
+                duration: 500,
+                delay,
+                easing: Easing.out(Easing.quad),
+                useNativeDriver: true,
+            }),
         ])
     })
 }
