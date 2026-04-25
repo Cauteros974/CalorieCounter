@@ -154,4 +154,6 @@ const styles = StyleSheet.create({
     xpCard: { backgroundColor: '#fff', borderRadius: 20, padding: 16, marginBottom: 16, elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8 },
     xpHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 },
     xpLeft: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+    xpLevel: { fontSize: 14, fontWeight: '700', color: '#1A1A1A' },
+    
 })
