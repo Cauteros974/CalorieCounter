@@ -100,5 +100,9 @@ function XpBar ({xp, level}: {xp: number; level: number}) {
                 />
             </View>
         </View>
-    )
+    );
+}
+
+function StreakCard({ streak }: {streak : number}) {
+    const scale = useRef(new Animated.Value(0.5)).current;
 }
