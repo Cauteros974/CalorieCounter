@@ -145,6 +145,11 @@ function StreakCard({ streak }: {streak : number}) {
     );
 }
 
+function FadeInterView({ delay = 0, children}: {delay: number; children: React.ReactNode}) {
+    const opacity = useRef(new Animated.Value(0)).current;
+    const translateY = useRef(new Animated.Value(20)).current;
+}
+
 const styles = StyleSheet.create({
     container: { flex: 1, backgroundColor: '#F8F9FA', paddingHorizontal: 20 },
     header: { marginTop: 60, marginBottom: 20 },
@@ -158,4 +163,6 @@ const styles = StyleSheet.create({
     xpCount: { fontSize: 12, color: '#888' },
     xpTrack: { height: 8, backgroundColor: '#F0F0F0', borderRadius: 4, overflow: 'hidden' },
     xpFill: { height: '100%', backgroundColor: '#FFD740', borderRadius: 4 },
+
+
 })
