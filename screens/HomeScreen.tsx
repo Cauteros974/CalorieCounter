@@ -104,5 +104,6 @@ function XpBar ({xp, level}: {xp: number; level: number}) {
 }
 
 function StreakCard({ streak }: {streak : number}) {
-    const scale = useRef(new Animated.Value(0.5)).current;
+    const scale = useRef(new Animated.Value(0.8)).current;
+    const opacity = useRef(new Animated.Value(0)).current;
 }
