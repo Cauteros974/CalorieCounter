@@ -106,4 +106,14 @@ function XpBar ({xp, level}: {xp: number; level: number}) {
 function StreakCard({ streak }: {streak : number}) {
     const scale = useRef(new Animated.Value(0.8)).current;
     const opacity = useRef(new Animated.Value(0)).current;
+
+    useEffect (() => {
+        Animated.parallel([
+            Animated.spring(scale, {
+                toValue: 1,
+                friction: 4,
+                
+            })
+        ])
+    }) 
 }
