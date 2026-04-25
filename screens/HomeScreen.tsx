@@ -118,7 +118,18 @@ function StreakCard({ streak }: {streak : number}) {
             Animated.timing(opacity, {
                 toValue: 1,
                 duration: 400,
-            })
-        ])
-    }) 
+                useNativeDriver: true,
+            }),
+        ]).start();
+    }, []);
+
+    const flameScale = useRef(new Animated.Value(1)).current;
+    useEffect(() => {
+        Animated.loop(
+            Animated.sequence([
+                Animated.timing(flameScale, { toValue: 1.2, duration: 600, useNativeDriver: true }),
+            
+            ])
+        ).start();
+    }, []);
 }
