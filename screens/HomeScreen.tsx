@@ -152,4 +152,6 @@ const styles = StyleSheet.create({
     subGreeting: { fontSize: 16, color: '#666', marginTop: 4 },
 
     xpCard: { backgroundColor: '#fff', borderRadius: 20, padding: 16, marginBottom: 16, elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8 },
+    xpHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 },
+    xpLeft: { flexDirection: 'row', alignItems: 'center', gap: 6 },
 })
