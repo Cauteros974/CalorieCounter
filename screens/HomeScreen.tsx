@@ -197,8 +197,8 @@ export default function HomeScreen() {
         return(
             <View style={{flex: 1, marginHorizontal: 5}}>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: 4 }}>
-                    <Text style={{fontSize: 12, fontWeight: '700'}}></Text>
-                    <Text style={{fontSize: 12, color: currentColors}}>{current}</Text>
+                    <Text style={{ fontSize: 12, fontWeight: '700', color: currentColors.subText }}>{label}</Text>
+                    <Text style={{ fontSize: 12, color: currentColors.text }}>{current}g</Text>
                 </View>
              </View>
         )
