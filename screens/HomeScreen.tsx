@@ -157,4 +157,5 @@ const styles = StyleSheet.create({
     xpLevel: { fontSize: 14, fontWeight: '700', color: '#1A1A1A' },
     xpCount: { fontSize: 12, color: '#888' },
     xpTrack: { height: 8, backgroundColor: '#F0F0F0', borderRadius: 4, overflow: 'hidden' },
+    xpFill: { height: '100%', backgroundColor: '#FFD740', borderRadius: 4 },
 })
