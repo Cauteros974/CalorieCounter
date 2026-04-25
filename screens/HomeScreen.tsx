@@ -1,8 +1,9 @@
-import { Star } from 'lucide-react-native';
+import { Flame, Star } from 'lucide-react-native';
 import React, { useEffect, useRef } from 'react';
 import {
     Animated,
     Easing,
+    StyleSheet,
     Text,
     View
 } from 'react-native';
@@ -141,5 +142,12 @@ function StreakCard({ streak }: {streak : number}) {
             <Text style={styles.streakNumber}>{streak}</Text>
             <Text style={styles.streakLabel}>day streak</Text>
         </Animated.View>
-    )
+    );
 }
+
+const styles = StyleSheet.create({
+    container: { flex: 1, backgroundColor: '#F8F9FA', paddingHorizontal: 20 },
+    header: { marginTop: 60, marginBottom: 20 },
+    
+
+})
