@@ -1,8 +1,9 @@
-import { useUserStore } from '@/store/useUserStore';
+import { addDays, startOfWeek } from 'date-fns';
 import { Flame, Star } from 'lucide-react-native';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Animated, Easing, StyleSheet, Text, View } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
+import { Colors, useUserStore } from '../store/useUserStore';
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
@@ -170,7 +171,14 @@ function FadeInView({ delay = 0, children }: { delay?: number; children: React.R
 }
 
 export default function HomeScreen() {
-    const { fullName, dailyCalories, consumedCalories, } = useUserStore();
+    const { fullName, dailyCalories, consumedCalories, dailyWater, consumedWater, addWater, xp, level, streak, consumed, targets, theme,} = useUserStore();
+    const [selectedDate, setSelectedDate] = useState(new Date());
+    const [showCamera, setShowCamera] = useState(false);
+
+    const calProgress = Math.min(consumedCalories / dailyCalories, 1) || 0;
+    const startDate = startOfWeek(new Date(), { weekStartsOn: 1 });
+    const weekDays = Array.from({ length: 7 }).map((_, i) => addDays(startDate, i));
+    const currentColors = Colors[theme];
 }
 
 const styles = StyleSheet.create({
