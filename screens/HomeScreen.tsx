@@ -1,12 +1,7 @@
+import { useUserStore } from '@/store/useUserStore';
 import { Flame, Star } from 'lucide-react-native';
 import React, { useEffect, useRef } from 'react';
-import {
-    Animated,
-    Easing,
-    StyleSheet,
-    Text,
-    View
-} from 'react-native';
+import { Animated, Easing, StyleSheet, Text, View } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
@@ -171,7 +166,11 @@ function FadeInView({ delay = 0, children }: { delay?: number; children: React.R
         <Animated.View style={{ opacity, transform: [{ translateY }] }}>
             {children}
         </Animated.View>
-    )
+    );
+}
+
+export default function HomeScreen() {
+    const { fullName, dailyCalories, consumedCalories, } = useUserStore();
 }
 
 const styles = StyleSheet.create({
