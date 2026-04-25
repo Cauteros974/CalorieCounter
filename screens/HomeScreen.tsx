@@ -128,7 +128,7 @@ function StreakCard({ streak }: {streak : number}) {
         Animated.loop(
             Animated.sequence([
                 Animated.timing(flameScale, { toValue: 1.2, duration: 600, useNativeDriver: true }),
-            
+                Animated.timing(flameScale, { toValue: 1.0, duration: 600, useNativeDriver: true }),
             ])
         ).start();
     }, []);
