@@ -145,7 +145,7 @@ function StreakCard({ streak }: {streak : number}) {
     );
 }
 
-function FadeInterView({ delay = 0, children}: {delay: number; children: React.ReactNode}) {
+function FadeInView({ delay = 0, children }: { delay?: number; children: React.ReactNode }) {
     const opacity = useRef(new Animated.Value(0)).current;
     const translateY = useRef(new Animated.Value(20)).current;
 }
