@@ -205,7 +205,8 @@ export default function HomeScreen() {
                         style={{
                             height: '100%',
                             width: animWidth.interpolate({inputRange: [0,1], outputRange: ['0%', '100%']}),
-                            backgroundColor: color
+                            backgroundColor: color,
+                            borderRadius: 3,
                         }}
                     />
                 </View>
