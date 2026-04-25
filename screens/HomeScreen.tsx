@@ -1,4 +1,5 @@
 import { addDays, startOfWeek } from 'date-fns';
+import { enUS } from 'date-fns/locale';
 import { Flame, Star } from 'lucide-react-native';
 import React, { useEffect, useRef, useState } from 'react';
 import { Animated, Easing, StyleSheet, Text, View } from 'react-native';
@@ -60,7 +61,7 @@ function CalorieRing({progress}: {progress: number}){
     );
 }
 
-function XpBar ({xp, level}: {xp: number; level: number}) {
+function XPBar ({xp, level}: {xp: number; level: number}) {
     const animWidth = useRef(new Animated.Value(0)).current;
     const XP_MAX = 1000;
     const progress = Math.min(xp / XP_MAX, 1);
@@ -226,6 +227,22 @@ export default function HomeScreen() {
                         <Text style={styles.greeting}>Hello, {fullName || 'User'} 👋</Text>
                         <Text style={styles.subGreeting}>Your progress today:</Text>
                     </View>
+                </FadeInView>
+
+                 {/* XP Bar */}
+                <FadeInView delay={100}>
+                    <XPBar xp={xp} level={level} />
+                </FadeInView>
+
+                <FadeInView delay={150}>
+                     <View style={styles.calendarContainer}>
+                        <Text style={styles.monthText}>
+                            {format(selectedDate, 'LLLL yyyy', { locale: enUS })}
+                        </Text>
+                        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.calendarScroll}>
+                            
+                        </ScrollView>
+                     </View>
                 </FadeInView>
             </ScrollView>
         </View>
