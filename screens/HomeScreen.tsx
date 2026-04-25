@@ -156,5 +156,5 @@ const styles = StyleSheet.create({
     xpLeft: { flexDirection: 'row', alignItems: 'center', gap: 6 },
     xpLevel: { fontSize: 14, fontWeight: '700', color: '#1A1A1A' },
     xpCount: { fontSize: 12, color: '#888' },
-    xpTrack: { height: 8, backgroundColor: '#F0F0F0',},
+    xpTrack: { height: 8, backgroundColor: '#F0F0F0', borderRadius: 4, overflow: 'hidden' },
 })
