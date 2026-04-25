@@ -187,8 +187,10 @@ export default function HomeScreen() {
         useEffect(() => {
             Animated.timing(animWidth, {
                 toValue: progress,
-                duration: 400,
-                delay: 200
+                duration: 900,
+                delay: 200,
+                easing: Easing.out(Easing.cubic),
+                useNativeDriver: false,
             })
         })
     }
