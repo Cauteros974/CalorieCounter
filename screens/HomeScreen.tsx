@@ -148,6 +148,16 @@ function StreakCard({ streak }: {streak : number}) {
 function FadeInView({ delay = 0, children }: { delay?: number; children: React.ReactNode }) {
     const opacity = useRef(new Animated.Value(0)).current;
     const translateY = useRef(new Animated.Value(20)).current;
+
+    useEffect(() => {
+        Animated.parallel([
+            Animated.timing(opacity, {
+                toValue: 1,
+                duration: 500,
+                
+            })
+        ])
+    })
 }
 
 const styles = StyleSheet.create({
