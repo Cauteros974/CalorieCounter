@@ -86,6 +86,19 @@ function XpBar ({xp, level}: {xp: number; level: number}) {
                 </View>
                 <Text style={styles.xpCount}>{xp} / {XP_MAX} XP</Text>
             </View>
+            <View style={styles.xpTrack}>
+                <Animated.View
+                    style={[
+                        styles.xpFill,
+                        {
+                            width: animWidth.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: ['0%', '100%'],
+                            }),
+                        },
+                    ]}
+                />
+            </View>
         </View>
     )
 }
