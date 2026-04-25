@@ -138,6 +138,7 @@ function StreakCard({ streak }: {streak : number}) {
             <Animated.View style={{ transform: [{ scale: flameScale }] }}>
                 <Flame color="#FF6B35" size={28} fill="#FF6B35" />
             </Animated.View>
+            <Text style={styles.streakNumber}>{streak}</Text>
             
         </Animated.View>
     )
