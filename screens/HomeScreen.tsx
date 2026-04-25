@@ -200,6 +200,13 @@ export default function HomeScreen() {
                     <Text style={{ fontSize: 12, fontWeight: '700', color: currentColors.subText }}>{label}</Text>
                     <Text style={{ fontSize: 12, color: currentColors.text }}>{current}g</Text>
                 </View>
+                <View style={{height: 6, backgroundColor: '#F0F0F0', borderRadius: 3, overflow: 'hidden'}}>
+                    <Animated.View 
+                        style={{
+                            height: '100%'
+                        }}
+                    />
+                </View>
              </View>
         )
     }
