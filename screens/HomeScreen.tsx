@@ -166,6 +166,12 @@ function FadeInView({ delay = 0, children }: { delay?: number; children: React.R
             }),
         ]).start();
     }, []);
+
+    return(
+        <Animated.View style={{ opacity, transform: [{ translateY }] }}>
+            {children}
+        </Animated.View>
+    )
 }
 
 const styles = StyleSheet.create({
