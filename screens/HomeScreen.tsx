@@ -297,4 +297,5 @@ const styles = StyleSheet.create({
     selectedDayCard: {backgroundColor: '#4CAF50'},
     dayName: {fontSize: 12, color: '#666'},
     dayNumber: {fontSize: 10, fontWeight: '700'},
+    selectedText: {color: '#fff'}
 })
