@@ -327,10 +327,11 @@ export default function HomeScreen() {
                     </View>
                 </FadeInView>
 
+                {/* Meals */}
                 <FadeInView delay={200}>
                     <View style={styles.mealsHeaderRow}>
                         <Text style={styles.sectionTitle}>Meals</Text>
-                        
+                        <Text style={styles.totalStats}>Total: {consumedCalories} kcal</Text>
                     </View>
                 </FadeInView>
             </ScrollView>
