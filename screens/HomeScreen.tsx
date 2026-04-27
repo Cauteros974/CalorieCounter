@@ -279,6 +279,7 @@ export default function HomeScreen() {
                                 <View style={styles.ringCenter}>
                                     <Utensils color="#4CAF50" size={20} />
                                     <Text style={styles.ringKcal}>{dailyCalories - consumedCalories}</Text>
+                                    <Text style={styles.ringLabel}>kcal left</Text>
                                 </View>
                             </View>
                         </View>
