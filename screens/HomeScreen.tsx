@@ -347,6 +347,7 @@ export default function HomeScreen() {
                                 </View>
                                 <View style={styles.mealData}>
                                     <Text style={styles.mealCals}>{meal.cals} kcal</Text>
+                                    <Plus size={20} color={currentColors.subText} />
                                 </View>
                             </TouchableOpacity>
                         </FadeInView>
