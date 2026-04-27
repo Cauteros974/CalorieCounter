@@ -353,6 +353,12 @@ export default function HomeScreen() {
                         </FadeInView>
                     ))}
                 </FadeInView>
+
+                <FadeInView delay={700}>
+                    <View style={[styles.tipCard, { backgroundColor: '#E8F5E9' }]}>
+                        <Text style={styles.tipTitle}>💡 Tip of the day</Text>
+                    </View>
+                </FadeInView>
             </ScrollView>
         </View>
     )
