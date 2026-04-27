@@ -336,5 +336,5 @@ const styles = StyleSheet.create({
     ringStats: {flex: 1, flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', },
     ringStatItem: { alignItems: 'center' },
     ringStatValue: { fontSize: 20, fontWeight: '800', color: '#1A1A1A' },
-    ringStatLabel: {fontSize: 12, color: '#888'}
+    ringStatLabel: {fontSize: 12, color: '#888', marginTop: 2}
 })
