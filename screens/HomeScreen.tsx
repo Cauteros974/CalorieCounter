@@ -258,6 +258,9 @@ export default function HomeScreen() {
                                         <Text style={[styles.dayName, isSelected && styles.selectedDayCard]}>
                                             {format(day, 'eee', {locale: enUS})}
                                         </Text>
+                                        <Text style={[styles.dayNumber, isSelected && styles.selectedText]}>
+                                            {format(day, 'd')}
+                                        </Text>
                                     </TouchableOpacity>
                                 )
                             })}
@@ -292,4 +295,5 @@ const styles = StyleSheet.create({
     calendarScroll: {gap: 10},
     dayCard: { width: 60, height: 80, backgroundColor: '#fff', borderRadius: 15, justifyContent: 'center', alignItems: 'center', elevation: 2 },
     selectedDayCard: {backgroundColor: '#4CAF50'},
+    dayName: {fontSize: 10, color: '#666'},
 })
