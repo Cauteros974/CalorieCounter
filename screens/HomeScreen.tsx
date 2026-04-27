@@ -252,6 +252,8 @@ export default function HomeScreen() {
                                 return(
                                     <TouchableOpacity
                                         key={day.toString()}
+                                        style={[styles.dayCard, isSelected && styles.selectedDayCard]}
+                                        onPress={() => setSelectedDate(day)}
                                     >
 
                                     </TouchableOpacity>
