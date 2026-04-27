@@ -282,6 +282,11 @@ export default function HomeScreen() {
                                     <Text style={styles.ringLabel}>kcal left</Text>
                                 </View>
                             </View>
+
+                            {/* Stats beside ring */}
+                            <View style={styles.ringStats}>
+
+                            </View>
                         </View>
                     </View>
                 </FadeInView>
@@ -296,6 +301,7 @@ const styles = StyleSheet.create({
     greeting: { fontSize: 22, fontWeight: '700', color: '#1A1A1A' },
     subGreeting: { fontSize: 16, color: '#666', marginTop: 4 },
 
+    //XP
     xpCard: { backgroundColor: '#fff', borderRadius: 20, padding: 16, marginBottom: 16, elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8 },
     xpHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 },
     xpLeft: { flexDirection: 'row', alignItems: 'center', gap: 6 },
@@ -304,6 +310,7 @@ const styles = StyleSheet.create({
     xpTrack: { height: 8, backgroundColor: '#F0F0F0', borderRadius: 4, overflow: 'hidden' },
     xpFill: { height: '100%', backgroundColor: '#FFD740', borderRadius: 4 },
 
+    //Calendar
     streakCard: { flex: 1, backgroundColor: '#FFF3EE', borderRadius: 20, alignItems: 'center', justifyContent: 'center', paddingVertical: 12 },
     streakNumber: { fontSize: 24, fontWeight: '900', color: '#FF6B35', marginTop: 4 },
     streakLabel: { fontSize: 11, color: '#FF9068', fontWeight: '600' },
@@ -315,5 +322,8 @@ const styles = StyleSheet.create({
     selectedDayCard: {backgroundColor: '#4CAF50'},
     dayName: {fontSize: 12, color: '#666'},
     dayNumber: {fontSize: 10, fontWeight: '700'},
-    selectedText: {color: '#fff'}
+    selectedText: {color: '#fff'},
+
+    //Main calorie card
+    mainCard: { backgroundColor: '#fff', borderRadius: 24, padding: 24, shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.05, shadowRadius: 10, elevation: 2, marginBottom: 20 },
 })
