@@ -295,5 +295,6 @@ const styles = StyleSheet.create({
     calendarScroll: {gap: 10},
     dayCard: { width: 60, height: 80, backgroundColor: '#fff', borderRadius: 15, justifyContent: 'center', alignItems: 'center', elevation: 2 },
     selectedDayCard: {backgroundColor: '#4CAF50'},
-    dayName: {fontSize: 10, color: '#666'},
+    dayName: {fontSize: 12, color: '#666'},
+    dayNumber: {fontSize: 10, fontWeight: '700'},
 })
