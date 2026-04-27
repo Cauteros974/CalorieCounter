@@ -429,7 +429,7 @@ const styles = StyleSheet.create({
     mealCals: { fontSize: 14, fontWeight: '600', color: '#444' },
 
     //Tip
-    tipCard: { padding: 20, borderRadius: 20, marginTop: 10},
+    tipCard: { padding: 20, borderRadius: 20, marginTop: 10, marginBottom: 100},
     tipTitle: { fontSize: 16, fontWeight: '800'},
     tipText: { fontSize: 14, color: '#4E342E', lineHeight: 20 },
 })
