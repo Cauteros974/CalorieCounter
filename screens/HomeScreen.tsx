@@ -285,7 +285,10 @@ export default function HomeScreen() {
 
                             {/* Stats beside ring */}
                             <View style={styles.ringStats}>
-
+                                <View style={styles.ringStatItem}>
+                                    <Text style={styles.ringStatValue}>{consumedCalories}</Text>
+                                    <Text style={styles.ringStatLabel}>eaten</Text>
+                                </View>
                             </View>
                         </View>
                     </View>
