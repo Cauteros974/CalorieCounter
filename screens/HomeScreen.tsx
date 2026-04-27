@@ -370,5 +370,10 @@ const styles = StyleSheet.create({
     ringStatItem: { alignItems: 'center' },
     ringStatValue: { fontSize: 20, fontWeight: '800', color: '#1A1A1A' },
     ringStatLabel: {fontSize: 12, color: '#888', marginTop: 2},
-    ringStatDivider: {width: 1, height: 40, backgroundColor: '#EFEFEF'}
+    ringStatDivider: {width: 1, height: 40, backgroundColor: '#EFEFEF'},
+
+    //Water row
+    waterRow: {flexDirection: 'row', gap: 12, marginBottom: 30},
+    smallCard: { backgroundColor: '#fff', borderRadius: 20, padding: 10, alignItems: 'center', justifyContent: 'center' },
+    smallCardValue: { fontSize: 13, fontWeight: '600', marginVertical: 8, textAlign: 'center' },
 })
