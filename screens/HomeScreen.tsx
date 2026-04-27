@@ -327,6 +327,7 @@ const styles = StyleSheet.create({
     //Main calorie card
     mainCard: { backgroundColor: '#fff', borderRadius: 24, padding: 24, shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.05, shadowRadius: 10, elevation: 2, marginBottom: 20 },
     ringRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
-    ringCenter: {position: 'absolute', alignItems: 'center'},
-    
+    ringCenter: { position: 'absolute', alignItems: 'center' },
+    ringKcal: { fontSize: 22, fontWeight: '800', color: '#1A1A1A', marginTop: 2 },
+    ringLabel: {}
 })
