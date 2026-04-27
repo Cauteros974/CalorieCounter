@@ -390,5 +390,5 @@ const styles = StyleSheet.create({
 
     mealsHeaderRow: {flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10, marginBottom: 15},
     sectionTitle: { fontSize: 18, fontWeight: '700' },
-    
+    totalStats: { fontSize: 14, color: '#888', fontWeight: '500' },
 })
