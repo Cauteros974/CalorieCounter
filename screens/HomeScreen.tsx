@@ -288,5 +288,5 @@ const styles = StyleSheet.create({
     calendarContainer: { marginVertical: 20 },
     monthText: {fontSize: 16, fontWeight: '600'},
 
-    dayCard: {}
+    dayCard: { width: 60, height: 80, backgroundColor: '#fff', borderRadius: 15, justifyContent: 'center', alignItems: 'center', elevation: 2 },
 })
