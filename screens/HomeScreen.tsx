@@ -340,7 +340,12 @@ export default function HomeScreen() {
                         { id: 'dinner', title: 'Dinner', time: '18:00 - 20:00', cals: 500, color: '#9C27B0' },
                     ].map((meal, i) => (
                         <FadeInView key={meal.id} delay={450 + i * 40}>
-
+                            <TouchableOpacity style={[styles.mealCard, {borderColor: meal.color}]}>
+                                <View style={styles.mealInfo}>
+                                    <Text style={styles.mealTitle}>{meal.title}</Text>
+                                    <Text style={styles.mealTime}>{meal.time}</Text>
+                                </View>
+                            </TouchableOpacity>
                         </FadeInView>
                     ))}
                 </FadeInView>
