@@ -1,9 +1,16 @@
-import { addDays, startOfWeek } from 'date-fns';
+import { addDays, format, isSameDay, startOfWeek } from 'date-fns';
 import { enUS } from 'date-fns/locale';
 import { Flame, Star } from 'lucide-react-native';
 import React, { useEffect, useRef, useState } from 'react';
-import { Animated, Easing, StyleSheet, Text, View } from 'react-native';
-import { ScrollView } from 'react-native-reanimated/lib/typescript/Animated';
+import {
+    Animated,
+    Easing,
+    ScrollView,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View
+} from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
 import { Colors, useUserStore } from '../store/useUserStore';
 
@@ -240,7 +247,16 @@ export default function HomeScreen() {
                             {format(selectedDate, 'LLLL yyyy', { locale: enUS })}
                         </Text>
                         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.calendarScroll}>
-                            
+                            {weekDays.map((day) => {
+                                const isSelcted = isSameDay(day, selectedDate);
+                                return(
+                                    <TouchableOpacity
+                                        key={day.toString()}
+                                    >
+
+                                    </TouchableOpacity>
+                                )
+                            })}
                         </ScrollView>
                      </View>
                 </FadeInView>
