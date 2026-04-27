@@ -406,5 +406,6 @@ const styles = StyleSheet.create({
     mealsHeaderRow: {flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10, marginBottom: 15},
     sectionTitle: { fontSize: 18, fontWeight: '700' },
     totalStats: { fontSize: 14, color: '#888', fontWeight: '500' },
-    mealCard: {backgroundColor: '#fff', borderRadius: 18, padding: 18, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, borderLeftWidth: 5, elevation: 2}
+    mealCard: {backgroundColor: '#fff', borderRadius: 18, padding: 18, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12, borderLeftWidth: 5, elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 10},
+    
 })
