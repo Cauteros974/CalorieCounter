@@ -333,6 +333,14 @@ export default function HomeScreen() {
                         <Text style={styles.sectionTitle}>Meals</Text>
                         <Text style={styles.totalStats}>Total: {consumedCalories} kcal</Text>
                     </View>
+
+                    {[
+                        { id: 'breakfast', title: 'Breakfast', time: '08:00 - 10:00', cals: 450, color: '#FF9800' },
+                        { id: 'lunch', title: 'Lunch', time: '12:00 - 14:00', cals: 700, color: '#2196F3' },
+                        { id: 'dinner', title: 'Dinner', time: '18:00 - 20:00', cals: 500, color: '#9C27B0' },
+                    ].map((meal, i) => (
+                        
+                    ))}
                 </FadeInView>
             </ScrollView>
         </View>
