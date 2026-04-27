@@ -1,6 +1,6 @@
 import { addDays, format, isSameDay, startOfWeek } from 'date-fns';
 import { enUS } from 'date-fns/locale';
-import { Droplets, Flame, Plus, Star, Utensils } from 'lucide-react-native';
+import { Camera, Droplets, Flame, Plus, Star, Utensils } from 'lucide-react-native';
 import React, { useEffect, useRef, useState } from 'react';
 import {
     Animated,
@@ -305,6 +305,7 @@ export default function HomeScreen() {
                     </View>
                 </FadeInView>
 
+                {/* Water + Camera + Streak */}
                 <FadeInView delay={300}>
                     <View style={styles.waterRow}>
                         <View style={[styles.smallCard]}>
@@ -315,6 +316,14 @@ export default function HomeScreen() {
                             </TouchableOpacity>
                         </View>
                         <StreakCard streak={streak} />
+                        
+                        <TouchableOpacity
+                            style={styles.camersCard}
+                            onPress={() => setShowCamera(true)}
+                        >
+                            <Camera color="#fff" size={28} />
+                            <Text style={styles.cameraText}>Photo</Text>
+                        </TouchableOpacity>
                     </View>
                 </FadeInView>
             </ScrollView>
