@@ -326,6 +326,13 @@ export default function HomeScreen() {
                         </TouchableOpacity>
                     </View>
                 </FadeInView>
+
+                <FadeInView delay={200}>
+                    <View style={styles.mealsHeaderRow}>
+                        <Text style={styles.sectionTitle}>Meals</Text>
+                        
+                    </View>
+                </FadeInView>
             </ScrollView>
         </View>
     )
