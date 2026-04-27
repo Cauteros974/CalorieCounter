@@ -1,6 +1,6 @@
 import { addDays, format, isSameDay, startOfWeek } from 'date-fns';
 import { enUS } from 'date-fns/locale';
-import { Flame, Star } from 'lucide-react-native';
+import { Flame, Star, Utensils } from 'lucide-react-native';
 import React, { useEffect, useRef, useState } from 'react';
 import {
     Animated,
@@ -273,7 +273,13 @@ export default function HomeScreen() {
                 <FadeInView delay={200}>
                     <View style={styles.mainCard}>
                         <View style={styles.ringRow}>
+                            {/*Ring */}
                             <View style={{ position: 'relative', alignItems: 'center', justifyContent: 'center' }}>
+                                <CalorieRing progress={calProgress} />
+                                <View style={styles.ringCenter}>
+                                    <Utensils color="#4CAF50" size={20} />
+                                </View>
+                            </View>
                         </View>
                     </View>
                 </FadeInView>
