@@ -318,7 +318,7 @@ export default function HomeScreen() {
                         <StreakCard streak={streak} />
                         
                         <TouchableOpacity
-                            style={styles.camersCard}
+                            style={styles.cameraCard}
                             onPress={() => setShowCamera(true)}
                         >
                             <Camera color="#fff" size={28} />
@@ -376,4 +376,7 @@ const styles = StyleSheet.create({
     waterRow: {flexDirection: 'row', gap: 12, marginBottom: 30},
     smallCard: { backgroundColor: '#fff', borderRadius: 20, padding: 10, alignItems: 'center', justifyContent: 'center' },
     smallCardValue: { fontSize: 13, fontWeight: '600', marginVertical: 8, textAlign: 'center' },
+    plusBtn: { backgroundColor: '#2196F3', padding: 5, borderRadius: 10 },
+    cameraCard: { flex: 1, backgroundColor: '#1A1A1A', borderRadius: 20, alignItems: 'center', justifyContent: 'center', paddingVertical: 12 },
+    
 })
