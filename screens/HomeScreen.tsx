@@ -1,6 +1,6 @@
 import { addDays, format, isSameDay, startOfWeek } from 'date-fns';
 import { enUS } from 'date-fns/locale';
-import { Flame, Star, Utensils } from 'lucide-react-native';
+import { Droplets, Flame, Star, Utensils } from 'lucide-react-native';
 import React, { useEffect, useRef, useState } from 'react';
 import {
     Animated,
@@ -296,10 +296,19 @@ export default function HomeScreen() {
                                 </View>
                             </View>
                         </View>
+                        {/* Macro bars */}
                         <View style={{ flexDirection: 'row', marginTop: 20 }}>
                             <MacroBar label="Proteins" current={consumed.protein} target={targets.protein} color="#FF5252" />
                             <MacroBar label="Fats" current={consumed.fat} target={targets.fat} color="#FFD740"/>
                             <MacroBar label="Carbs" current={consumed.carbs} target={targets.carbs} color="#448AFF"/>
+                        </View>
+                    </View>
+                </FadeInView>
+
+                <FadeInView delay={300}>
+                    <View style={styles.waterRow}>
+                        <View style={[styles.smallCard]}>
+                            <Droplets color="#2196F3" size={20} />
                         </View>
                     </View>
                 </FadeInView>
