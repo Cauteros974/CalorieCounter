@@ -417,6 +417,7 @@ const styles = StyleSheet.create({
     cameraCard: { flex: 1, backgroundColor: '#1A1A1A', borderRadius: 20, alignItems: 'center', justifyContent: 'center', paddingVertical: 12 },
     cameraText: { color: '#fff', fontSize: 13, fontWeight: '600', marginTop: 6 },
 
+    //Meals
     mealsHeaderRow: {flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10, marginBottom: 15},
     sectionTitle: { fontSize: 18, fontWeight: '700' },
     totalStats: { fontSize: 14, color: '#888', fontWeight: '500' },
@@ -426,4 +427,7 @@ const styles = StyleSheet.create({
     mealTime: { fontSize: 12, color: '#AAA', marginTop: 2 },
     mealData: { flexDirection: 'row', alignItems: 'center', gap: 10},
     mealCals: { fontSize: 14, fontWeight: '600', color: '#444' },
+
+    //Tip
+    tipCard: { padding: 20, borderRadius: 20, marginTop: 10},
 })
