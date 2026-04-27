@@ -1,6 +1,6 @@
 import { addDays, format, isSameDay, startOfWeek } from 'date-fns';
 import { enUS } from 'date-fns/locale';
-import { Droplets, Flame, Star, Utensils } from 'lucide-react-native';
+import { Droplets, Flame, Plus, Star, Utensils } from 'lucide-react-native';
 import React, { useEffect, useRef, useState } from 'react';
 import {
     Animated,
@@ -308,8 +308,13 @@ export default function HomeScreen() {
                 <FadeInView delay={300}>
                     <View style={styles.waterRow}>
                         <View style={[styles.smallCard]}>
-                            <Droplets color="#2196F3" size={20} />
+                            <Droplets color="#2196F3" size={24} />
+                            <Text style={styles.smallCardValue}>{consumedWater} l / {dailyWater} l</Text>
+                            <TouchableOpacity style={styles.plusBtn} onPress={() => addWater(0.25)}>
+                                <Plus color="#fff" size={20} />
+                            </TouchableOpacity>
                         </View>
+                        <StreakCard streak={streak} />
                     </View>
                 </FadeInView>
             </ScrollView>
