@@ -378,5 +378,5 @@ const styles = StyleSheet.create({
     smallCardValue: { fontSize: 13, fontWeight: '600', marginVertical: 8, textAlign: 'center' },
     plusBtn: { backgroundColor: '#2196F3', padding: 5, borderRadius: 10 },
     cameraCard: { flex: 1, backgroundColor: '#1A1A1A', borderRadius: 20, alignItems: 'center', justifyContent: 'center', paddingVertical: 12 },
-    
+    cameraText: { color: '#fff', fontSize: 13, fontWeight: '600', marginTop: 6 },
 })
