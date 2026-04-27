@@ -357,6 +357,9 @@ export default function HomeScreen() {
                 <FadeInView delay={700}>
                     <View style={[styles.tipCard, { backgroundColor: '#E8F5E9' }]}>
                         <Text style={styles.tipTitle}>💡 Tip of the day</Text>
+                        <Text style={styles.tipText}>
+                            Try drinking a glass of water 20 minutes before meals. This improves digestion and helps prevent overeating.
+                        </Text>
                     </View>
                 </FadeInView>
             </ScrollView>
