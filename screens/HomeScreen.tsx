@@ -241,6 +241,7 @@ export default function HomeScreen() {
                     <XPBar xp={xp} level={level} />
                 </FadeInView>
 
+                {/* Calendar */}
                 <FadeInView delay={150}>
                      <View style={styles.calendarContainer}>
                         <Text style={styles.monthText}>
@@ -266,6 +267,15 @@ export default function HomeScreen() {
                             })}
                         </ScrollView>
                      </View>
+                </FadeInView>
+
+                {/* Calories — ring + macros */}
+                <FadeInView delay={200}>
+                    <View style={styles.mainCard}>
+                        <View style={styles.ringRow}>
+                            <View style={{ position: 'relative', alignItems: 'center', justifyContent: 'center' }}>
+                        </View>
+                    </View>
                 </FadeInView>
             </ScrollView>
         </View>
