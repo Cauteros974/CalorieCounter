@@ -414,4 +414,5 @@ const styles = StyleSheet.create({
     mealTitle: { fontSize: 16, fontWeight: '700' },
     mealTime: { fontSize: 12, color: '#AAA', marginTop: 2 },
     mealData: { flexDirection: 'row', alignItems: 'center', gap: 10},
+    mealCals: { fontSize: 14, fontWeight: '600', color: '#444' },
 })
