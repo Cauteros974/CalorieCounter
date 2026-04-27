@@ -388,5 +388,7 @@ const styles = StyleSheet.create({
     cameraCard: { flex: 1, backgroundColor: '#1A1A1A', borderRadius: 20, alignItems: 'center', justifyContent: 'center', paddingVertical: 12 },
     cameraText: { color: '#fff', fontSize: 13, fontWeight: '600', marginTop: 6 },
 
-    mealsHeaderRow: {flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10, marginBottom: 15}
+    mealsHeaderRow: {flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10, marginBottom: 15},
+    sectionTitle: { fontSize: 18, fontWeight: '700' },
+    
 })
