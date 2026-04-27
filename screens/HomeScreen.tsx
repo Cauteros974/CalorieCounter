@@ -284,4 +284,9 @@ const styles = StyleSheet.create({
     streakCard: { flex: 1, backgroundColor: '#FFF3EE', borderRadius: 20, alignItems: 'center', justifyContent: 'center', paddingVertical: 12 },
     streakNumber: { fontSize: 24, fontWeight: '900', color: '#FF6B35', marginTop: 4 },
     streakLabel: { fontSize: 11, color: '#FF9068', fontWeight: '600' },
+
+    calendarContainer: { marginVertical: 20 },
+    monthText: {fontSize: 16, fontWeight: '600'},
+
+    dayCard: {}
 })
