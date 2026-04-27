@@ -333,4 +333,8 @@ const styles = StyleSheet.create({
     ringCenter: { position: 'absolute', alignItems: 'center' },
     ringKcal: { fontSize: 22, fontWeight: '800', color: '#1A1A1A', marginTop: 2 },
     ringLabel: {fontSize: 11, color: '#888'},
+    ringStats: {flex: 1, flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center', },
+    ringStatItem: { alignItems: 'center' },
+    ringStatValue: { fontSize: 20, fontWeight: '800', color: '#1A1A1A' },
+    ringStatLabel: {fontSize: 12, color: '#888'}
 })
