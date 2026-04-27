@@ -296,6 +296,11 @@ export default function HomeScreen() {
                                 </View>
                             </View>
                         </View>
+                        <View style={{ flexDirection: 'row', marginTop: 20 }}>
+                            <MacroBar label="Proteins" current={consumed.protein}/>
+                            <MacroBar label="Fats" current={consumed.fat}/>
+                            <MacroBar label="Carbs" current={consumed.carbs} />
+                        </View>
                     </View>
                 </FadeInView>
             </ScrollView>
