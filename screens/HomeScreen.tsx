@@ -329,5 +329,5 @@ const styles = StyleSheet.create({
     ringRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
     ringCenter: { position: 'absolute', alignItems: 'center' },
     ringKcal: { fontSize: 22, fontWeight: '800', color: '#1A1A1A', marginTop: 2 },
-    ringLabel: {}
+    ringLabel: {fontSize: 11, color: '#888'},
 })
