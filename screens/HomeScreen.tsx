@@ -430,6 +430,6 @@ const styles = StyleSheet.create({
 
     //Tip
     tipCard: { padding: 20, borderRadius: 20, marginTop: 10, marginBottom: 100},
-    tipTitle: { fontSize: 16, fontWeight: '800'},
+    tipTitle: { fontSize: 16, fontWeight: '800', color: '#2E7D32', marginBottom: 5},
     tipText: { fontSize: 14, color: '#4E342E', lineHeight: 20 },
 })
