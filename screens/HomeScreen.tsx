@@ -54,18 +54,20 @@ function CalorieRing({ progress }: { progress: number }) {
                     fill="none"
                 />
                 {/* Fill */}
-                <AnimatedCircle
-                    cx={SIZE / 2}
-                    cy={SIZE / 2}
-                    r={R}
-                    stroke="#4CAF50"
-                    strokeWidth={STROKE}
-                    fill="none"
-                    strokeDasharray={CIRCUMFERENCE}
-                    strokeDashoffset={strokeDashoffset}
-                    strokeLinecap="round"
-                    transform={`rotate(-90, ${SIZE / 2}, ${SIZE / 2})`}
-                />
+                <Svg collapsable={false}>
+                    <AnimatedCircle
+                        cx={SIZE / 2}
+                        cy={SIZE / 2}
+                        r={R}
+                        stroke="#4CAF50"
+                        strokeWidth={STROKE}
+                        fill="none"
+                        strokeDasharray={CIRCUMFERENCE}
+                        strokeDashoffset={strokeDashoffset}
+                        strokeLinecap="round"
+                        transform={`rotate(-90, ${SIZE / 2}, ${SIZE / 2})`}
+                    />
+                </Svg>
             </Svg>
         </View>
     );
