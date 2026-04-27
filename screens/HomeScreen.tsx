@@ -255,7 +255,9 @@ export default function HomeScreen() {
                                         style={[styles.dayCard, isSelected && styles.selectedDayCard]}
                                         onPress={() => setSelectedDate(day)}
                                     >
-
+                                        <Text style={[styles.dayName, isSelected && styles.selectedDayCard]}>
+                                            {format(day, 'eee', {locale: enUS})}
+                                        </Text>
                                     </TouchableOpacity>
                                 )
                             })}
