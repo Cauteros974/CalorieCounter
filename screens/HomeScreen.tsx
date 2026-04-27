@@ -278,6 +278,7 @@ export default function HomeScreen() {
                                 <CalorieRing progress={calProgress} />
                                 <View style={styles.ringCenter}>
                                     <Utensils color="#4CAF50" size={20} />
+                                    <Text style={styles.ringKcal}>{dailyCalories - consumedCalories}</Text>
                                 </View>
                             </View>
                         </View>
