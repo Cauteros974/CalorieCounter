@@ -297,9 +297,9 @@ export default function HomeScreen() {
                             </View>
                         </View>
                         <View style={{ flexDirection: 'row', marginTop: 20 }}>
-                            <MacroBar label="Proteins" current={consumed.protein}/>
-                            <MacroBar label="Fats" current={consumed.fat}/>
-                            <MacroBar label="Carbs" current={consumed.carbs} />
+                            <MacroBar label="Proteins" current={consumed.protein} target={targets.protein} color="#FF5252" />
+                            <MacroBar label="Fats" current={consumed.fat} target={targets.fat} color="#FFD740"/>
+                            <MacroBar label="Carbs" current={consumed.carbs} target={targets.carbs} color="#448AFF"/>
                         </View>
                     </View>
                 </FadeInView>
