@@ -248,7 +248,7 @@ export default function HomeScreen() {
                         </Text>
                         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.calendarScroll}>
                             {weekDays.map((day) => {
-                                const isSelcted = isSameDay(day, selectedDate);
+                                const isSelected = isSameDay(day, selectedDate);
                                 return(
                                     <TouchableOpacity
                                         key={day.toString()}
@@ -289,5 +289,5 @@ const styles = StyleSheet.create({
     monthText: {fontSize: 16, fontWeight: '600'},
     calendarScroll: {gap: 10},
     dayCard: { width: 60, height: 80, backgroundColor: '#fff', borderRadius: 15, justifyContent: 'center', alignItems: 'center', elevation: 2 },
-    
+    selectedDayCard: {backgroundColor: '#4CAF50'},
 })
