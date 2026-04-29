@@ -202,31 +202,6 @@ function RecentLogItem({ name, time, cals, macros }: { name: string; time: strin
     )
 }
 
-{/* Recent Entries */}
-<FadeInView delay={350}>
-    <View style={styles.recentHeaderRow}>
-        <Text style={styles.sectionTitle}>Recent Entries</Text>
-        <TouchableOpacity>
-            <Text style={{ color: '#4CAF50', fontWeight: '600' }}>See all</Text>
-        </TouchableOpacity>
-    </View>
-    
-    <View style={styles.recentList}>
-        <RecentLogItem 
-            name="Avocado Toast" 
-            time="10:24 AM" 
-            cals={320} 
-            macros="P: 8g • F: 22g • C: 28g" 
-        />
-        <RecentLogItem 
-            name="Protein Shake" 
-            time="08:15 AM" 
-            cals={180} 
-            macros="P: 30g • F: 2g • C: 5g" 
-        />
-    </View>
-</FadeInView>
-
 // ── Main Screen ─────────────────────────────────────────────────────────────
 export default function HomeScreen() {
     const {
@@ -410,6 +385,8 @@ export default function HomeScreen() {
                     ))}
                 </FadeInView>
 
+                
+
                 {/* Tip */}
                 <FadeInView delay={700}>
                     <View style={[styles.tipCard, { backgroundColor: '#E8F5E9' }]}>
@@ -498,4 +475,25 @@ const styles = StyleSheet.create({
     //Records
     recentItem: { flexDirection: 'row', alignItems: 'center', paddingVertical: 12, paddingHorizontal: 10, borderBottomWidth: 1, borderBottomColor: '#F0F0F0'},
     recentItemIcon: {width: 50, height: 40, backgroundColor: '#E8F5E9', borderRadius: 12, justifyContent: 'center', alignItems: 'center'},
+    // Recent Entries Styles
+    recentHeaderRow: { 
+        flexDirection: 'row', 
+        justifyContent: 'space-between', 
+        alignItems: 'center', 
+        marginTop: 10, 
+        marginBottom: 15 
+    },
+    recentList: { 
+        backgroundColor: '#fff', 
+        borderRadius: 20, 
+        padding: 10, 
+        marginBottom: 20,
+        elevation: 2,
+        shadowColor: '#000',
+        shadowOpacity: 0.05,
+        shadowRadius: 10,
+    },
+    recentItemName: { fontSize: 15, fontWeight: '600', color: '#1A1A1A' },
+    recentItemDetails: { fontSize: 12, color: '#888', marginTop: 2 },
+    recentItemCals: { fontSize: 14, fontWeight: '700', color: '#4CAF50' },
 });
