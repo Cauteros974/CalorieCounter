@@ -395,7 +395,12 @@ export default function HomeScreen() {
                     </View>
 
                     <View style = {styles.recentList}>
-                        <Text style={styles.sectionTitle}>Title</Text>
+                        <RecentLogItem
+                            name="Avocado Toast"
+                            time="10:24 AM"
+                            cals={320} 
+                            macros="P: 8g • F: 22g • C: 28g"
+                        />
                     </View>
                 </FadeInView>
 
