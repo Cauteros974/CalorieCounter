@@ -186,6 +186,7 @@ function FadeInView({ delay = 0, children }: { delay?: number; children: React.R
     );
 }
 
+// ── Records ─────────────────────────────────────────────────────────────
 function RecentLogItem({ name, time, cals, macros }: { name: string; time: string; cals: number; macros: string }) {
     return(
         <View style={styles.recentItem}>
@@ -463,4 +464,7 @@ const styles = StyleSheet.create({
     tipCard: { padding: 20, borderRadius: 20, marginTop: 10, marginBottom: 100 },
     tipTitle: { fontSize: 16, fontWeight: '800', color: '#2E7D32', marginBottom: 5 },
     tipText: { fontSize: 14, color: '#4E342E', lineHeight: 20 },
+
+    //Records
+    recentItem: { flexDirection: 'row', alignItems: 'center', paddingVertical: 12,}
 });
