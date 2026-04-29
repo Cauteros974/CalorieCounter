@@ -193,9 +193,39 @@ function RecentLogItem({ name, time, cals, macros }: { name: string; time: strin
             <View style={styles.recentItemIcon}>
                 <Utensils color="#4CAF50" size={18} />
             </View>
+            <View style={{ flex: 1, marginLeft: 12 }}>
+                <Text style={styles.recentItemName}>{name}</Text>
+                <Text style={styles.recentItemDetails}>{time} • {macros}</Text>
+            </View>
+            <Text style={styles.recentItemCals}>+{cals} kcal</Text>
         </View>
     )
 }
+
+{/* Recent Entries */}
+<FadeInView delay={350}>
+    <View style={styles.recentHeaderRow}>
+        <Text style={styles.sectionTitle}>Recent Entries</Text>
+        <TouchableOpacity>
+            <Text style={{ color: '#4CAF50', fontWeight: '600' }}>See all</Text>
+        </TouchableOpacity>
+    </View>
+    
+    <View style={styles.recentList}>
+        <RecentLogItem 
+            name="Avocado Toast" 
+            time="10:24 AM" 
+            cals={320} 
+            macros="P: 8g • F: 22g • C: 28g" 
+        />
+        <RecentLogItem 
+            name="Protein Shake" 
+            time="08:15 AM" 
+            cals={180} 
+            macros="P: 30g • F: 2g • C: 5g" 
+        />
+    </View>
+</FadeInView>
 
 // ── Main Screen ─────────────────────────────────────────────────────────────
 export default function HomeScreen() {
