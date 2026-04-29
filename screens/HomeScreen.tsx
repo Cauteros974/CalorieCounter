@@ -385,7 +385,12 @@ export default function HomeScreen() {
                     ))}
                 </FadeInView>
 
-                
+                {/* Recent Entries */}
+                <FadeInView delay={350}>
+                    <View style={styles.recentHeaderRow}>
+                        <Text style={styles.sectionTitle}>Recent Entries</Text>
+                    </View>
+                </FadeInView>
 
                 {/* Tip */}
                 <FadeInView delay={700}>
