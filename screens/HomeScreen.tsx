@@ -467,5 +467,5 @@ const styles = StyleSheet.create({
 
     //Records
     recentItem: { flexDirection: 'row', alignItems: 'center', paddingVertical: 12, paddingHorizontal: 10, borderBottomWidth: 1, borderBottomColor: '#F0F0F0'},
-    recentItemIcon: {width: 50, height: 40, backgroundColor: '#E8F5E9', borderRadius: 12,}
+    recentItemIcon: {width: 50, height: 40, backgroundColor: '#E8F5E9', borderRadius: 12, justifyContent: 'center', alignItems: 'center'},
 });
