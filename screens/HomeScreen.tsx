@@ -401,6 +401,12 @@ export default function HomeScreen() {
                             cals={320} 
                             macros="P: 8g • F: 22g • C: 28g"
                         />
+                        <RecentLogItem 
+                            name="Protein Shake" 
+                            time="08:15 AM" 
+                            cals={180} 
+                            macros="P: 30g • F: 2g • C: 5g" 
+                        />
                     </View>
                 </FadeInView>
 
