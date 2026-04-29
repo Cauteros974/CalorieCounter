@@ -186,6 +186,16 @@ function FadeInView({ delay = 0, children }: { delay?: number; children: React.R
     );
 }
 
+function RecentLogItem({ name, time, cals, macros }: { name: string; time: string; cals: number; macros: string }) {
+    return(
+        <View style={styles.recentItem}>
+            <View style={styles.recentItemIcon}>
+                <Utensils color="#4CAF50" size={18} />
+            </View>
+        </View>
+    )
+}
+
 // ── Main Screen ─────────────────────────────────────────────────────────────
 export default function HomeScreen() {
     const {
