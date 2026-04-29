@@ -466,5 +466,5 @@ const styles = StyleSheet.create({
     tipText: { fontSize: 14, color: '#4E342E', lineHeight: 20 },
 
     //Records
-    recentItem: { flexDirection: 'row', alignItems: 'center', paddingVertical: 12, paddingHorizontal: 10,}
+    recentItem: { flexDirection: 'row', alignItems: 'center', paddingVertical: 12, paddingHorizontal: 10, borderBottomWidth: 1, borderBottomColor: '#F0F0F0'},
 });
