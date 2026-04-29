@@ -387,8 +387,15 @@ export default function HomeScreen() {
 
                 {/* Recent Entries */}
                 <FadeInView delay={350}>
-                    <View style={styles.recentHeaderRow}>
+                    <View style = {styles.recentHeaderRow}>
                         <Text style={styles.sectionTitle}>Recent Entries</Text>
+                        <TouchableOpacity>
+                            <Text style={{ color: '#4CAF50', fontWeight: '600'}}>See all</Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    <View style = {styles.recentList}>
+                        <Text style={styles.sectionTitle}>Title</Text>
                     </View>
                 </FadeInView>
 
