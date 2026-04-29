@@ -395,6 +395,12 @@ export default function HomeScreen() {
                     </View>
 
                     <View style = {styles.recentList}>
+                        <RecentLogItem 
+                            name="Protein Shake" 
+                            time="08:15 AM" 
+                            cals={180} 
+                            macros="P: 30g • F: 2g • C: 5g" 
+                        />
                         <RecentLogItem
                             name="Avocado Toast"
                             time="10:24 AM"
@@ -402,9 +408,9 @@ export default function HomeScreen() {
                             macros="P: 8g • F: 22g • C: 28g"
                         />
                         <RecentLogItem 
-                            name="Protein Shake" 
-                            time="08:15 AM" 
-                            cals={180} 
+                            name="Boiled Eggs" 
+                            time="12:15 AM" 
+                            cals={200} 
                             macros="P: 30g • F: 2g • C: 5g" 
                         />
                     </View>
