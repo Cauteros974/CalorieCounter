@@ -64,6 +64,10 @@ function AnimatedInput({ label, icon, keyboardType = 'default', error, onChange,
                         style={inputStyles.input}
                         keyboardType={keyboardType}
                         onChangeText={onChange}
+                        value={value}
+                        onFocus={onFocus}
+                        onBlur={onBlur}
+                        
                     />
                 </View>
             </Animated.View>
