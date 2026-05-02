@@ -17,5 +17,12 @@ const profileSchema = z.object({
 type ProfileFormData = z.infer<typeof profileSchema>;
 
 function AnimatedInput({ label, icon, keyboardType = 'default', error, onChange, value }: any) {
-    const borderAnim = useRef(new Animated.Value(0)).current
+    const borderAnim = useRef(new Animated.Value(0)).current;
+    const labelAnim = useRef(new Animated.Value(value ? 1 : 0)).current;
+    
+    const onFocus = () => {
+        Animated.parallel([
+            Animated.timing(borderAnim, { toValue: 1, duration: 200, useNativeDriver: false }),
+        ])
+    }
 }
