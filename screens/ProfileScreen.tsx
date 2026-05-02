@@ -121,5 +121,6 @@ function ProfileDashboard({ onEdit } : {onEdit: () => void}) {
 
     const stats = [
         { label: 'Calories', value: `${consumedCalories}`, sub: `/ ${dailyCalories} kcal`, color: '#4CAF50' },
+        {label: 'Water', value: `${consumedWater}`}
     ]
 }
