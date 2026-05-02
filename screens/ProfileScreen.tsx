@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Animated } from 'react-native';
+import { Animated, Easing } from 'react-native';
 import * as z from 'zod';
 
 const profileSchema = z.object({
@@ -23,6 +23,7 @@ function AnimatedInput({ label, icon, keyboardType = 'default', error, onChange,
     const onFocus = () => {
         Animated.parallel([
             Animated.timing(borderAnim, { toValue: 1, duration: 200, useNativeDriver: false }),
-        ])
-    }
+            Animated.timing(labelAnim, { toValue: 1, duration: 180, easing: Easing.out(Easing.quad), useNativeDriver: false }),
+        ]).start();
+    };
 }
