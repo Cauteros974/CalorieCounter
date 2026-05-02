@@ -118,4 +118,8 @@ function ProfileDashboard({ onEdit } : {onEdit: () => void}) {
         { icon: <Bell color="#2196F3" size={20} />, label: 'Reminders', bg: '#E3F2FD' },
         { icon: <Album color="#9C27B0" size={20} />, label: 'Photo Album', bg: '#F3E5F5' },
     ];
+
+    const stats = [
+        { label: 'Calories', value: `${consumedCalories}`, sub: `/ ${dailyCalories} kcal`, color: '#4CAF50' },
+    ]
 }
