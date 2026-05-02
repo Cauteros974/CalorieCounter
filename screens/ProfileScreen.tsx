@@ -83,5 +83,8 @@ const inputStyles = StyleSheet.create({
     box: {
         flexDirection: 'row', alignItems: 'center', borderWidth: 1.5,
         borderRadius: 16, paddingHorizontal: 16, backgroundColor: '#FAFAFA', height: 64,
-    }
+    },
+    iconWrap: { marginRight: 12 },
+    floatingLabel: { fontWeight: '600' },
+    
 })
