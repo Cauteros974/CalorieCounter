@@ -32,5 +32,9 @@ function AnimatedInput({ label, icon, keyboardType = 'default', error, onChange,
         if (!value) {
             Animated.timing(labelAnim, { toValue: 0, duration: 180, useNativeDriver: false }).start();
         }
-    }
+    };
+
+    const borderColor = borderAnim.interpolate({
+        inputRange: [0, 1],
+    });
 }
