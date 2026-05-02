@@ -1,4 +1,7 @@
 import { useUserStore } from '@/store/useUserStore';
+import {
+    Weight
+} from 'lucide-react-native';
 import React, { useRef } from 'react';
 import {
     Animated, Easing,
@@ -110,4 +113,9 @@ function ProfileDashboard({ onEdit } : {onEdit: () => void}) {
             useNativeDriver: true
         }).start();
     },[]);
+
+    const menuItems = [
+        { icon: <Weight color="#4CAF50" size={20} />, label: 'My Weight', bg: '#E8F5E9' },
+        
+    ];
 }
