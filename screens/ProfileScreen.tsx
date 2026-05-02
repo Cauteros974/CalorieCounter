@@ -1,6 +1,6 @@
 import * as z from 'zod';
 
-const ProfileScreen = z.object({
+const profileSchema = z.object({
     fullName: z.string().min(1, 'The name is too short'),
     weight: z.string().refine(val => {
         const num = Number(val);
@@ -10,4 +10,6 @@ const ProfileScreen = z.object({
         const num = Number(val);
         return num >= 100 && num <= 250;
     }, 'Invalid height'),
-})
+});
+
+type ProfileFormData = z.infer<typeof profileSchema>;
