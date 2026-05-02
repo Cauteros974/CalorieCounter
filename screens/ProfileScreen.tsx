@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { Animated } from 'react-native';
 import * as z from 'zod';
 
 const profileSchema = z.object({
@@ -13,3 +15,7 @@ const profileSchema = z.object({
 });
 
 type ProfileFormData = z.infer<typeof profileSchema>;
+
+function AnimatedInput({ label, icon, keyboardType = 'default', error, onChange, value }: any) {
+    const borderAnim = useRef(new Animated.Value(0)).current
+}
