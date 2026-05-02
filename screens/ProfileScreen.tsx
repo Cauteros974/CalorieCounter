@@ -1,5 +1,5 @@
 import { useUserStore } from '@/store/useUserStore';
-import { Award, Weight } from 'lucide-react-native';
+import { Album, Award, Bell, Weight } from 'lucide-react-native';
 import React, { useRef } from 'react';
 import {
     Animated, Easing,
@@ -115,6 +115,7 @@ function ProfileDashboard({ onEdit } : {onEdit: () => void}) {
     const menuItems = [
         { icon: <Weight color="#4CAF50" size={20} />, label: 'My Weight', bg: '#E8F5E9' },
         { icon: <Award color="#FFD740" size={20} />, label: 'My Achievements', bg: '#FFFDE7' },
-        
+        { icon: <Bell color="#2196F3" size={20} />, label: 'Reminders', bg: '#E3F2FD' },
+        { icon: <Album color="#9C27B0" size={20} />, label: 'Photo Album', bg: '#F3E5F5' },
     ];
 }
