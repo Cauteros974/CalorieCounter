@@ -86,5 +86,6 @@ const inputStyles = StyleSheet.create({
     },
     iconWrap: { marginRight: 12 },
     floatingLabel: { fontWeight: '600' },
-    
+    input: { fontSize: 16, color: '#1A1A1A', paddingBottom: 4, height: 30 },
+    errorText: { color: '#FF5252', fontSize: 12, marginTop: 4, marginLeft: 16 },
 })
