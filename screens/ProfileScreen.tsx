@@ -106,7 +106,7 @@ function ProfileDashboard({ onEdit } : {onEdit: () => void}) {
     React.useEffect(() => {
         Animated.timing(fadeAnim, {
             toValue: 1,
-            delay: 1000,
+            delay: 400,
             useNativeDriver: true
         }).start();
     },[]);
