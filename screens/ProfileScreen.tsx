@@ -1,5 +1,8 @@
-import { useRef } from 'react';
-import { Animated, Easing } from 'react-native';
+import React, { useRef } from 'react';
+import {
+    Animated, Easing,
+    View
+} from 'react-native';
 import * as z from 'zod';
 
 const profileSchema = z.object({
@@ -41,4 +44,23 @@ function AnimatedInput({ label, icon, keyboardType = 'default', error, onChange,
     const labelColor = labelAnim.interpolate({ inputRange: [0, 1], outputRange: ['#AAA', '#4CAF50'] });
     const labelSize = labelAnim.interpolate({ inputRange: [0, 1], outputRange: [15, 11] });
     const labelY = labelAnim.interpolate({ inputRange: [0, 1], outputRange: [30, 8] });
+
+    return(
+        <View style = {inputStyles.wrapper}>
+            <Animated.View style={[inputStyles.box, { borderColor }]}>
+                <View style={inputStyles.iconWrap}>{icon}</View>
+                <View style={{ flex: 1, height: 56, justifyContent: 'flex-end' }}>
+                    <Animated.Text
+                        pointerEvents="none"
+                        style={[inputStyles.floatingLabel, {
+                            color: labelColor, fontSize: labelSize,
+                            position: 'absolute', top: labelY, left: 0,
+                        }]}
+                    >
+
+                    </Animated.Text>
+                </View>
+            </Animated.View>
+        </View>
+    )
 }
