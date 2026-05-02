@@ -39,4 +39,6 @@ function AnimatedInput({ label, icon, keyboardType = 'default', error, onChange,
         outputRange: [error ? '#FF5252' : '#E8E8E8', error ? '#FF5252' : '#4CAF50'],
     });
     const labelColor = labelAnim.interpolate({ inputRange: [0, 1], outputRange: ['#AAA', '#4CAF50'] });
+    const labelSize = labelAnim.interpolate({ inputRange: [0, 1], outputRange: [15, 11] });
+    const labelY = labelAnim.interpolate({ inputRange: [0, 1], outputRange: [30, 8] });
 }
