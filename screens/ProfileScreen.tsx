@@ -76,3 +76,11 @@ function AnimatedInput({ label, icon, keyboardType = 'default', error, onChange,
         </View>
     );
 }
+
+const inputStyles = StyleSheet.create({
+    wrapper: {marginBottom: 16},
+    box: {
+        flexDirection: 'row', alignItems: 'center', borderWidth: 1.5,
+        
+    }
+})
