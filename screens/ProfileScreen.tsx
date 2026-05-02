@@ -1,3 +1,4 @@
+import { useUserStore } from '@/store/useUserStore';
 import React, { useRef } from 'react';
 import {
     Animated, Easing,
@@ -6,6 +7,7 @@ import {
     View
 } from 'react-native';
 import * as z from 'zod';
+
 
 const profileSchema = z.object({
     fullName: z.string().min(1, 'The name is too short'),
@@ -21,6 +23,7 @@ const profileSchema = z.object({
 
 type ProfileFormData = z.infer<typeof profileSchema>;
 
+// Animated Input
 function AnimatedInput({ label, icon, keyboardType = 'default', error, onChange, value }: any) {
     const borderAnim = useRef(new Animated.Value(0)).current;
     const labelAnim = useRef(new Animated.Value(value ? 1 : 0)).current;
@@ -88,4 +91,23 @@ const inputStyles = StyleSheet.create({
     floatingLabel: { fontWeight: '600' },
     input: { fontSize: 16, color: '#1A1A1A', paddingBottom: 4, height: 30 },
     errorText: { color: '#FF5252', fontSize: 12, marginTop: 4, marginLeft: 16 },
-})
+});
+
+function ProfileDashboard({ onEdit } : {onEdit: () => void}) {
+    const {
+        fullName, weight, height,
+        dailyCalories, dailyWater,
+        consumedCalories, consumedWater,
+        xp, level, streak
+    } = useUserStore();
+
+    const fadeAnim = useRef(new Animated.Value(0)).current;
+
+    React.useEffect(() => {
+        Animated.timing(fadeAnim, {
+            toValue: 1,
+            delay: 1000,
+            useNativeDriver: true
+        }).start();
+    },[]);
+}
