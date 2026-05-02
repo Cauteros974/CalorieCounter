@@ -67,7 +67,8 @@ function AnimatedInput({ label, icon, keyboardType = 'default', error, onChange,
                         value={value}
                         onFocus={onFocus}
                         onBlur={onBlur}
-                        
+                        autoCorrect={false}
+                        autoCapitalize="none"
                     />
                 </View>
             </Animated.View>
