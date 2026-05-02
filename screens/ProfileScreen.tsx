@@ -81,6 +81,6 @@ const inputStyles = StyleSheet.create({
     wrapper: {marginBottom: 16},
     box: {
         flexDirection: 'row', alignItems: 'center', borderWidth: 1.5,
-        
+        borderRadius: 16, paddingHorizontal: 16, backgroundColor: '#FAFAFA', height: 64,
     }
 })
