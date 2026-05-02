@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import {
     Animated, Easing,
+    TextInput,
     View
 } from 'react-native';
 import * as z from 'zod';
@@ -57,8 +58,13 @@ function AnimatedInput({ label, icon, keyboardType = 'default', error, onChange,
                             position: 'absolute', top: labelY, left: 0,
                         }]}
                     >
-
+                        {label}
                     </Animated.Text>
+                    <TextInput
+                        style={inputStyles.input}
+                        keyboardType={keyboardType}
+                        onChangeText={onChange}
+                    />
                 </View>
             </Animated.View>
         </View>
