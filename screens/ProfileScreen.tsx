@@ -26,4 +26,8 @@ function AnimatedInput({ label, icon, keyboardType = 'default', error, onChange,
             Animated.timing(labelAnim, { toValue: 1, duration: 180, easing: Easing.out(Easing.quad), useNativeDriver: false }),
         ]).start();
     };
+
+    const onBlur = () => {
+        Animated.timing(borderAnim, { toValue: 0, duration: 200, useNativeDriver: false}).start();
+    }
 }
