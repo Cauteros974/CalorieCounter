@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import {
     Animated, Easing,
+    StyleSheet,
     Text, TextInput,
     View
 } from 'react-native';
