@@ -148,7 +148,8 @@ const styles =  StyleSheet.create({
     currentUnit: { fontSize: 24, fontWeight: '600', color: '#888' },
     chartCard: {
         marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 24,
-        
+        padding: 20, marginBottom: 16,
+        elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
     },
     }
 })
