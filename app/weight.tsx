@@ -1,12 +1,12 @@
 import { useUserStore } from '@/store/useUserStore';
+import { ArrowLeft, Plus } from 'lucide-react-native';
 import React, { useState } from 'react';
 import {
-    Alert, Dimensions,
-    StyleSheet,
-    Text,
-    View
+    Alert, Dimensions, ScrollView, StyleSheet,
+    Text, TextInput, TouchableOpacity, View
 } from 'react-native';
 import Svg, { Circle, Line, Path, Text as SvgText } from 'react-native-svg';
+import { router } from 'expo-router';
 
 
 const W = Dimensions.get('window').width - 80;
@@ -90,7 +90,9 @@ export default function WeightScreen() {
         <View style={styles.container}>
             {/* Header */}
             <View style={styles.header}>
-                
+                <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
+                    <ArrowLeft color="#1A1A1A" size={24} />
+                </TouchableOpacity>
                 <Text style={styles.title}>My Weight</Text>
                 <View style={{ width: 40 }} />
             </View>
@@ -99,5 +101,6 @@ export default function WeightScreen() {
 }
 
 const styles =  StyleSheet.create({
-
+    container: {flex: 1, backgroundColor: '#F8F9FA'}
+    header: {}
 })
