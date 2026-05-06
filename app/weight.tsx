@@ -1,12 +1,14 @@
 import { useUserStore } from '@/store/useUserStore';
-import { ArrowLeft, Plus } from 'lucide-react-native';
+import { router } from 'expo-router';
+import { ArrowLeft } from 'lucide-react-native';
 import React, { useState } from 'react';
 import {
-    Alert, Dimensions, ScrollView, StyleSheet,
-    Text, TextInput, TouchableOpacity, View
+    Alert, Dimensions,
+    StyleSheet,
+    Text,
+    TouchableOpacity, View
 } from 'react-native';
 import Svg, { Circle, Line, Path, Text as SvgText } from 'react-native-svg';
-import { router } from 'expo-router';
 
 
 const W = Dimensions.get('window').width - 80;
@@ -101,7 +103,7 @@ export default function WeightScreen() {
 }
 
 const styles =  StyleSheet.create({
-    container: {flex: 1, backgroundColor: '#F8F9FA'}
+    container: {flex: 1, backgroundColor: '#F8F9FA'},
     header: {
         flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
         paddingHorizontal: 20, paddingTop: 60, paddingBottom: 20,
@@ -109,5 +111,13 @@ const styles =  StyleSheet.create({
         borderBottomLeftRadius: 24, borderBottomRightRadius: 24,
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
         marginBottom: 20,
+    },
+    backBtn: {
+        width: 40, 
+        height: 40, 
+        borderRadius: 12, 
+        backgroundColor: '#F5F5F5', 
+        alignItems: 'center', 
+        justifyContent: 'center' 
     }
 })
