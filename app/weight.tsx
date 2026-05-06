@@ -15,6 +15,9 @@ function WeightChart({data} : {data: {data: string; value: number}[]}) {
             <View style={{ alignItems: 'center', paddingVertical: 40 }}>
                 <Text style={{ color: '#AAA', fontSize: 14 }}>Add at least 2 entries to see the chart</Text>
             </View>
-        )
+        );
     }
+
+    const values = data.map(d => d.value);
+    const max = Math.map(...values);
 }
