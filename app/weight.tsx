@@ -1,3 +1,4 @@
+import { useUserStore } from '@/store/useUserStore';
 import React from 'react';
 import {
     Dimensions,
@@ -63,7 +64,11 @@ function WeightChart({data} : {data: {date: string; value: number}[]}) {
                 </React.Fragment>
             ))}
         </Svg>
-    )
+    );
+}
+
+export default function WeightScreen() {
+    const { weight, weightHistory, addWeightEntry } = useUserStore();
 }
 
 const styles =  StyleSheet.create({
