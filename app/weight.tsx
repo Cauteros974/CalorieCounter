@@ -26,6 +26,8 @@ function WeightChart({data} : {data: {data: string; value: number}[]}) {
     const points = data.map((d, i) => ({
         x: PADDING_LEFT + (i / (data.length - 1)) * (W - PADDING_LEFT),
         y: 10 + ((max - d.value) / range) * (H - 20),
+        label: d.date,
+        value: d.value,
     }));
 
 }
