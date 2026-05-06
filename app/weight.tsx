@@ -5,7 +5,7 @@ import {
     Text,
     View
 } from 'react-native';
-import Svg, { Line } from 'react-native-svg';
+import Svg, { Line, Text as SvgText } from 'react-native-svg';
 
 
 const W = Dimensions.get('window').width - 80;
@@ -45,6 +45,7 @@ function WeightChart({data} : {data: {date: string; value: number}[]}) {
                 return (
                     <React.Fragment key={i}>
                         <Line x1={PADDING_LEFT} y1={y} x2={W} y2={y} stroke="#F0F0F0" strokeWidth={1} />
+                        <SvgText x={0} y={y + 4} fontSize={9} fill="#BBB">{val}</SvgText>
                     </React.Fragment>
                 );
             })}
