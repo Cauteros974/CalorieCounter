@@ -135,4 +135,6 @@ const styles =  StyleSheet.create({
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8
     },
     currentLabel: {fontSize: 14, color: '#888', marginBottom: 8},
+    currentValue: { fontSize: 52, fontWeight: '900', color: '#1A1A1A' },
+    currentUnit: { fontSize: 24, fontWeight: '600', color: '#888' },
 })
