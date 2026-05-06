@@ -22,4 +22,11 @@ function WeightChart({data} : {data: {data: string; value: number}[]}) {
     const max = Math.max(...values);
     const min = Math.min(...values);
     const range = max - min || 1;
+
+    const points = data.map((d, i) => ({
+        x: PADDING_LEFT + (i / (data.length - 1)) * (W - PADDING_LEFT),
+        y: 10 + ((max - d.value) / range) * (H - 20),
+        
+    }));
+
 }
