@@ -1,5 +1,5 @@
 import { useUserStore } from '@/store/useUserStore';
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Dimensions,
     StyleSheet,
@@ -7,7 +7,6 @@ import {
     View
 } from 'react-native';
 import Svg, { Circle, Line, Path, Text as SvgText } from 'react-native-svg';
-
 
 
 const W = Dimensions.get('window').width - 80;
@@ -69,6 +68,7 @@ function WeightChart({data} : {data: {date: string; value: number}[]}) {
 
 export default function WeightScreen() {
     const { weight, weightHistory, addWeightEntry } = useUserStore();
+    const [input, setInput] = useState('');
 }
 
 const styles =  StyleSheet.create({
