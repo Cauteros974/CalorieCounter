@@ -131,5 +131,7 @@ const styles =  StyleSheet.create({
     title: {fontSize: 18, fontWeight: '800', color: '#1A1A1A' },
     currentdCard: {
         marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 24,
+        padding: 24, alignItems: 'center', marginBottom: 16,
+        elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8
     }
 })
