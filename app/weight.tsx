@@ -104,6 +104,6 @@ const styles =  StyleSheet.create({
     container: {flex: 1, backgroundColor: '#F8F9FA'}
     header: {
         flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
-        paddingHorizontal: 20, paddingTop: 60,
+        paddingHorizontal: 20, paddingTop: 60, paddingBottom: 20,
     }
 })
