@@ -32,5 +32,5 @@ function WeightChart({data} : {data: {data: string; value: number}[]}) {
 
     const pathD = points
         .map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`)
-
+        .join(' ');
 }
