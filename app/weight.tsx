@@ -1,10 +1,12 @@
 import React from 'react';
 import {
     Dimensions,
+    StyleSheet,
     Text,
     View
 } from 'react-native';
-import Svg from 'react-native-svg';
+import Svg, { Line } from 'react-native-svg';
+
 
 const W = Dimensions.get('window').width - 80;
 const H = 160;
@@ -40,7 +42,16 @@ function WeightChart({data} : {data: {date: string; value: number}[]}) {
             {[0, 0.5, 1].map((t, i) => {
                 const y = 10 + t * (H - 20);
                 const val = (max - t * range).toFixed(1);
+                return (
+                    <React.Fragment key={i}>
+                        <Line x1={PADDING_LEFT} y1={y} x2={W} y2={y} stroke="#F0F0F0" strokeWidth={1} />
+                    </React.Fragment>
+                );
             })}
         </Svg>
     )
 }
+
+const styles =  StyleSheet.create({
+
+})
