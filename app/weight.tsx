@@ -120,5 +120,5 @@ const styles =  StyleSheet.create({
         alignItems: 'center', 
         justifyContent: 'center' 
     },
-    title: {fontSize: 18,}
+    title: {fontSize: 18, fontWeight: '800', color: '#1A1A1A' }
 })
