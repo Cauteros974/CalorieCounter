@@ -102,5 +102,8 @@ export default function WeightScreen() {
 
 const styles =  StyleSheet.create({
     container: {flex: 1, backgroundColor: '#F8F9FA'}
-    header: {}
+    header: {
+        flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+        paddingHorizontal: 20, paddingTop: 60,
+    }
 })
