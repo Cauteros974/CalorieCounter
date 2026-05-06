@@ -151,8 +151,6 @@ const styles =  StyleSheet.create({
         padding: 20, marginBottom: 16,
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
     },
-    sectionTitle: {
-        fontSize: 16, fontWeight: '700', color: '#1A1A1A', marginBottom: 16 
-    }
+    sectionTitle: { fontSize: 16, fontWeight: '700', color: '#1A1A1A', marginBottom: 16 }
     }
 })
