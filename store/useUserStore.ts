@@ -54,6 +54,7 @@ interface UserState {
   };
 
   weightHistory: { date: string; value: number }[];
+  photoAlbum: { uri: string; dishName: string; calories: number; date: string }[];
 }
 
 export const Colors = {
@@ -189,4 +190,5 @@ export const useUserStore = create<UserState>((set) => ({
   targets: { calories: 2200, protein: 140, fat: 75, carbs: 240 },
   
   weightHistory: [],
+  photoAlbum: [],
 }));
