@@ -80,7 +80,7 @@ export default function WeightScreen() {
         setInput('');
     };
     const current = weightHistory.length > 0
-        ? weightHistory(weightHistory.length - 1).value
+        ? weightHistory[weightHistory.length - 1].value
         : weight;
 
     const first = weightHistory.length > 1 ? weightHistory[0].value : null;
