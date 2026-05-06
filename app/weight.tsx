@@ -119,5 +119,6 @@ const styles =  StyleSheet.create({
         backgroundColor: '#F5F5F5', 
         alignItems: 'center', 
         justifyContent: 'center' 
-    }
+    },
+    title: {fontSize: 18,}
 })
