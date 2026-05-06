@@ -54,7 +54,9 @@ function WeightChart({data} : {data: {date: string; value: number}[]}) {
             {points.map((p, i) => (
                 <React.Fragment key={1}>
                     <Circle cx={p.x} cy={p.y} r={5} fill="#4CAF50" />
-                    
+                    <SvgText>
+                        {p.label.split('/').slice(0, 2).join('/')}
+                    </SvgText>
                 </React.Fragment>
             ))}
         </Svg>
