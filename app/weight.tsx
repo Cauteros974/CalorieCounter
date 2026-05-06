@@ -108,6 +108,12 @@ export default function WeightScreen() {
                         </Text>
                     )}
                 </View>
+
+                {/* Chart */}
+                <View style={styles.chartCard}>
+                    <Text style={styles.sectionTitle}>Progress chart</Text>
+                    <WeightChart data={weightHistory} />
+                </View>
             </ScrollView>
         </View>
     )
@@ -140,4 +146,9 @@ const styles =  StyleSheet.create({
     currentLabel: {fontSize: 14, color: '#888', marginBottom: 8},
     currentValue: { fontSize: 52, fontWeight: '900', color: '#1A1A1A' },
     currentUnit: { fontSize: 24, fontWeight: '600', color: '#888' },
+    chartCard: {
+        marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 24,
+        
+    },
+    }
 })
