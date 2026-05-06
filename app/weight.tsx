@@ -5,7 +5,8 @@ import {
     Text,
     View
 } from 'react-native';
-import Svg, { Line, Path, Text as SvgText } from 'react-native-svg';
+import Svg, { Circle, Line, Path, Text as SvgText } from 'react-native-svg';
+
 
 
 const W = Dimensions.get('window').width - 80;
@@ -50,6 +51,12 @@ function WeightChart({data} : {data: {date: string; value: number}[]}) {
                 );
             })}
             <Path d={pathD} stroke="#4CAF50" strokeWidth={2.5} fill="none" strokeLinecap="round" strokeLinejoin="round" />
+            {points.map((p, i) => (
+                <React.Fragment key={1}>
+                    <Circle cx={p.x} cy={p.y} r={5} fill="#4CAF50" />
+                    
+                </React.Fragment>
+            ))}
         </Svg>
     )
 }
