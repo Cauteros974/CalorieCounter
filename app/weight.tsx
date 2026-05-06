@@ -19,5 +19,7 @@ function WeightChart({data} : {data: {data: string; value: number}[]}) {
     }
 
     const values = data.map(d => d.value);
-    const max = Math.map(...values);
+    const max = Math.max(...values);
+    const min = Math.min(...values);
+    const range = max - min || 1;
 }
