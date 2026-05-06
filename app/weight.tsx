@@ -76,6 +76,8 @@ export default function WeightScreen() {
             Alert.alert('Invalid value', 'Enter weight between 30 and 300 kg');
             return;
         }
+        addWeightEntry(val);
+        setInput('');
     };
 }
 
