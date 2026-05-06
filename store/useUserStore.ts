@@ -52,6 +52,8 @@ interface UserState {
     fat: number; // ~1g per kg of body weight
     carbs: number; // remainder
   };
+
+  weightHistory: { date: string; value: number }[];
 }
 
 export const Colors = {
@@ -185,4 +187,6 @@ export const useUserStore = create<UserState>((set) => ({
 
   consumed: { calories: 0, protein: 0, fat: 0, carbs: 0 },
   targets: { calories: 2200, protein: 140, fat: 75, carbs: 240 },
+  
+  weightHistory: [],
 }));
