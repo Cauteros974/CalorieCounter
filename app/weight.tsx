@@ -79,6 +79,9 @@ export default function WeightScreen() {
         addWeightEntry(val);
         setInput('');
     };
+    const current = weightHistory.length > 0
+        ? weightHistory(weightHistory.length - 1).value
+        : weight;
 }
 
 const styles =  StyleSheet.create({
