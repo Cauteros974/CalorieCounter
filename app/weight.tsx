@@ -133,5 +133,6 @@ const styles =  StyleSheet.create({
         marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 24,
         padding: 24, alignItems: 'center', marginBottom: 16,
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8
-    }
+    },
+    currentLabel: {fontSize: 14, color: '#888', marginBottom: 8},
 })
