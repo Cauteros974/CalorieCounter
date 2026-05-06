@@ -4,12 +4,13 @@ import {
     Text,
     View
 } from 'react-native';
+import Svg from 'react-native-svg';
 
 const W = Dimensions.get('window').width - 80;
 const H = 160;
 const PADDING_LEFT = 40;
 
-function WeightChart({data} : {data: {data: string; value: number}[]}) {
+function WeightChart({data} : {data: {date: string; value: number}[]}) {
     if(data.length < 2) {
         return(
             <View style={{ alignItems: 'center', paddingVertical: 40 }}>
@@ -33,4 +34,10 @@ function WeightChart({data} : {data: {data: string; value: number}[]}) {
     const pathD = points
         .map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`)
         .join(' ');
+
+    return(
+        <Svg width={W + 20} height={H + 40}>
+
+        </Svg>
+    )
 }
