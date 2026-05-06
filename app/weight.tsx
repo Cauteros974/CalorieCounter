@@ -37,7 +37,10 @@ function WeightChart({data} : {data: {date: string; value: number}[]}) {
 
     return(
         <Svg width={W + 20} height={H + 40}>
-
+            {[0, 0.5, 1].map((t, i) => {
+                const y = 10 + t * (H - 20);
+                const val = (max - t * range).toFixed(1);
+            })}
         </Svg>
     )
 }
