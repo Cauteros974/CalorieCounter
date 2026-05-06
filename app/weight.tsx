@@ -1,7 +1,7 @@
 import { useUserStore } from '@/store/useUserStore';
 import React, { useState } from 'react';
 import {
-    Dimensions,
+    Alert, Dimensions,
     StyleSheet,
     Text,
     View
@@ -69,6 +69,14 @@ function WeightChart({data} : {data: {date: string; value: number}[]}) {
 export default function WeightScreen() {
     const { weight, weightHistory, addWeightEntry } = useUserStore();
     const [input, setInput] = useState('');
+
+    const handleAdd = () => {
+        const val = parseFloat(input);
+        if (isNaN(val) || val < 30 || val > 300) {
+            Alert.alert('Invalid value', 'Enter weight between 30 and 300 kg');
+            return;
+        }
+    };
 }
 
 const styles =  StyleSheet.create({
