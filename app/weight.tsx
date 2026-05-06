@@ -82,6 +82,9 @@ export default function WeightScreen() {
     const current = weightHistory.length > 0
         ? weightHistory(weightHistory.length - 1).value
         : weight;
+
+    const first = weightHistory.length > 1 ? weightHistory[0].value : null;
+    
 }
 
 const styles =  StyleSheet.create({
