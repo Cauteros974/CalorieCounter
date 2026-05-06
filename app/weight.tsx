@@ -128,5 +128,8 @@ const styles =  StyleSheet.create({
         alignItems: 'center', 
         justifyContent: 'center' 
     },
-    title: {fontSize: 18, fontWeight: '800', color: '#1A1A1A' }
+    title: {fontSize: 18, fontWeight: '800', color: '#1A1A1A' },
+    currentdCard: {
+        marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 24,
+    }
 })
