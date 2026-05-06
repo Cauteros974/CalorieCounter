@@ -55,6 +55,8 @@ interface UserState {
 
   weightHistory: { date: string; value: number }[];
   photoAlbum: { uri: string; dishName: string; calories: number; date: string }[];
+  addWeightEntry: (value: number) => void;
+  addPhotoEntry: (entry: { uri: string; dishName: string; calories: number }) => void;
 }
 
 export const Colors = {
