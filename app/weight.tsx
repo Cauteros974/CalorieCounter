@@ -84,7 +84,18 @@ export default function WeightScreen() {
         : weight;
 
     const first = weightHistory.length > 1 ? weightHistory[0].value : null;
-    const diff = first !== null ? (current - first).toFixed(1) : null;    
+    const diff = first !== null ? (current - first).toFixed(1) : null;
+
+    return(
+        <View style={styles.container}>
+            {/* Header */}
+            <View style={styles.header}>
+                
+                <Text style={styles.title}>My Weight</Text>
+                <View style={{ width: 40 }} />
+            </View>
+        </View>
+    )
 }
 
 const styles =  StyleSheet.create({
