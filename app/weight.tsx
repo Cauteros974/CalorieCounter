@@ -3,9 +3,7 @@ import { router } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
 import React, { useState } from 'react';
 import {
-    Alert, Dimensions,
-    ScrollView,
-    StyleSheet,
+    Alert, Dimensions, ScrollView, StyleSheet,
     Text,
     TouchableOpacity, View
 } from 'react-native';
@@ -104,6 +102,11 @@ export default function WeightScreen() {
                 <View style={styles.currentdCard}>
                     <Text style={styles.currentLabel}>Current weight</Text>
                     <Text style={styles.currentValue}>{current} <Text style={styles.currentUnit}>kg</Text></Text>
+                    {diff !== null && (
+                        <Text style={[styles.diff, { color: parseFloat(diff) <= 0 ? '#4CAF50' : '#FF5252' }]}>
+                            {parseFloat(diff) > 0 ? '+' : ''}{diff} kg since start
+                        </Text>
+                    )}
                 </View>
             </ScrollView>
         </View>
