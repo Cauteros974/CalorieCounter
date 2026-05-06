@@ -4,6 +4,7 @@ import { ArrowLeft } from 'lucide-react-native';
 import React, { useState } from 'react';
 import {
     Alert, Dimensions,
+    ScrollView,
     StyleSheet,
     Text,
     TouchableOpacity, View
@@ -98,6 +99,13 @@ export default function WeightScreen() {
                 <Text style={styles.title}>My Weight</Text>
                 <View style={{ width: 40 }} />
             </View>
+
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>
+                <View style={styles.currentdCard}>
+                    <Text style={styles.currentLabel}>Current weight</Text>
+                    <Text style={styles.currentValue}>{current} <Text style={styles.currentUnit}>kg</Text></Text>
+                </View>
+            </ScrollView>
         </View>
     )
 }
