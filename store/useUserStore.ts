@@ -193,4 +193,12 @@ export const useUserStore = create<UserState>((set) => ({
   
   weightHistory: [],
   photoAlbum: [],
+
+  addWeightEntry: (value) => 
+    set((state) => ({
+      weightHistory: [
+        ...state.weightHistory,
+        { date: new Date().toLocaleDateString('en-US'), value }
+      ]
+    }))
 }));
