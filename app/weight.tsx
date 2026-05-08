@@ -170,5 +170,5 @@ const styles =  StyleSheet.create({
         padding: 20, marginBottom: 16,
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
     },
-    inputRow:{flexDirection: 'row', gap: 11}
+    inputRow:{flexDirection: 'row', gap: 12}
 })
