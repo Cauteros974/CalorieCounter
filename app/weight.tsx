@@ -193,5 +193,10 @@ const styles =  StyleSheet.create({
     addBtn:{
         width: 52, height: 52, borderRadius: 14, borderColor: '#4CAF50', 
         alignItems: 'center',justifyContent: 'center',
+    },
+    historyCard:{
+        marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 24,
+        padding: 20, marginBottom: 16,
+        elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
     }
 })
