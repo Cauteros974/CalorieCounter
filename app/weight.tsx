@@ -180,6 +180,6 @@ const styles =  StyleSheet.create({
         borderRadius: 14, paddingHorizontal: 16, fontSize: 16, backgroundColor: '#FAFAFA',
     },
     addBtn:{
-        width: 52, height: 52, borderRadius: 14,
+        width: 52, height: 52, borderRadius: 14, borderColor: '#4CAF50', alignItems: 'center'
     }
 })
