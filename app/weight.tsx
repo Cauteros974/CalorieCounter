@@ -201,6 +201,6 @@ const styles =  StyleSheet.create({
     },
     historyRow: {
         flexDirection: 'row', justifyContent: 'space-between',
-        
+        paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: '#F5F5F5',
     },
 })
