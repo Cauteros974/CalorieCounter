@@ -1,12 +1,10 @@
 import { useUserStore } from '@/store/useUserStore';
 import { router } from 'expo-router';
-import { ArrowLeft } from 'lucide-react-native';
+import { ArrowLeft, Plus } from 'lucide-react-native';
 import React, { useState } from 'react';
 import {
     Alert, Dimensions, ScrollView, StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity, View
+    Text, TextInput, TouchableOpacity, View
 } from 'react-native';
 import Svg, { Circle, Line, Path, Text as SvgText } from 'react-native-svg';
 
@@ -127,7 +125,9 @@ export default function WeightScreen() {
                             value={input}
                             onChangeText={setInput}
                         />
-
+                        <TouchableOpacity>
+                            <Plus>
+                        </TouchableOpacity>
                         
                     </View>
                 </View>
