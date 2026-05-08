@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 import {
     Alert, Dimensions, ScrollView, StyleSheet,
     Text,
+    TextInput,
     TouchableOpacity, View
 } from 'react-native';
 import Svg, { Circle, Line, Path, Text as SvgText } from 'react-native-svg';
@@ -114,6 +115,18 @@ export default function WeightScreen() {
                     <Text style={styles.sectionTitle}>Progress chart</Text>
                     <WeightChart data={weightHistory} />
                 </View>
+
+                <View style={styles.addCard}>
+                    <Text style={styles.sectionTitle}>Add today's weight</Text>
+                    <View style = {styles.inputRow}>
+                        <TextInput
+                             style={styles.input}
+                            placeholder="e.g. 74.5"
+                        />
+
+                        
+                    </View>
+                </View>
             </ScrollView>
         </View>
     )
@@ -152,5 +165,4 @@ const styles =  StyleSheet.create({
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
     },
     sectionTitle: { fontSize: 16, fontWeight: '700', color: '#1A1A1A', marginBottom: 16 }
-    }
 })
