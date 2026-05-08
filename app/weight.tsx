@@ -134,6 +134,12 @@ export default function WeightScreen() {
                 {weightHistory.length > 0 && (
                     <View style={styles.historyCard}>
                         <Text style={styles.sectionTitle}>History</Text>
+                        {[...weightHistory].reverse().map((entry, i) => (
+                            <View key={i} style={styles.historyRow}>
+                                <Text style={styles.historyDate}>{entry.date}</Text>
+                                <Text style={styles.historyValue}>{entry.value} kg</Text>
+                            </View>
+                        ))}
                     </View>
                 )}
             </ScrollView>
