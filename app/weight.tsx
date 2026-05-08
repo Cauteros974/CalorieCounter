@@ -178,5 +178,8 @@ const styles =  StyleSheet.create({
     input:{
         flex: 1, height: 52, borderWidth: 1.5, borderColor: '#E8E8E8',
         borderRadius: 14, paddingHorizontal: 16, fontSize: 16, backgroundColor: '#FAFAFA',
+    },
+    addBtn:{
+        width: 52, height: 52, borderRadius: 14,
     }
 })
