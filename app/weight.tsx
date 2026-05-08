@@ -167,6 +167,6 @@ const styles =  StyleSheet.create({
     sectionTitle: { fontSize: 16, fontWeight: '700', color: '#1A1A1A', marginBottom: 16 },
     addCard:{
         marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 24,
-        
+        padding: 20, marginBottom: 16,
     }
 })
