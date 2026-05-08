@@ -116,12 +116,16 @@ export default function WeightScreen() {
                     <WeightChart data={weightHistory} />
                 </View>
 
+                {/* Add entry */}
                 <View style={styles.addCard}>
                     <Text style={styles.sectionTitle}>Add today's weight</Text>
                     <View style = {styles.inputRow}>
                         <TextInput
                             style={styles.input}
                             placeholder="e.g. 74.5"
+                            keyboardType="numeric"
+                            value={input}
+                            onChangeText={setInput}
                         />
 
                         
