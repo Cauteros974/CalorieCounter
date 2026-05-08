@@ -8,14 +8,13 @@ import {
 } from 'react-native';
 import Svg, { Circle, Line, Path, Text as SvgText } from 'react-native-svg';
 
-
 const W = Dimensions.get('window').width - 80;
 const H = 160;
 const PADDING_LEFT = 40;
 
-function WeightChart({data} : {data: {date: string; value: number}[]}) {
-    if(data.length < 2) {
-        return(
+function WeightChart({ data }: { data: { date: string; value: number }[] }) {
+    if (data.length < 2) {
+        return (
             <View style={{ alignItems: 'center', paddingVertical: 40 }}>
                 <Text style={{ color: '#AAA', fontSize: 14 }}>Add at least 2 entries to see the chart</Text>
             </View>
@@ -38,7 +37,7 @@ function WeightChart({data} : {data: {date: string; value: number}[]}) {
         .map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`)
         .join(' ');
 
-    return(
+    return (
         <Svg width={W + 20} height={H + 40}>
             {[0, 0.5, 1].map((t, i) => {
                 const y = 10 + t * (H - 20);
@@ -79,6 +78,7 @@ export default function WeightScreen() {
         addWeightEntry(val);
         setInput('');
     };
+
     const current = weightHistory.length > 0
         ? weightHistory[weightHistory.length - 1].value
         : weight;
@@ -86,7 +86,7 @@ export default function WeightScreen() {
     const first = weightHistory.length > 1 ? weightHistory[0].value : null;
     const diff = first !== null ? (current - first).toFixed(1) : null;
 
-    return(
+    return (
         <View style={styles.container}>
             {/* Header */}
             <View style={styles.header}>
@@ -98,7 +98,8 @@ export default function WeightScreen() {
             </View>
 
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>
-                <View style={styles.currentdCard}>
+                {/* Current weight card */}
+                <View style={styles.currentCard}>
                     <Text style={styles.currentLabel}>Current weight</Text>
                     <Text style={styles.currentValue}>{current} <Text style={styles.currentUnit}>kg</Text></Text>
                     {diff !== null && (
@@ -117,7 +118,7 @@ export default function WeightScreen() {
                 {/* Add entry */}
                 <View style={styles.addCard}>
                     <Text style={styles.sectionTitle}>Add today's weight</Text>
-                    <View style = {styles.inputRow}>
+                    <View style={styles.inputRow}>
                         <TextInput
                             style={styles.input}
                             placeholder="e.g. 74.5"
@@ -131,6 +132,7 @@ export default function WeightScreen() {
                     </View>
                 </View>
 
+                {/* History */}
                 {weightHistory.length > 0 && (
                     <View style={styles.historyCard}>
                         <Text style={styles.sectionTitle}>History</Text>
@@ -144,11 +146,11 @@ export default function WeightScreen() {
                 )}
             </ScrollView>
         </View>
-    )
+    );
 }
 
-const styles =  StyleSheet.create({
-    container: {flex: 1, backgroundColor: '#F8F9FA'},
+const styles = StyleSheet.create({
+    container: { flex: 1, backgroundColor: '#F8F9FA' },
     header: {
         flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
         paddingHorizontal: 20, paddingTop: 60, paddingBottom: 20,
@@ -157,44 +159,38 @@ const styles =  StyleSheet.create({
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
         marginBottom: 20,
     },
-    backBtn: {
-        width: 40, 
-        height: 40, 
-        borderRadius: 12, 
-        backgroundColor: '#F5F5F5', 
-        alignItems: 'center', 
-        justifyContent: 'center' 
-    },
-    title: {fontSize: 18, fontWeight: '800', color: '#1A1A1A' },
-    currentdCard: {
+    backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: '#F5F5F5', alignItems: 'center', justifyContent: 'center' },
+    title: { fontSize: 18, fontWeight: '800', color: '#1A1A1A' },
+    currentCard: {
         marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 24,
         padding: 24, alignItems: 'center', marginBottom: 16,
-        elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8
+        elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
     },
-    currentLabel: {fontSize: 14, color: '#888', marginBottom: 8},
+    currentLabel: { fontSize: 14, color: '#888', marginBottom: 8 },
     currentValue: { fontSize: 52, fontWeight: '900', color: '#1A1A1A' },
     currentUnit: { fontSize: 24, fontWeight: '600', color: '#888' },
+    diff: { fontSize: 14, fontWeight: '600', marginTop: 8 },
     chartCard: {
         marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 24,
         padding: 20, marginBottom: 16,
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
     },
     sectionTitle: { fontSize: 16, fontWeight: '700', color: '#1A1A1A', marginBottom: 16 },
-    addCard:{
+    addCard: {
         marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 24,
         padding: 20, marginBottom: 16,
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
     },
-    inputRow:{flexDirection: 'row', gap: 12},
-    input:{
+    inputRow: { flexDirection: 'row', gap: 12 },
+    input: {
         flex: 1, height: 52, borderWidth: 1.5, borderColor: '#E8E8E8',
         borderRadius: 14, paddingHorizontal: 16, fontSize: 16, backgroundColor: '#FAFAFA',
     },
-    addBtn:{
-        width: 52, height: 52, borderRadius: 14, borderColor: '#4CAF50', 
-        alignItems: 'center',justifyContent: 'center',
+    addBtn: {
+        width: 52, height: 52, borderRadius: 14,
+        backgroundColor: '#4CAF50', alignItems: 'center', justifyContent: 'center',
     },
-    historyCard:{
+    historyCard: {
         marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 24,
         padding: 20, marginBottom: 16,
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
@@ -205,5 +201,4 @@ const styles =  StyleSheet.create({
     },
     historyDate: { fontSize: 14, color: '#888' },
     historyValue: { fontSize: 14, fontWeight: '700', color: '#1A1A1A' },
-    diff: { fontSize: 14, fontWeight: '600', marginTop: 8 },
-})
+});
