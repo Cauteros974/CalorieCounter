@@ -205,4 +205,5 @@ const styles =  StyleSheet.create({
     },
     historyDate: { fontSize: 14, color: '#888' },
     historyValue: { fontSize: 14, fontWeight: '700', color: '#1A1A1A' },
+    diff: { fontSize: 14, fontWeight: '600', marginTop: 8 },
 })
