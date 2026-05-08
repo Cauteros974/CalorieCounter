@@ -125,8 +125,8 @@ export default function WeightScreen() {
                             value={input}
                             onChangeText={setInput}
                         />
-                        <TouchableOpacity>
-                            <Plus>
+                        <TouchableOpacity style={styles.addBtn}>
+                            <Plus color="#fff" size={22} />
                         </TouchableOpacity>
                         
                     </View>
