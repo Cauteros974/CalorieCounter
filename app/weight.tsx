@@ -128,9 +128,14 @@ export default function WeightScreen() {
                         <TouchableOpacity style={styles.addBtn} onPress={handleAdd}>
                             <Plus color="#fff" size={22} />
                         </TouchableOpacity>
-                        
                     </View>
                 </View>
+
+                {weightHistory.length > 0 && (
+                    <View style={styles.historyCard}>
+                        <Text style={styles.sectionTitle}>History</Text>
+                    </View>
+                )}
             </ScrollView>
         </View>
     )
