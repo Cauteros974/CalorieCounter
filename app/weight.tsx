@@ -203,4 +203,6 @@ const styles =  StyleSheet.create({
         flexDirection: 'row', justifyContent: 'space-between',
         paddingVertical: 12, borderBottomWidth: 1, borderBottomColor: '#F5F5F5',
     },
+    historyDate: { fontSize: 14, color: '#888' },
+    historyValue: { fontSize: 14, fontWeight: '700', color: '#1A1A1A' },
 })
