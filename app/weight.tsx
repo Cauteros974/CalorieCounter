@@ -198,5 +198,9 @@ const styles =  StyleSheet.create({
         marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 24,
         padding: 20, marginBottom: 16,
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
-    }
+    },
+    historyRow: {
+        flexDirection: 'row', justifyContent: 'space-between',
+        
+    },
 })
