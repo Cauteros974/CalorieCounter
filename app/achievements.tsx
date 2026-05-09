@@ -3,6 +3,7 @@ import { router } from 'expo-router';
 import { ArrowLeft, Lock } from 'lucide-react-native';
 import React, { useEffect, useRef } from 'react';
 import { Animated, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ScrollView } from 'react-native-reanimated/lib/typescript/Animated';
 
 
 
@@ -68,6 +69,14 @@ export default function AchievementsScreen() {
                 <Text style={styles.title}>My Achievements</Text>
                 <View style={{ width: 40 }} />
             </View>
+
+            <ScrollView showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingEnd: 100}}>
+                <View style={styles.progressCard}>
+                    <Text style={styles.progressText}>
+                        {unlocked} / {achievements.length} unlocked
+                    </Text>
+                </View>
+            </ScrollView>
         </View>
     )
 }
