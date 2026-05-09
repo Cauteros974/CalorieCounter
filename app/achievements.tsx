@@ -131,5 +131,5 @@ const styles = StyleSheet.create({
     },
     achCardLocker: { backgroundColor: '#FAFAFA' },
     achIcon: { width: 56, height: 56, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
-    achTitle: { fontSize: 15, fontWeight: '700', color: '#1A1A1A'},
+    achTitle: { fontSize: 15, fontWeight: '700', color: '#1A1A1A', marginBottom: 4 },
 })
