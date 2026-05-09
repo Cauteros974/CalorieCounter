@@ -126,6 +126,6 @@ const styles = StyleSheet.create({
     sectionLabel: { fontSize: 14, fontWeight: '700', color: '#888', marginHorizontal: 20, marginBottom: 12 },
     achCard: {
         marginHorizontal: 20, marginBottom: 12, backgroundColor: '#fff',
-        borderRadius: 20, padding: 16, flexDirection: 'row', alignItems: 'center'
+        borderRadius: 20, padding: 16, flexDirection: 'row', alignItems: 'center', gap: 14
     }
 })
