@@ -1,5 +1,7 @@
+import { Lock } from 'lucide-react-native';
 import React, { useEffect, useRef } from 'react';
 import { Animated, Text, View } from 'react-native';
+
 
 const ICON_MAP: Record<string, string> = {
     droplet: '💧',
@@ -30,8 +32,11 @@ function AchievementCard({ achievement, index }: {achievement: any; index: numbe
             !achievement.isUnlocked && styles.achCardLocked,
             { opacity, transform: [{ scale }] }
         ]}>
-            <View style={{ flex: 1}}>
-                <Text style={[styles]}></Text>
+            <View style={[styles.achIcon, { backgroundColor: achievement.isUnlocked ? '#E8F5E9' : '#F5F5F5' }]}>
+                {achievement.isUnlocked
+                    ? <Text style={{ fontSize: 28 }}>{ICON_MAP[achievement.icon] || '🏆'}</Text>
+                    : <Lock color="#CCC" size={24} />
+                }
             </View>
         </Animated.View>
     )
