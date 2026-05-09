@@ -118,10 +118,10 @@ const styles = StyleSheet.create({
         marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 20,
         padding: 20, marginBottom: 24, elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
     },
-    processText: {
+    progressText: {
         fontSize: 15, fontWeight: '700', color: '#1A1A1A', marginBottom: 12, textAlign: 'center' 
     },
-     progressTrack: { height: 10, backgroundColor: '#F0F0F0', borderRadius: 5, overflow: 'hidden' },
+    progressTrack: { height: 10, backgroundColor: '#F0F0F0', borderRadius: 5, overflow: 'hidden' },
     progressFill: { height: '100%', backgroundColor: '#FFD740', borderRadius: 5 },
     sectionLabel: { fontSize: 14, fontWeight: '700', color: '#888', marginHorizontal: 20, marginBottom: 12 },
     achCard: {
@@ -129,8 +129,13 @@ const styles = StyleSheet.create({
         borderRadius: 20, padding: 16, flexDirection: 'row', alignItems: 'center', gap: 14,
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
     },
-    achCardLocker: { backgroundColor: '#FAFAFA' },
+    achCardLocked: { backgroundColor: '#FAFAFA' },
     achIcon: { width: 56, height: 56, borderRadius: 16, alignItems: 'center', justifyContent: 'center' },
     achTitle: { fontSize: 15, fontWeight: '700', color: '#1A1A1A', marginBottom: 4 },
     achDesc: { fontSize: 13, color: '#888', lineHeight: 18 },
+    achBadge: {
+        width: 28, height: 28, borderRadius: 14,
+        backgroundColor: '#4CAF50', alignItems: 'center', justifyContent: 'center',
+    },
+    achBadgeText: { color: '#fff', fontSize: 14, fontWeight: '700' },
 })
