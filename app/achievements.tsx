@@ -56,7 +56,7 @@ function AchievementCard({ achievement, index }: {achievement: any; index: numbe
 
 export default function AchievementsScreen() {
     const { achievements } = useUserStore();
-    const unlocked = achievements.filter(a = > a.isUnlocked).length;
+    const unlocked = achievements.filter(a => a.isUnlocked).length;
 }
 
 const styles = StyleSheet.create({
