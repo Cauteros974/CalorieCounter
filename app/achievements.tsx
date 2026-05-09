@@ -111,5 +111,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20, paddingTop: 60, paddingBottom: 20,
         backgroundColor: '#fff', borderBottomLeftRadius: 24, borderBottomRightRadius: 24,
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8, marginBottom: 20,
-    }
+    },
+    backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: '#F5F5F5', alignItems: 'center', justifyContent: 'center' },
 })
