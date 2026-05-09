@@ -116,5 +116,6 @@ const styles = StyleSheet.create({
     title: {fontSize: 18, fontWeight: '800', color: '#1A1A1A'},
     progressCard: {
         marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 20,
+        padding: 20, marginBottom: 24,
     }
 })
