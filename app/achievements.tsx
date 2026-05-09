@@ -130,5 +130,5 @@ const styles = StyleSheet.create({
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
     },
     achCardLocker: { backgroundColor: '#FAFAFA' },
-    achIcon: { width: 50, height: 50, borderRadius: 16}
+    achIcon: { width: 56, height: 56, borderRadius: 16, alignItems: 'center', justifyContent: 'center' }
 })
