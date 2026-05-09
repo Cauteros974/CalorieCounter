@@ -43,6 +43,11 @@ function AchievementCard({ achievement, index }: {achievement: any; index: numbe
                     {achievement.title}
                 </Text>
             </View>
+            {achievement.isUnlocked && (
+                <View style={styles.achBadge}>
+                    <Text style={styles.achBadgeText}>✓</Text>
+                </View>
+            )}
         </Animated.View>
     )
 }
