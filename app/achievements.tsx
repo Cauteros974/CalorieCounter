@@ -20,7 +20,7 @@ function AchievementCard({ achivement, index }: {achivement: any; index: number}
             Animated.spring(scale, {
                 toValue: 1, friction: 6, tension: 100,
                 delay: index * 100, useNativeDriver: true,
-            })
-        ])
+            } as any),
+        ]).start();
     })
 }
