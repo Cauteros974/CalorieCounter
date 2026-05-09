@@ -70,7 +70,7 @@ export default function AchievementsScreen() {
             </View>
 
             <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>
-                {/*Progress */}
+                {/* Progress */}
                 <View style={styles.progressCard}>
                     <Text style={styles.progressText}>
                         {unlocked} / {achievements.length} unlocked
@@ -84,6 +84,7 @@ export default function AchievementsScreen() {
                     </View>
                 </View>
 
+                {/* Unlocked */}
                 {unlocked > 0 && (
                     <>
                         <Text style={styles.sectionLabel}>🏆 Unlocked</Text>
@@ -92,6 +93,12 @@ export default function AchievementsScreen() {
                         ))}
                     </>
                 )}
+
+                {/*Locked */}
+                <Text style={styles.sectionLabel}>🔒 Locked</Text>
+                {achievements.filter(a => !a.isUnlocked).map((a, i) => (
+                    <AchievementCard key={a.id} achievement={a} index={i} />
+                ))}
             </ScrollView>
         </View>
     )
