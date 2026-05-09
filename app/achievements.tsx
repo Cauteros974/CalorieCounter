@@ -1,6 +1,8 @@
+import { useUserStore } from '@/store/useUserStore';
 import { Lock } from 'lucide-react-native';
 import React, { useEffect, useRef } from 'react';
-import { Animated, Text, View } from 'react-native';
+import { Animated, StyleSheet, Text, View } from 'react-native';
+
 
 
 const ICON_MAP: Record<string, string> = {
@@ -49,5 +51,14 @@ function AchievementCard({ achievement, index }: {achievement: any; index: numbe
                 </View>
             )}
         </Animated.View>
-    )
+    );
 }
+
+export default function AchievementsScreen() {
+    const { achievements } = useUserStore();
+    const unlocked = achievements.filter(a = > a.isUnlocked).length;
+}
+
+const styles = StyleSheet.create({
+
+})
