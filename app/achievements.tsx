@@ -127,6 +127,6 @@ const styles = StyleSheet.create({
     achCard: {
         marginHorizontal: 20, marginBottom: 12, backgroundColor: '#fff',
         borderRadius: 20, padding: 16, flexDirection: 'row', alignItems: 'center', gap: 14,
-        elevation: 2, shadowColor: '#000', 
+        elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
     }
 })
