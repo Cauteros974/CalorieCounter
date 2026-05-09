@@ -1,7 +1,8 @@
 import { useUserStore } from '@/store/useUserStore';
-import { Lock } from 'lucide-react-native';
+import { router } from 'expo-router';
+import { ArrowLeft, Lock } from 'lucide-react-native';
 import React, { useEffect, useRef } from 'react';
-import { Animated, StyleSheet, Text, View } from 'react-native';
+import { Animated, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 
 
@@ -57,6 +58,16 @@ function AchievementCard({ achievement, index }: {achievement: any; index: numbe
 export default function AchievementsScreen() {
     const { achievements } = useUserStore();
     const unlocked = achievements.filter(a => a.isUnlocked).length;
+
+    return(
+        <View style={styles.container}>
+            <View style={styles.header}>
+                <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
+                    <ArrowLeft color="#1A1A1A" size={24} />
+                </TouchableOpacity>
+            </View>
+        </View>
+    )
 }
 
 const styles = StyleSheet.create({
