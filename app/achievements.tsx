@@ -120,5 +120,8 @@ const styles = StyleSheet.create({
     },
     processText: {
         fontSize: 15, fontWeight: '700', color: '#1A1A1A', marginBottom: 12, textAlign: 'center' 
-    }
+    },
+     progressTrack: { height: 10, backgroundColor: '#F0F0F0', borderRadius: 5, overflow: 'hidden' },
+    progressFill: { height: '100%', backgroundColor: '#FFD740', borderRadius: 5 },
+    sectionLabel: { fontSize: 14, fontWeight: '700', color: '#888', marginHorizontal: 20, marginBottom: 12 },
 })
