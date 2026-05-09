@@ -124,4 +124,7 @@ const styles = StyleSheet.create({
      progressTrack: { height: 10, backgroundColor: '#F0F0F0', borderRadius: 5, overflow: 'hidden' },
     progressFill: { height: '100%', backgroundColor: '#FFD740', borderRadius: 5 },
     sectionLabel: { fontSize: 14, fontWeight: '700', color: '#888', marginHorizontal: 20, marginBottom: 12 },
+    achCard: {
+        marginHorizontal: 20, marginBottom: 12, backgroundColor: '#fff'
+    }
 })
