@@ -65,6 +65,8 @@ export default function AchievementsScreen() {
                 <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
                     <ArrowLeft color="#1A1A1A" size={24} />
                 </TouchableOpacity>
+                <Text style={styles.title}>My Achievements</Text>
+                <View style={{ width: 40 }} />
             </View>
         </View>
     )
