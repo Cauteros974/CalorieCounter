@@ -2,8 +2,7 @@ import { useUserStore } from '@/store/useUserStore';
 import { router } from 'expo-router';
 import { ArrowLeft, Lock } from 'lucide-react-native';
 import React, { useEffect, useRef } from 'react';
-import { Animated, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { ScrollView } from 'react-native-reanimated/lib/typescript/Animated';
+import { Animated, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 
 
@@ -76,6 +75,13 @@ export default function AchievementsScreen() {
                     <Text style={styles.progressText}>
                         {unlocked} / {achievements.length} unlocked
                     </Text>
+                    <View style={styles.progressTrack}>
+                        <Animated.View
+                            style={[styles.progressFill, {
+                                width: `${(unlocked / achievements.length) * 100}%`
+                            }]}
+                        />
+                    </View>
                 </View>
             </ScrollView>
         </View>
