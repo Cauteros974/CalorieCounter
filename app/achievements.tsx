@@ -113,5 +113,8 @@ const styles = StyleSheet.create({
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8, marginBottom: 20,
     },
     backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: '#F5F5F5', alignItems: 'center', justifyContent: 'center' },
-    title: {fontSize: 18, fontWeight: '800', color: '#1A1A1A'}
+    title: {fontSize: 18, fontWeight: '800', color: '#1A1A1A'},
+    progressCard: {
+        marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 20,
+    }
 })
