@@ -87,6 +87,9 @@ export default function AchievementsScreen() {
                 {unlocked > 0 && (
                     <>
                         <Text style={styles.sectionLabel}>🏆 Unlocked</Text>
+                        {achievements.filter(a => a.isUnlocked).map((a, i) => (
+                            <AchievementCard key={a.id} achievement={a} index={i} />
+                        ))}
                     </>
                 )}
             </ScrollView>
