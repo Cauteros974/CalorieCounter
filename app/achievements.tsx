@@ -38,6 +38,11 @@ function AchievementCard({ achievement, index }: {achievement: any; index: numbe
                     : <Lock color="#CCC" size={24} />
                 }
             </View>
+            <View style={{flex: 1}}>
+                <Text style={[styles.achTitle, !achievement.isUnlocked]}>
+                    {achievement.title}
+                </Text>
+            </View>
         </Animated.View>
     )
 }
