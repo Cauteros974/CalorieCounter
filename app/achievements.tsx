@@ -83,6 +83,12 @@ export default function AchievementsScreen() {
                         />
                     </View>
                 </View>
+
+                {unlocked > 0 && (
+                    <>
+                        <Text style={styles.sectionLabel}>🏆 Unlocked</Text>
+                    </>
+                )}
             </ScrollView>
         </View>
     )
