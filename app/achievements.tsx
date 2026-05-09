@@ -118,4 +118,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 20,
         padding: 20, marginBottom: 24, elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
     },
+    processText: {
+        fontSize: 15, fontWeight: '700', color: '#1A1A1A', marginBottom: 12, textAlign: 'center' 
+    }
 })
