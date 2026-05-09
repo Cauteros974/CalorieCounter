@@ -70,7 +70,8 @@ export default function AchievementsScreen() {
                 <View style={{ width: 40 }} />
             </View>
 
-            <ScrollView showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingEnd: 100}}>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 100 }}>
+                {/*Progress */}
                 <View style={styles.progressCard}>
                     <Text style={styles.progressText}>
                         {unlocked} / {achievements.length} unlocked
