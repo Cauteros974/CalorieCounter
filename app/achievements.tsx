@@ -39,7 +39,7 @@ function AchievementCard({ achievement, index }: {achievement: any; index: numbe
                 }
             </View>
             <View style={{flex: 1}}>
-                <Text style={[styles.achTitle, !achievement.isUnlocked]}>
+                <Text style={[styles.achDesc, !achievement.isUnlocked && { color: '#CCC' }]}>
                     {achievement.title}
                 </Text>
             </View>
