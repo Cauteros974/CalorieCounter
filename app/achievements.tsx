@@ -125,6 +125,7 @@ const styles = StyleSheet.create({
     progressFill: { height: '100%', backgroundColor: '#FFD740', borderRadius: 5 },
     sectionLabel: { fontSize: 14, fontWeight: '700', color: '#888', marginHorizontal: 20, marginBottom: 12 },
     achCard: {
-        marginHorizontal: 20, marginBottom: 12, backgroundColor: '#fff'
+        marginHorizontal: 20, marginBottom: 12, backgroundColor: '#fff',
+        borderRadius: 20, padding: 20, flexDirection: 'row'
     }
 })
