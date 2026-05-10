@@ -151,5 +151,8 @@ const styles = StyleSheet.create({
   emojiWrap: {
     width: 44, height: 44, borderRadius: 12, backgroundColor: '#F8F8FA',
     alignItems: 'center', justifyContent: 'center'
+  },
+  reminderTitle: {
+    fontSize: 14, fontWeight: '400', color: '#1A1A1A'
   }
 });
