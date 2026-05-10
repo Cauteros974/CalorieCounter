@@ -139,5 +139,6 @@ const styles = StyleSheet.create({
   },
   row: {
     flexDirection:'row', alignItems: 'center', padding: 16, gap: 12,
+    borderBottomWidth: 1, borderBottomColor: '#F5F5F5',
   }
 });
