@@ -112,7 +112,7 @@ export default function RemindersScreen() {
                 value={enabled[reminder.id]}
                 onValueChange={() => toggle(reminder.id)}
                 trackColor={{ false: '#E0E0E0', true: '#A5D6A7'}}
-                thumbColor={enabled[reminder.id] ? '#4CAF50'}
+                thumbColor={enabled[reminder.id] ? '#4CAF50': '#F5F5F5'}
               />
               
             </View>
