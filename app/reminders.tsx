@@ -114,10 +114,13 @@ export default function RemindersScreen() {
                 trackColor={{ false: '#E0E0E0', true: '#A5D6A7'}}
                 thumbColor={enabled[reminder.id] ? '#4CAF50': '#F5F5F5'}
               />
-              
             </View>
           ))}
          </View>
+         
+         <Text style={styles.note}>
+          Push notifications require system permission. Make sure notifications are enabled in your device settings.
+         </Text>
       </ScrollView>
     </View>
   );
