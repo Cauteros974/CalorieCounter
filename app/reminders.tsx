@@ -104,6 +104,9 @@ export default function RemindersScreen() {
                   </Text>
                   <Text style={styles.reminderTime}>{reminder.time}</Text>
                 </View>
+                <Text style={[styles.reminderDesc, !enabled[reminder.id] && { color: '#CCC' }]}>
+                  {reminder.desc}
+                </Text>
               </View>
             </View>
           ))}
@@ -157,6 +160,6 @@ const styles = StyleSheet.create({
     fontSize: 14, fontWeight: '400', color: '#1A1A1A'
   },
   reminderTime: {
-    fontSize: 12, color: '#4CAF50', fontWeight: '200'
+    fontSize: 12, color: '#4CAF50', fontWeight: '600'
   }
 });
