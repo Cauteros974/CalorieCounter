@@ -176,6 +176,7 @@ const styles = StyleSheet.create({
     fontSize: 12, color: '#888', marginTop: 2
   },
   note: {
-    marginHorizontal: 20, marginTop: 20, fontSize: 13
+    marginHorizontal: 20, marginTop: 20, fontSize: 13,
+    color: '#AAA', textAlign: 'center'
   }
 });
