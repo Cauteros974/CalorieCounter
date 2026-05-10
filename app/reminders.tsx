@@ -11,6 +11,7 @@ const DEFAULT_REMINDERS = [
     title: "Breakfast",
     desc: "Dont skip the most important meal",
     time: "9:00 AM",
+    emoji: "🍳",
   },
   {
     id: "3",
@@ -25,5 +26,12 @@ const DEFAULT_REMINDERS = [
     desc: "Stay hydrated",
     time: "3:00 PM",
     emoji: "💧",
+  },
+  {
+    id: "5",
+    title: "Dinner",
+    desc: "Light dinner for better sleep",
+    time: "7:00 PM",
+    emoji: "🍽️",
   },
 ];
