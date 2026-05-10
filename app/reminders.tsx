@@ -34,4 +34,11 @@ const DEFAULT_REMINDERS = [
     time: "7:00 PM",
     emoji: "🍽️",
   },
+  {
+    id: "6",
+    title: "Daily summary",
+    desc: "Check your progress for today",
+    time: "9:00 PM",
+    emoji: "📊",
+  },
 ];
