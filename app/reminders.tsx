@@ -97,6 +97,13 @@ export default function RemindersScreen() {
               <View style={styles.emojiWrap}>
                 <Text style={{ fontSize: 22 }}>{reminder.emoji}</Text>
               </View>
+              <View>
+                <View style={}>
+                  <Text style={[styles.reminderTitle, !enabled[reminder.id] && { color: '#BBB' }]}>
+                    {reminder.title}
+                  </Text>
+                </View>
+              </View>
             </View>
           ))}
          </View>
