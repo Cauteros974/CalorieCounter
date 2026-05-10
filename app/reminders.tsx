@@ -119,7 +119,7 @@ export default function RemindersScreen() {
          </View>
          
          <Text style={styles.note}>
-          Push notifications require system permission. Make sure notifications are enabled in your device settings.
+          💡 Push notifications require system permission. Make sure notifications are enabled in your device settings.
          </Text>
       </ScrollView>
     </View>
@@ -127,56 +127,33 @@ export default function RemindersScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#F8F8FA" },
-  header: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingHorizontal: 20,
-    paddingTop: 60,
-    paddingBottom: 20,
-    backgroundColor: "#fff",
-    borderBottomLeftRadius: 24,
-    borderBottomRightRadius: 24,
-    elevation: 2,
-    shadowColor: "#000",
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    marginBottom: 20,
-  },
-  backBtn: {
-    width: 40,
-    height: 40,
-    borderRadius: 12,
-    backgroundColor: "#F5F5F5",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: { fontSize: 18, fontWeight: "800", color: "#1A1A1A", },
-  hint: { textAlign: 'center', fontSize: 13, color: '#888', marginBottom: 20 },
-  listCard: {
-    marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 24, overflow: 'hidden',
-    elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
-  },
-  row: {
-    flexDirection:'row', alignItems: 'center', padding: 16, gap: 12,
-    borderBottomWidth: 1, borderBottomColor: '#F5F5F5',
-  },
-  emojiWrap: {
-    width: 44, height: 44, borderRadius: 12, backgroundColor: '#F8F8FA',
-    alignItems: 'center', justifyContent: 'center'
-  },
-  reminderTitle: {
-    fontSize: 14, fontWeight: '400', color: '#1A1A1A'
-  },
-  reminderTime: {
-    fontSize: 12, color: '#4CAF50', fontWeight: '600'
-  },
-  reminderDesc: {
-    fontSize: 12, color: '#888', marginTop: 2
-  },
-  note: {
-    marginHorizontal: 20, marginTop: 20, fontSize: 13,
-    color: '#AAA', textAlign: 'center', lineHeight: 20
-  }
+  container: { flex: 1, backgroundColor: '#F8F9FA' },
+    header: {
+        flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
+        paddingHorizontal: 20, paddingTop: 60, paddingBottom: 20,
+        backgroundColor: '#fff', borderBottomLeftRadius: 24, borderBottomRightRadius: 24,
+        elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8, marginBottom: 20,
+    },
+    backBtn: { width: 40, height: 40, borderRadius: 12, backgroundColor: '#F5F5F5', alignItems: 'center', justifyContent: 'center' },
+    title: { fontSize: 18, fontWeight: '800', color: '#1A1A1A' },
+    hint: { textAlign: 'center', fontSize: 13, color: '#888', marginBottom: 20 },
+    listCard: {
+        marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 24, overflow: 'hidden',
+        elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
+    },
+    row: {
+        flexDirection: 'row', alignItems: 'center', padding: 16, gap: 12,
+        borderBottomWidth: 1, borderBottomColor: '#F5F5F5',
+    },
+    emojiWrap: {
+        width: 44, height: 44, borderRadius: 12, backgroundColor: '#F8F9FA',
+        alignItems: 'center', justifyContent: 'center',
+    },
+    reminderTitle: { fontSize: 14, fontWeight: '700', color: '#1A1A1A' },
+    reminderTime: { fontSize: 12, color: '#4CAF50', fontWeight: '600' },
+    reminderDesc: { fontSize: 12, color: '#888', marginTop: 2 },
+    note: {
+        marginHorizontal: 20, marginTop: 20, fontSize: 13,
+        color: '#AAA', lineHeight: 20, textAlign: 'center',
+    },
 });
