@@ -50,7 +50,7 @@ const DEFAULT_REMINDERS = [
 
 export default function RemindersScreen() {
   const [enabled, setEnabled] = useState<Record<string, boolean>>(
-    Object.fromEntries(DEFAULT_REMINDERS.map(r => [r.id, true]))
+    Object.fromEntries(DEFAULT_REMINDERS.map((r) => [r.id, true])),
   );
 
   const togle = (id: string) =>
@@ -67,7 +67,9 @@ export default function RemindersScreen() {
         <TouchableOpacity
           style={styles.backBtn}
           onPress={() => {
-            const newState = Object.fromEntries(DEFAULT_REMINDERS.map(r => {r.id !allOn}));
+            const newState = Object.fromEntries(
+              DEFAULT_REMINDERS.map((r) => [r.id, !allOn]),
+            );
             setEnabled(newState);
           }}
         >
