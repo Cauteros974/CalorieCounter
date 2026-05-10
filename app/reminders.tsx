@@ -140,5 +140,9 @@ const styles = StyleSheet.create({
   row: {
     flexDirection:'row', alignItems: 'center', padding: 16, gap: 12,
     borderBottomWidth: 1, borderBottomColor: '#F5F5F5',
+  },
+  emojiWrap: {
+    width: 44, height: 44, borderRadius: 12, backgroundColor: '#F8F8FA',
+    alignItems: 'center'
   }
 });
