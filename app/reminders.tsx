@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { router } from "expo-router";
+import { ArrowLeft } from "lucide-react-native";
+import React, { useState } from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const DEFAULT_REMINDERS = [
   {
@@ -53,4 +56,19 @@ export default function RemindersScreen() {
   const togle = (id: string) =>
     setEnabled((prev) => ({ ...prev, [id]: !prev[id] }));
   const allOn = Object.values(enabled).every(Boolean);
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
+          <ArrowLeft color="#1A1A1A" size={24} />
+        </TouchableOpacity>
+        <Text style={styles.title}>Reminders</Text>
+      </View>
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: "#F8F8FA" },
+});
