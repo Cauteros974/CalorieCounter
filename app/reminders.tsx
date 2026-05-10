@@ -1,5 +1,5 @@
 import { router } from "expo-router";
-import { ArrowLeft } from "lucide-react-native";
+import { ArrowLeft, Bell, BellOff } from "lucide-react-native";
 import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
@@ -64,6 +64,13 @@ export default function RemindersScreen() {
           <ArrowLeft color="#1A1A1A" size={24} />
         </TouchableOpacity>
         <Text style={styles.title}>Reminders</Text>
+        <TouchableOpacity>
+          {allOn ? (
+            <BellOff color="#888" size={20} />
+          ) : (
+            <Bell color="#4CAF50" size={20} />
+          )}
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -96,7 +103,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: "800",
     color: "#1A1A1A",
   },
