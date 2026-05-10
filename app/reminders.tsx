@@ -87,4 +87,11 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     marginBottom: 20,
   },
+  backBtn: {
+    width: 40,
+    height: 40,
+    borderRadius: 12,
+    backgroundColor: "#F5F5F5",
+    alignItems: "center",
+  },
 });
