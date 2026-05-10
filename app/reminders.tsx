@@ -95,4 +95,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  title: {
+    fontSize: 15,
+    fontWeight: "800",
+    color: "#1A1A1A",
+  },
 });
