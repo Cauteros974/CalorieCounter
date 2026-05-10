@@ -135,6 +135,6 @@ const styles = StyleSheet.create({
   hint: { textAlign: 'center', fontSize: 13, color: '#888', marginBottom: 20 },
   listCard: {
     marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 24, overflow: 'hidden',
-    elevation: 2, shadowColor: '#000', shadowOpacity: 0.05
+    elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
   }
 });
