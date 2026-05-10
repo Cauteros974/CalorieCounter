@@ -87,7 +87,13 @@ export default function RemindersScreen() {
 
          <View style={styles.listCard}>
           {DEFAULT_REMINDERS.map((reminder, i) => (
-            <View>
+            <View
+              key={reminder.id}
+              style={[
+                styles.row,
+                i === DEFAULT_REMINDERS.length - 1 && {borderBlockColor: 0}
+              ]}
+            >
               <View style={styles.emojiWrap}>
                 <Text style={{ fontSize: 22 }}>{reminder.emoji}</Text>
               </View>
