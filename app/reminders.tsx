@@ -116,5 +116,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: { fontSize: 18, fontWeight: "800", color: "#1A1A1A", },
-  hint: { textAlign: 'center', fontSize: 13, color: '#888', },
+  hint: { textAlign: 'center', fontSize: 13, color: '#888', marginBottom: 20 },
 });
