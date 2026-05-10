@@ -161,5 +161,8 @@ const styles = StyleSheet.create({
   },
   reminderTime: {
     fontSize: 12, color: '#4CAF50', fontWeight: '600'
+  },
+  reminderDesc: {
+    fontSize: 12, color: '#888', marginTop: 10
   }
 });
