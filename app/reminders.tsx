@@ -84,6 +84,16 @@ export default function RemindersScreen() {
         <Text style={styles.hint}>
           {Object.values(enabled).filter(Boolean).length} of {DEFAULT_REMINDERS.length} reminders active
         </Text>
+
+         <View style={styles.listCard}>
+          {DEFAULT_REMINDERS.map((reminder, i) => (
+            <View>
+              <View style={styles.emojiWrap}>
+                <Text style={{ fontSize: 22 }}>{reminder.emoji}</Text>
+              </View>
+            </View>
+          ))}
+         </View>
       </ScrollView>
     </View>
   );
