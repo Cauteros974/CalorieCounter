@@ -1,7 +1,7 @@
 import { router } from "expo-router";
 import { ArrowLeft, Bell, BellOff } from "lucide-react-native";
 import React, { useState } from "react";
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView, StyleSheet, Switch, Text, TouchableOpacity, View } from "react-native";
 
 const DEFAULT_REMINDERS = [
   {
@@ -53,7 +53,7 @@ export default function RemindersScreen() {
     Object.fromEntries(DEFAULT_REMINDERS.map((r) => [r.id, true])),
   );
 
-  const togle = (id: string) =>
+  const toggle = (id: string) =>
     setEnabled((prev) => ({ ...prev, [id]: !prev[id] }));
   const allOn = Object.values(enabled).every(Boolean);
 
@@ -108,6 +108,11 @@ export default function RemindersScreen() {
                   {reminder.desc}
                 </Text>
               </View>
+              <Switch
+                value={enabled[reminder.id]}
+                onValueChange={() => toggle(reminder.id)}
+              />
+              
             </View>
           ))}
          </View>
