@@ -2,6 +2,7 @@ import { router } from "expo-router";
 import { ArrowLeft, Bell, BellOff } from "lucide-react-native";
 import React, { useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { ScrollView } from "react-native-reanimated/lib/typescript/Animated";
 
 const DEFAULT_REMINDERS = [
   {
@@ -80,6 +81,16 @@ export default function RemindersScreen() {
           )}
         </TouchableOpacity>
       </View>
+
+      <ScrollView
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{ padding: 50 }}
+      >
+        <Text style={styles.hint}>
+          {Object.values(enabled).filter(Boolean).length} of{" "}
+          {DEFAULT_REMINDERS.length} reminders active
+        </Text>
+      </ScrollView>
     </View>
   );
 }
