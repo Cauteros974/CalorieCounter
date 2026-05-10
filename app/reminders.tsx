@@ -1,8 +1,7 @@
 import { router } from "expo-router";
 import { ArrowLeft, Bell, BellOff } from "lucide-react-native";
 import React, { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { ScrollView } from "react-native-reanimated/lib/typescript/Animated";
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 const DEFAULT_REMINDERS = [
   {
@@ -74,11 +73,7 @@ export default function RemindersScreen() {
             setEnabled(newState);
           }}
         >
-          {allOn ? (
-            <BellOff color="#888" size={20} />
-          ) : (
-            <Bell color="#4CAF50" size={20} />
-          )}
+          {allOn ? <BellOff color="#888" size={20} /> : <Bell color="#4CAF50" size={20} />}
         </TouchableOpacity>
       </View>
 
@@ -87,8 +82,7 @@ export default function RemindersScreen() {
         contentContainerStyle={{ padding: 50 }}
       >
         <Text style={styles.hint}>
-          {Object.values(enabled).filter(Boolean).length} of{" "}
-          {DEFAULT_REMINDERS.length} reminders active
+          {Object.values(enabled).filter(Boolean).length} of {DEFAULT_REMINDERS.length} reminders active
         </Text>
       </ScrollView>
     </View>
@@ -121,9 +115,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  title: {
-    fontSize: 18,
-    fontWeight: "800",
-    color: "#1A1A1A",
-  },
+  title: { fontSize: 18, fontWeight: "800", color: "#1A1A1A", },
+  hint: { textAlign: 'center', fontSize: 13, color: '#888', },
 });
