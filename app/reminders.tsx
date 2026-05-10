@@ -111,6 +111,7 @@ export default function RemindersScreen() {
               <Switch
                 value={enabled[reminder.id]}
                 onValueChange={() => toggle(reminder.id)}
+                trackColor={{ false: '#E0E0E0', true: '#A5D6A7'}}
               />
               
             </View>
