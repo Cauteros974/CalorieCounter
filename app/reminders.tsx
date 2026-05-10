@@ -49,4 +49,6 @@ export default function RemindersScreen() {
   const [enanbled, setEnabled] = useState<Record<string, boolean>>(
     Object.fromEntries(DEFAULT_REMINDERS.map((r) => [r.id, true])),
   );
+
+  const togle = (id: string) => setEnabled(prev => ({...prev,[id]: !prev,[id]}));
 }
