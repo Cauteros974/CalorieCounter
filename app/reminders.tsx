@@ -138,6 +138,6 @@ const styles = StyleSheet.create({
     elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
   },
   row: {
-    flexDirection:'row', alignItems: 'center', padding: 10, gap: 12,
+    flexDirection:'row', alignItems: 'center', padding: 16, gap: 12,
   }
 });
