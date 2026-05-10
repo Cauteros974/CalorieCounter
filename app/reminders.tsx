@@ -143,6 +143,6 @@ const styles = StyleSheet.create({
   },
   emojiWrap: {
     width: 44, height: 44, borderRadius: 12, backgroundColor: '#F8F8FA',
-    alignItems: 'center'
+    alignItems: 'center', justifyContent: 'center'
   }
 });
