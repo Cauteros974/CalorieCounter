@@ -177,6 +177,6 @@ const styles = StyleSheet.create({
   },
   note: {
     marginHorizontal: 20, marginTop: 20, fontSize: 13,
-    color: '#AAA', textAlign: 'center'
+    color: '#AAA', textAlign: 'center', lineHeight: 20
   }
 });
