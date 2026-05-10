@@ -136,5 +136,8 @@ const styles = StyleSheet.create({
   listCard: {
     marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 24, overflow: 'hidden',
     elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
+  },
+  row: {
+    flexDirection:'row', alignItems: 'center', padding: 10, gap: 12,
   }
 });
