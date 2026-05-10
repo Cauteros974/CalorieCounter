@@ -102,6 +102,7 @@ export default function RemindersScreen() {
                   <Text style={[styles.reminderTitle, !enabled[reminder.id] && { color: '#BBB' }]}>
                     {reminder.title}
                   </Text>
+                  <Text>{reminder.time}</Text>
                 </View>
               </View>
             </View>
