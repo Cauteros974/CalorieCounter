@@ -91,7 +91,7 @@ export default function RemindersScreen() {
               key={reminder.id}
               style={[
                 styles.row,
-                i === DEFAULT_REMINDERS.length - 1 && {borderBlockColor: 0}
+                i === DEFAULT_REMINDERS.length - 1 && {borderBottomWidth: 0}
               ]}
             >
               <View style={styles.emojiWrap}>
