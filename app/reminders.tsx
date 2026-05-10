@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   title: {
-    fontSize: 15,
+    fontSize: 20,
     fontWeight: "800",
     color: "#1A1A1A",
   },
