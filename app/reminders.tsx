@@ -133,4 +133,7 @@ const styles = StyleSheet.create({
   },
   title: { fontSize: 18, fontWeight: "800", color: "#1A1A1A", },
   hint: { textAlign: 'center', fontSize: 13, color: '#888', marginBottom: 20 },
+  listCard: {
+    marginHorizontal: 20, backgroundColor: '#fff', borderRadius: 20, overflow: 'hidden'
+  }
 });
