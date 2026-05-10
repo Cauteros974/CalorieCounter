@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const DEFAULT_REMINDERS = [
   {
     id: "1",
@@ -42,3 +44,9 @@ const DEFAULT_REMINDERS = [
     emoji: "📊",
   },
 ];
+
+export default function RemindersScreen() {
+  const [enanbled, setEnabled] = useState<Record<string, boolean>>(
+    Object.fromEntries(DEFAULT_REMINDERS.map((r) => [r.id, true])),
+  );
+}
