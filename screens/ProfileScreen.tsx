@@ -4,7 +4,9 @@ import { router } from 'expo-router';
 import {
     Album, Award, Bell,
     Camera, ChevronRight,
-    Edit3, Ruler, User, Weight
+    Edit3,
+    LogOut,
+    Ruler, User, Weight
 } from 'lucide-react-native';
 import React, { useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
@@ -210,6 +212,12 @@ function ProfileDashboard({ onEdit }: { onEdit: () => void }) {
                         <Text style={dashStyles.editFullBtnText}>Edit Profile</Text>
                     </TouchableOpacity>
 
+                    
+                    <TouchableOpacity style={dashStyles.editFullBtn} onPress={onEdit} activeOpacity={0.85}>
+                        <LogOut color="#fff" size={18} />
+                        <Text style={dashStyles.editFullBtnText}>Exit</Text>
+                    </TouchableOpacity>
+
                 </Animated.View>
             </ScrollView>
         </View>
@@ -285,9 +293,9 @@ const dashStyles = StyleSheet.create({
     editFullBtn: {
         marginHorizontal: 16, backgroundColor: '#4CAF50', borderRadius: 16,
         padding: 16, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
-        shadowColor: '#4CAF50', shadowOpacity: 0.3, shadowRadius: 10, elevation: 4,
+        shadowColor: '#4CAF50', shadowOpacity: 0.3, shadowRadius: 10, elevation: 4, 
     },
-    editFullBtnText: { color: '#fff', fontSize: 16, fontWeight: '700' },
+    editFullBtnText: { color: '#fff', fontSize: 16, fontWeight: '700', },
 });
 
 // ── Main Screen ───────────────────────────────────────────────────────────────
