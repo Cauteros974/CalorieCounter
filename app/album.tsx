@@ -1,6 +1,10 @@
-import { useUserStore } from "@/store/useUserStore";
-import { ArrowLeft } from "lucide-react-native";
-import { Dimensions, TouchableOpacity, View } from "react-native";
+import { useUserStore } from '@/store/useUserStore';
+import { ArrowLeft } from 'lucide-react-native';
+import React from 'react';
+import {
+    Dimensions,
+    StyleSheet, Text, TouchableOpacity, View
+} from 'react-native';
 
 const COL = 2;
 const GAP = 12;
@@ -15,6 +19,8 @@ export default function AlbumScreen() {
                 <TouchableOpacity>
                     <ArrowLeft color="#1A1A1A" size={20} />
                 </TouchableOpacity>
+                <Text style={styles.title}>Photo Album</Text>
+                <View style={{ width: 40 }} />
             </View>
         </View>
     );
