@@ -109,5 +109,5 @@ const styles = StyleSheet.create({
     cardInfo: { padding: 10 },
     dishName: { fontSize: 13, fontWeight: '700', color: '#1A1A1A' },
     cardCals: { fontSize: 12, color: '#4CAF50', fontWeight: '600', marginTop: 2 },
-    
+    cardDate: { fontSize: 11, color: '#AAA', marginTop: 2 },
 })
