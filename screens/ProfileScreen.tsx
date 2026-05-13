@@ -292,11 +292,8 @@ const dashStyles = StyleSheet.create({
         alignItems: 'center', justifyContent: 'center', marginRight: 14,
     },
     menuLabel: { flex: 1, fontSize: 15, fontWeight: '600', color: '#1A1A1A' },
-    editFullBtn: {
-        marginHorizontal: 16, backgroundColor: '#4CAF50', borderRadius: 16,
-        padding: 16, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 10,
-        shadowColor: '#4CAF50', shadowOpacity: 0.3, shadowRadius: 10, elevation: 4, display: 'flex'
-    },
+    buttonsRow: { flexDirection: 'row', marginHorizontal: 16, gap: 12},
+    
     editFullBtnText: { color: '#fff', fontSize: 16, fontWeight: '700' },
 });
 
