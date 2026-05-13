@@ -1,4 +1,5 @@
 import { useUserStore } from '@/store/useUserStore';
+import { router } from 'expo-router';
 import { ArrowLeft } from 'lucide-react-native';
 import React from 'react';
 import {
@@ -16,7 +17,7 @@ export default function AlbumScreen() {
     return(
         <View style = {styles.container}>
             <View style = {styles.header}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => router.back()} style={styles.backBtn}>
                     <ArrowLeft color="#1A1A1A" size={20} />
                 </TouchableOpacity>
                 <Text style={styles.title}>Photo Album</Text>
@@ -35,6 +36,6 @@ const styles = StyleSheet.create({
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8, marginBottom: 20,
     },
     title: {
-        fontSize: 18, fontWeight: '700', color: '#1A1A1A'
+        fontSize: 18, fontWeight: '800', color: '#1A1A1A'
     }
 })
