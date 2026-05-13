@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     },
     goBtn:{
         marginTop: 24, backgroundColor: '#4CAF50', borderRadius: 14,
+        paddingHorizontal: 28, paddingVertical: 14,
     },
     gotBtnText: {
         color: '#fff', 
