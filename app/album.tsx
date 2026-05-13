@@ -32,6 +32,11 @@ export default function AlbumScreen() {
                     <Text style={styles.emptyDesc}>
                         Scan your meals with the camera on the home screen and they'll appear here
                     </Text>
+                    <TouchableOpacity>
+                        <Text style={styles.gotBtnText}>
+                            Go scan a meal
+                        </Text>
+                    </TouchableOpacity>
                 </View>
             ):(
                 <ScrollView>
@@ -62,6 +67,6 @@ const styles = StyleSheet.create({
         fontSize: 20, fontWeight: '800', color: '#1A1A1A', marginBottom: 0, marginTop: 20
     },
     emptyDesc: {
-        fontSize: 14, color: '#888', textAlign: 'center'
-    }
+        fontSize: 14, color: '#888', textAlign: 'center', lineHeight: 20
+    },
 })
