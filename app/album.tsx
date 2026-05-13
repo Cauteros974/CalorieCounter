@@ -11,7 +11,7 @@ const GAP = 12;
 const CARD_W = (Dimensions.get('window').width - 40 - GAP) / COL;
 
 export default function AlbumScreen() {
-    const {photo} = useUserStore;
+    const {photoAlbum} = useUserStore;
 
     return(
         <View style = {styles.container}>
@@ -34,4 +34,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff', borderBottomLeftRadius: 24, borderBottomRightRadius: 24,
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8, marginBottom: 20,
     },
+    title: {
+        fontSize: 18, fontWeight: '700', color: '#1A1A1A'
+    }
 })
