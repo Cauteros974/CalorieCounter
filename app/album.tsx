@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     },
     backBtn: {
         width: 40, height: 40, borderRadius: 12, backgroundColor: '#F5F5F5', 
+        alignItems: 'center', justifyContent: 'center' 
     },
     title: {
         fontSize: 18, fontWeight: '800', color: '#1A1A1A'
