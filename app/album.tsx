@@ -107,4 +107,6 @@ const styles = StyleSheet.create({
     },
     photo: { width: CARD_W, height: CARD_W },
     cardInfo: { padding: 10 },
+    dishName: { fontSize: 13, fontWeight: '700', color: '#1A1A1A' },
+    
 })
