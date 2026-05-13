@@ -105,8 +105,6 @@ const styles = StyleSheet.create({
         width: CARD_W, backgroundColor: '#fff', borderRadius: 20, overflow: 'hidden',
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
     },
-    photo: {
-        width: CARD_W, backgroundColor: '#fff', borderRadius: 20, overflow: 'hidden',
-        elevation: 2, shadowColor: '#0000', shadowOpacity: 0.05, shadowRadius: 8
-    }
+    photo: { width: CARD_W, height: CARD_W },
+
 })
