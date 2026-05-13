@@ -52,12 +52,12 @@ export default function AlbumScreen() {
                                 style={styles.photo} 
                                 source={{url: photo.uri}}
                                 resizeMode="cover"
-                            />
-                            <View style={styles.cardInfo}>
-                                <Text style={styles.dishName} numberOfLines={1}>{photo.dishName}</Text>
-                                <Text style={styles.cardCals}>{photo.calories} kcal</Text>
-                                <Text style={styles.cardDate}>{photo.date}</Text>
-                            </View>
+                                />
+                                <View style={styles.cardInfo}>
+                                    <Text style={styles.dishName} numberOfLines={1}>{photo.dishName}</Text>
+                                    <Text style={styles.cardCals}>{photo.calories} kcal</Text>
+                                    <Text style={styles.cardDate}>{photo.date}</Text>
+                                </View>
                             </View>
                         ))}
                     </View>
