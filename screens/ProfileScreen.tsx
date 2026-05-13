@@ -291,11 +291,22 @@ const dashStyles = StyleSheet.create({
     },
     menuLabel: { flex: 1, fontSize: 15, fontWeight: '600', color: '#1A1A1A' },
     editFullBtn: {
-        marginHorizontal: 16, backgroundColor: '#4CAF50', borderRadius: 16,
-        padding: 16, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8,
-        shadowColor: '#4CAF50', shadowOpacity: 0.3, shadowRadius: 10, elevation: 4, 
+        marginHorizontal: 16, 
+        flexDirection: 'row', 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        gap: 10, 
+        display: 'flex',
+        flex: 1, 
+        backgroundColor: '#4CAF50', 
+        borderRadius: 16,
+        padding: 16, 
+        shadowColor: '#4CAF50', 
+        shadowOpacity: 0.3, 
+        shadowRadius: 10, 
+        elevation: 4, 
     },
-    editFullBtnText: { color: '#fff', fontSize: 16, fontWeight: '700', },
+    editFullBtnText: { color: '#fff', fontSize: 16, fontWeight: '700' },
 });
 
 // ── Main Screen ───────────────────────────────────────────────────────────────
