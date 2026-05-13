@@ -293,7 +293,14 @@ const dashStyles = StyleSheet.create({
     },
     menuLabel: { flex: 1, fontSize: 15, fontWeight: '600', color: '#1A1A1A' },
     buttonsRow: { flexDirection: 'row', marginHorizontal: 16, gap: 12},
-    
+    editFullBtn: {
+        flex: 1,
+        backgroundColor: '#4CAF50', 
+        borderRadius: 16,
+        padding: 16, 
+        flexDirection: 'row', 
+        alignItems: 'center', 
+    },
     editFullBtnText: { color: '#fff', fontSize: 16, fontWeight: '700' },
 });
 
