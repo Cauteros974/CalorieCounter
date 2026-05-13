@@ -100,4 +100,5 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20, paddingBottom: 100
     },
     count: { fontSize: 13, color: '#888', marginBottom: 16 },
+    row: { flexDirection: 'row', flexWrap: 'wrap', gap: GAP },
 })
