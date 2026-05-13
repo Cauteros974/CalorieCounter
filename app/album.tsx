@@ -26,7 +26,7 @@ export default function AlbumScreen() {
             </View>
 
             {photoAlbum.length === 0 ? (
-                <View >
+                <View style={styles.empty}>
                     <Camera color="#CCC" size={64} />
                     <Text style={styles.emptyTitle}>No photos yet</Text>
                     <Text style={styles.emptyDesc}>
@@ -56,5 +56,8 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 18, fontWeight: '800', color: '#1A1A1A'
+    },
+    emptyTitle: {
+
     }
 })
