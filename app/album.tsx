@@ -50,7 +50,7 @@ export default function AlbumScreen() {
                             <View style={styles.card}>
                                 <Image 
                                 style={styles.photo} 
-                                source={{url: photo.uri}}
+                                source={{uri: photo.uri}}
                                 resizeMode="cover"
                                 />
                                 <View style={styles.cardInfo}>
