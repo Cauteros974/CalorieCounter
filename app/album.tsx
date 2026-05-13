@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 18, fontWeight: '800', color: '#1A1A1A'
     },
+    empty: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 40 },
     emptyTitle: {
 
     }
