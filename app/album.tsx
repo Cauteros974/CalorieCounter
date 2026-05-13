@@ -103,6 +103,6 @@ const styles = StyleSheet.create({
     row: { flexDirection: 'row', flexWrap: 'wrap', gap: GAP },
     card: {
         width: CARD_W, backgroundColor: '#fff', borderRadius: 20, overflow: 'hidden',
-        elevation: 2,
+        elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
     },
 })
