@@ -14,7 +14,7 @@ const GAP = 12;
 const CARD_W = (Dimensions.get('window').width - 40 - GAP) / COL;
 
 export default function AlbumScreen() {
-    const {photoAlbum} = useUserStore;
+    const {photoAlbum} = useUserStore();
 
     return(
         <View style = {styles.container}>
@@ -110,4 +110,4 @@ const styles = StyleSheet.create({
     dishName: { fontSize: 13, fontWeight: '700', color: '#1A1A1A' },
     cardCals: { fontSize: 12, color: '#4CAF50', fontWeight: '600', marginTop: 2 },
     cardDate: { fontSize: 11, color: '#AAA', marginTop: 2 },
-})
+});
