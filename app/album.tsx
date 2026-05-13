@@ -60,5 +60,8 @@ const styles = StyleSheet.create({
     empty: { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 40 },
     emptyTitle: {
         fontSize: 20, fontWeight: '800', color: '#1A1A1A', marginBottom: 0, marginTop: 20
+    },
+    emptyDesc: {
+        fontSize: 14, color: '#888', textAlign: 'center'
     }
 })
