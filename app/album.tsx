@@ -1,9 +1,10 @@
 import { useUserStore } from '@/store/useUserStore';
 import { router } from 'expo-router';
-import { ArrowLeft } from 'lucide-react-native';
+import { ArrowLeft, Camera } from 'lucide-react-native';
 import React from 'react';
 import {
     Dimensions,
+    ScrollView,
     StyleSheet, Text, TouchableOpacity, View
 } from 'react-native';
 
@@ -23,6 +24,14 @@ export default function AlbumScreen() {
                 <Text style={styles.title}>Photo Album</Text>
                 <View style={{ width: 40 }} />
             </View>
+
+            {photoAlbum.length === 0 ? (
+                <View >
+                    <Camera size={20}></Camera>
+                </View>
+            ):(
+                <ScrollView></ScrollView>
+            )}
         </View>
     );
 }
