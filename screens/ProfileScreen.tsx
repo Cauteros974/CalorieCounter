@@ -302,6 +302,9 @@ const dashStyles = StyleSheet.create({
         alignItems: 'center', 
         justifyContent: 'center', 
         gap: 10,
+        shadowColor: '#4CAF50', 
+        shadowOpacity: 0.3, 
+        shadowRadius: 10, 
     },
     editFullBtnText: { color: '#fff', fontSize: 16, fontWeight: '700' },
 });
