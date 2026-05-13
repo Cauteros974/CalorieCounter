@@ -4,6 +4,7 @@ import { ArrowLeft, Camera } from 'lucide-react-native';
 import React from 'react';
 import {
     Dimensions,
+    Image,
     ScrollView,
     StyleSheet, Text, TouchableOpacity, View
 } from 'react-native';
