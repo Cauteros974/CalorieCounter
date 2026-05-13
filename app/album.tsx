@@ -102,6 +102,7 @@ const styles = StyleSheet.create({
     count: { fontSize: 13, color: '#888', marginBottom: 16 },
     row: { flexDirection: 'row', flexWrap: 'wrap', gap: GAP },
     card: {
-        width: CARD_W, backgroundColor: '#fff', borderRadius: 20,
+        width: CARD_W, backgroundColor: '#fff', borderRadius: 20, overflow: 'hidden',
+        elevation: 2,
     },
 })
