@@ -207,16 +207,18 @@ function ProfileDashboard({ onEdit }: { onEdit: () => void }) {
                     </View>
 
                     {/* Edit button */}
-                    <TouchableOpacity style={dashStyles.editFullBtn} onPress={onEdit} activeOpacity={0.85}>
-                        <Edit3 color="#fff" size={18} />
-                        <Text style={dashStyles.editFullBtnText}>Edit Profile</Text>
-                    </TouchableOpacity>
+                    <View style={dashStyles.buttonsRow}>
+                        <TouchableOpacity style={dashStyles.editFullBtn} onPress={onEdit} activeOpacity={0.85}>
+                            <Edit3 color="#fff" size={18} />
+                            <Text style={dashStyles.editFullBtnText}>Edit Profile</Text>
+                        </TouchableOpacity>
+                        
+                        <TouchableOpacity style={dashStyles.editFullBtn} onPress={onEdit} activeOpacity={0.85}>
+                            <LogOut color="#fff" size={18} />
+                            <Text style={dashStyles.editFullBtnText}>Exit</Text>
+                        </TouchableOpacity>
+                    </View>
 
-                    
-                    <TouchableOpacity style={dashStyles.editFullBtn} onPress={onEdit} activeOpacity={0.85}>
-                        <LogOut color="#fff" size={18} />
-                        <Text style={dashStyles.editFullBtnText}>Exit</Text>
-                    </TouchableOpacity>
 
                 </Animated.View>
             </ScrollView>
