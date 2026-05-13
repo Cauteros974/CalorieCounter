@@ -305,6 +305,8 @@ const dashStyles = StyleSheet.create({
         shadowColor: '#4CAF50', 
         shadowOpacity: 0.3, 
         shadowRadius: 10, 
+        elevation: 4, 
+        display: 'flex'
     },
     editFullBtnText: { color: '#fff', fontSize: 16, fontWeight: '700' },
 });
