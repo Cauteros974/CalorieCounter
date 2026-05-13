@@ -39,8 +39,11 @@ export default function AlbumScreen() {
                     </TouchableOpacity>
                 </View>
             ):(
-                <ScrollView>
-
+                <ScrollView
+                    showsVerticalScrollIndicator={false}
+                    contentContainerStyle={styles.grid}
+                >
+                    <Text style={styles.count}>{photoAlbum.length} meals scanned</Text>
                 </ScrollView>
             )}
         </View>
@@ -75,5 +78,9 @@ const styles = StyleSheet.create({
     },
     gotBtnText: {
         color: '#fff', 
-    }
+    },
+    grid: {
+        paddingHorizontal: 20, paddingBottom: 90
+    },
+    count: { fontSize: 13, color: '#888', marginBottom: 16 },
 })
