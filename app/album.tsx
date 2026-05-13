@@ -27,10 +27,16 @@ export default function AlbumScreen() {
 
             {photoAlbum.length === 0 ? (
                 <View >
-                    <Camera size={20}></Camera>
+                    <Camera color="#CCC" size={64} />
+                    <Text style={styles.emptyTitle}>No photos yet</Text>
+                    <Text style={styles.emptyDesc}>
+                        Scan your meals with the camera on the home screen and they'll appear here
+                    </Text>
                 </View>
             ):(
-                <ScrollView></ScrollView>
+                <ScrollView>
+
+                </ScrollView>
             )}
         </View>
     );
