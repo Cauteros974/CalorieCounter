@@ -106,5 +106,10 @@ const styles = StyleSheet.create({
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8,
     },
     photo: { width: CARD_W, height: CARD_W },
-
+    cardInfo: {
+        padding: 10
+    },
+    dishName: {
+        fontSize: 13, fontWeight: '700', color: '#1A1A1A'
+    }  
 })
