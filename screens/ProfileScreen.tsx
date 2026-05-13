@@ -300,6 +300,8 @@ const dashStyles = StyleSheet.create({
         padding: 16, 
         flexDirection: 'row', 
         alignItems: 'center', 
+        justifyContent: 'center', 
+        gap: 10,
     },
     editFullBtnText: { color: '#fff', fontSize: 16, fontWeight: '700' },
 });
