@@ -44,6 +44,17 @@ export default function AlbumScreen() {
                     contentContainerStyle={styles.grid}
                 >
                     <Text style={styles.count}>{photoAlbum.length} meals scanned</Text>
+                    <View style={styles.row}>
+                        {photoAlbum.map((photo, i) => (
+                            <View style={styles.card}>
+                                <Image 
+                                style={styles.photo} 
+                                source={{url: photo.uri}}
+                                resizeMode="cover"
+                                />
+                            </View>
+                        ))}
+                    </View>
                 </ScrollView>
             )}
         </View>
