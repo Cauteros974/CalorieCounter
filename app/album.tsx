@@ -32,7 +32,7 @@ export default function AlbumScreen() {
                     <Text style={styles.emptyDesc}>
                         Scan your meals with the camera on the home screen and they'll appear here
                     </Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity style={styles.goBtn} onPress={() => router.push('/')}>
                         <Text style={styles.gotBtnText}>
                             Go scan a meal
                         </Text>
@@ -69,4 +69,10 @@ const styles = StyleSheet.create({
     emptyDesc: {
         fontSize: 14, color: '#888', textAlign: 'center', lineHeight: 20
     },
+    goBtn:{
+        marginTop: 24, backgroundColor: '#4CAF50', borderRadius: 14,
+    },
+    gotBtnText: {
+        color: '#fff', 
+    }
 })
