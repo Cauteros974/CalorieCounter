@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
         color: '#fff', 
     },
     grid: {
-        paddingHorizontal: 20, paddingBottom: 90
+        paddingHorizontal: 20, paddingBottom: 100
     },
     count: { fontSize: 13, color: '#888', marginBottom: 16 },
 })
