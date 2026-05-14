@@ -1,23 +1,19 @@
 import { useUserStore } from '@/store/useUserStore';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useNavigation } from '@react-navigation/native';
+import { router } from 'expo-router';
 import {
     Album, Award, Bell,
     Camera, ChevronRight,
-    Edit3,
-    LogOut,
-    Ruler, User, Weight
+    LogOut, Ruler, User, Weight
 } from 'lucide-react-native';
 import React, { useRef, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import {
     Animated, Easing, Keyboard, KeyboardAvoidingView,
-    Platform, Pressable, ScrollView, StyleSheet,
+    Platform, ScrollView, StyleSheet,
     Text, TextInput, TouchableOpacity, View,
 } from 'react-native';
 import * as z from 'zod';
-
-const navigation = useNavigation<any>();
 
 const profileSchema = z.object({
     fullName: z.string().min(1, 'The name is too short'),
@@ -35,7 +31,7 @@ type ProfileFormData = z.infer<typeof profileSchema>;
 
 // ── Animated Input ────────────────────────────────────────────────────────────
 function AnimatedInput({ label, icon, keyboardType = 'default', error, onChange, value }: any) {
-    const borderAnim = useRef(new Animated.Value(0)).current;
+    const borderAnim = useRef(new Animated.Value(value ? 1 : 0)).current;
     const labelAnim = useRef(new Animated.Value(value ? 1 : 0)).current;
 
     const onFocus = () => {
@@ -78,35 +74,22 @@ function AnimatedInput({ label, icon, keyboardType = 'default', error, onChange,
                             {label}
                         </Animated.Text>
                     </View>
-    <TextInput
-        style={inputStyles.input}
-        keyboardType={keyboardType}
-        onChangeText={onChange}
-        value={value}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        autoCorrect={false}
-        autoCapitalize="none"
-    />
-</View>
-
+                    <TextInput
+                        style={inputStyles.input}
+                        keyboardType={keyboardType}
+                        onChangeText={onChange}
+                        value={value}
+                        onFocus={onFocus}
+                        onBlur={onBlur}
+                        autoCorrect={false}
+                        autoCapitalize="none"
+                    />
+                </View>
             </Animated.View>
             {error && <Text style={inputStyles.errorText}>{error}</Text>}
         </View>
     );
 }
-
-const inputStyles = StyleSheet.create({
-    wrapper: { marginBottom: 16 },
-    box: {
-        flexDirection: 'row', alignItems: 'center', borderWidth: 1.5,
-        borderRadius: 16, paddingHorizontal: 16, backgroundColor: '#FAFAFA', height: 64,
-    },
-    iconWrap: { marginRight: 12 },
-    floatingLabel: { fontWeight: '600' },
-    input: { fontSize: 16, color: '#1A1A1A', paddingBottom: 4, height: 30 },
-    errorText: { color: '#FF5252', fontSize: 12, marginTop: 4, marginLeft: 16 },
-});
 
 // ── Profile Dashboard ─────────────────────────────────────────────────────────
 function ProfileDashboard({ onEdit }: { onEdit: () => void }) {
@@ -188,23 +171,19 @@ function ProfileDashboard({ onEdit }: { onEdit: () => void }) {
                             <Text style={dashStyles.xpCount}>{xp} / 1000 XP</Text>
                         </View>
                         <View style={dashStyles.xpTrack}>
-                            <View style={[dashStyles.xpFill, { width: `${Math.min(xp / 10, 100)}%` }]} />
+                            <View style={[dashStyles.xpFill, { width: `${Math.min((xp || 0) / 10, 100)}%` }]} />
                         </View>
                     </View>
 
-                    {/* Menu */}
+                    {/* Menu Items */}
                     <View style={dashStyles.menuSection}>
-                        {menuItems.map((item, i) => (
-                            <TouchableOpacity
-                                key={item.label}
-                                style={[
-                                    dashStyles.menuRow,
-                                    i === menuItems.length - 1 && { borderBottomWidth: 0 }
-                                ]}
-                                activeOpacity={0.7}
-                                onPress={() => navigation.navigate(item.route)}
+                        {menuItems.map((item, idx) => (
+                            <TouchableOpacity 
+                                key={idx} 
+                                style={dashStyles.menuItem}
+                                onPress={() => router.push(item.route as any)}
                             >
-                                <View style={[dashStyles.menuIcon, { backgroundColor: item.bg }]}>
+                                <View style={[dashStyles.menuIconBg, { backgroundColor: item.bg }]}>
                                     {item.icon}
                                 </View>
                                 <Text style={dashStyles.menuLabel}>{item.label}</Text>
@@ -213,19 +192,11 @@ function ProfileDashboard({ onEdit }: { onEdit: () => void }) {
                         ))}
                     </View>
 
-                    {/* Edit button */}
-                    <View style={dashStyles.buttonsRow}>
-                        <TouchableOpacity style={dashStyles.editFullBtn} onPress={onEdit} activeOpacity={0.85}>
-                            <Edit3 color="#fff" size={18} />
-                            <Text style={dashStyles.editFullBtnText}>Edit Profile</Text>
-                        </TouchableOpacity>
-                        
-                        <TouchableOpacity style={dashStyles.editFullBtn} onPress={onEdit} activeOpacity={0.85}>
-                            <LogOut color="#fff" size={18} />
-                            <Text style={dashStyles.editFullBtnText}>Exit</Text>
-                        </TouchableOpacity>
-                    </View>
-
+                    {/* Logout Button */}
+                    <TouchableOpacity style={dashStyles.logoutBtn}>
+                        <LogOut color="#FF5252" size={20} />
+                        <Text style={dashStyles.logoutText}>Log Out</Text>
+                    </TouchableOpacity>
 
                 </Animated.View>
             </ScrollView>
@@ -233,223 +204,206 @@ function ProfileDashboard({ onEdit }: { onEdit: () => void }) {
     );
 }
 
-const dashStyles = StyleSheet.create({
-    header: {
-        flexDirection: 'row', alignItems: 'center',
-        paddingHorizontal: 20, paddingTop: 60, paddingBottom: 24,
-        backgroundColor: '#fff',
-        borderBottomLeftRadius: 28, borderBottomRightRadius: 28,
-        shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 10, elevation: 3,
-        marginBottom: 20,
-    },
-    avatarWrap: { alignItems: 'center', marginRight: 20 },
-    avatar: {
-        width: 80, height: 80, borderRadius: 40,
-        backgroundColor: '#E8F5E9',
-        alignItems: 'center', justifyContent: 'center',
-        borderWidth: 3, borderColor: '#4CAF50',
-    },
-    cameraBtn: {
-        position: 'absolute', bottom: 22, right: -4,
-        backgroundColor: '#4CAF50', borderRadius: 12, padding: 4,
-    },
-    editBtn: { color: '#4CAF50', fontSize: 13, fontWeight: '600', marginTop: 6 },
-    headerInfo: { flex: 1 },
-    name: { fontSize: 20, fontWeight: '800', color: '#1A1A1A' },
-    accountType: { fontSize: 13, color: '#AAA', fontStyle: 'italic', marginTop: 2 },
-    levelBadge: {
-        marginTop: 8, backgroundColor: '#F8F9FA',
-        borderRadius: 10, paddingHorizontal: 10, paddingVertical: 4,
-        alignSelf: 'flex-start',
-    },
-    levelText: { fontSize: 12, fontWeight: '600', color: '#555' },
-    statsGrid: {
-        flexDirection: 'row', flexWrap: 'wrap',
-        paddingHorizontal: 16, gap: 12, marginBottom: 16,
-    },
-    statCard: {
-        width: '46%', backgroundColor: '#fff', borderRadius: 20,
-        padding: 16, alignItems: 'center',
-        shadowColor: '#000', shadowOpacity: 0.04, shadowRadius: 8, elevation: 2,
-    },
-    statValue: { fontSize: 24, fontWeight: '900' },
-    statSub: { fontSize: 12, color: '#AAA', marginTop: 2 },
-    statLabel: { fontSize: 13, fontWeight: '600', color: '#555', marginTop: 4 },
-    xpCard: {
-        marginHorizontal: 16, backgroundColor: '#fff', borderRadius: 20,
-        padding: 16, marginBottom: 16,
-        shadowColor: '#000', shadowOpacity: 0.04, shadowRadius: 8, elevation: 2,
-    },
-    xpLabel: { fontSize: 13, fontWeight: '700', color: '#1A1A1A' },
-    xpCount: { fontSize: 12, color: '#888' },
-    xpTrack: { height: 8, backgroundColor: '#F0F0F0', borderRadius: 4, overflow: 'hidden' },
-    xpFill: { height: '100%', backgroundColor: '#FFD740', borderRadius: 4 },
-    menuSection: {
-        marginHorizontal: 16, backgroundColor: '#fff',
-        borderRadius: 20, overflow: 'hidden',
-        shadowColor: '#000', shadowOpacity: 0.04, shadowRadius: 8, elevation: 2,
-        marginBottom: 16,
-    },
-    menuRow: {
-        flexDirection: 'row', alignItems: 'center',
-        padding: 16, borderBottomWidth: 1, borderBottomColor: '#F5F5F5',
-    },
-    menuIcon: {
-        width: 40, height: 40, borderRadius: 12,
-        alignItems: 'center', justifyContent: 'center', marginRight: 14,
-    },
-    menuLabel: { flex: 1, fontSize: 15, fontWeight: '600', color: '#1A1A1A' },
-    buttonsRow: { flexDirection: 'row', marginHorizontal: 16, gap: 12},
-    editFullBtn: {
-        flex: 1,
-        backgroundColor: '#4CAF50', 
-        borderRadius: 16,
-        padding: 16, 
-        flexDirection: 'row', 
-        alignItems: 'center', 
-        justifyContent: 'center', 
-        gap: 10,
-        shadowColor: '#4CAF50', 
-        shadowOpacity: 0.3, 
-        shadowRadius: 10, 
-        elevation: 4, 
-        display: 'flex'
-    },
-    editFullBtnText: { color: '#fff', fontSize: 16, fontWeight: '700' },
-});
-
-// ── Main Screen ───────────────────────────────────────────────────────────────
-export default function ProfileScreen() {
-    const setProfile = useUserStore((state) => state.setProfile);
-    const fullName = useUserStore((state) => state.fullName);
-
-    const [showDashboard, setShowDashboard] = useState(!!fullName);
-    const buttonScale = useRef(new Animated.Value(1)).current;
-    const fadeAnim = useRef(new Animated.Value(0)).current;
-    const slideAnim = useRef(new Animated.Value(40)).current;
-
-    React.useEffect(() => {
-        Animated.parallel([
-            Animated.timing(fadeAnim, { toValue: 1, duration: 500, useNativeDriver: true }),
-            Animated.timing(slideAnim, { toValue: 0, duration: 500, easing: Easing.out(Easing.quad), useNativeDriver: true }),
-        ]).start();
-    }, []);
-
+// ── Profile Editor ────────────────────────────────────────────────────────────
+function ProfileEditor({ onCancel }: { onCancel: () => void }) {
+    const { fullName, weight, height, setProfile } = useUserStore();
+    
     const { control, handleSubmit, formState: { errors } } = useForm<ProfileFormData>({
         resolver: zodResolver(profileSchema),
-        defaultValues: { fullName: '', weight: '', height: '' },
+        defaultValues: {
+            fullName: fullName || '',
+            weight: weight ? String(weight) : '',
+            height: height ? String(height) : '',
+        }
     });
 
-    const onSubmit = (data: any) => {
-        setProfile({
-            fullName: data.fullName,
-            weight: Number(data.weight),
-            height: Number(data.height),
-        });
-        Animated.sequence([
-            Animated.timing(buttonScale, { toValue: 0.95, duration: 100, useNativeDriver: true }),
-            Animated.timing(buttonScale, { toValue: 1, duration: 100, useNativeDriver: true }),
-        ]).start(() => setShowDashboard(true));
+    const onSubmit = (data: ProfileFormData) => {
+        if (typeof setProfile === 'function') {
+            setProfile({
+                fullName: data.fullName,
+                weight: Number(data.weight),
+                height: Number(data.height),
+            });
+        }
+        Keyboard.dismiss();
+        onCancel();
     };
 
-    if (showDashboard) {
-        return <ProfileDashboard onEdit={() => setShowDashboard(false)} />;
-    }
-
     return (
-        <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-            <Pressable style={{ flex: 1 }} onPress={Keyboard.dismiss}>
-                <ScrollView
-                    style={formStyles.container}
-                    contentContainerStyle={formStyles.content}
-                    keyboardShouldPersistTaps="handled"
-                >
-                    <Animated.View style={{ opacity: fadeAnim, transform: [{ translateY: slideAnim }] }}>
+        <KeyboardAvoidingView 
+            behavior={Platform.OS === 'ios' ? 'padding' : 'height'} 
+            style={{ flex: 1, backgroundColor: '#FFF' }}
+        >
+            <ScrollView 
+                contentContainerStyle={{ padding: 24, paddingTop: Platform.OS === 'ios' ? 60 : 40 }}
+                keyboardShouldPersistTaps="handled"
+            >
+                <View style={editStyles.header}>
+                    <Text style={editStyles.title}>Edit Profile</Text>
+                    <Text style={editStyles.subtitle}>Update your personal metrics for accurate tracking</Text>
+                </View>
 
-                        <View style={formStyles.header}>
-                            <View style={formStyles.avatarCircle}>
-                                <User color="#4CAF50" size={36} />
-                            </View>
-                            <Text style={formStyles.title}>Personal Profile</Text>
-                            <Text style={formStyles.subtitle}>
-                                Fill in your details so we can calculate your daily norms
-                            </Text>
-                        </View>
-
-                        <Controller
-                            control={control}
-                            name="fullName"
-                            render={({ field: { onChange, value } }) => (
-                                <AnimatedInput
-                                    label="Full Name"
-                                    icon={<User color="#4CAF50" size={20} />}
-                                    onChange={onChange}
-                                    value={value}
-                                    error={errors.fullName?.message}
-                                />
-                            )}
+                <Controller
+                    control={control}
+                    name="fullName"
+                    render={({ field: { onChange, value } }) => (
+                        <AnimatedInput
+                            label="Full Name"
+                            icon={<User color="#4CAF50" size={20} />}
+                            onChange={onChange}
+                            value={value}
+                            error={errors.fullName?.message}
                         />
-                        <Controller
-                            control={control}
-                            name="height"
-                            render={({ field: { onChange, value } }) => (
-                                <AnimatedInput
-                                    label="Height (cm)"
-                                    icon={<Ruler color="#2196F3" size={20} />}
-                                    keyboardType="numeric"
-                                    onChange={onChange}
-                                    value={value}
-                                    error={errors.height && 'Please enter a valid height (100–250)'}
-                                />
-                            )}
-                        />
-                        <Controller
-                            control={control}
-                            name="weight"
-                            render={({ field: { onChange, value } }) => (
-                                <AnimatedInput
-                                    label="Weight (kg)"
-                                    icon={<Weight color="#FF9800" size={20} />}
-                                    keyboardType="numeric"
-                                    onChange={onChange}
-                                    value={value}
-                                    error={errors.weight && 'Please enter a valid weight (30–300)'}
-                                />
-                            )}
-                        />
+                    )}
+                />
 
-                        <Animated.View style={{ transform: [{ scale: buttonScale }] }}>
-                            <TouchableOpacity
-                                style={formStyles.button}
-                                onPress={handleSubmit(onSubmit)}
-                                activeOpacity={0.85}
-                            >
-                                <Text style={formStyles.buttonText}>Calculate my norms</Text>
-                            </TouchableOpacity>
-                        </Animated.View>
+                <Controller
+                    control={control}
+                    name="weight"
+                    render={({ field: { onChange, value } }) => (
+                        <AnimatedInput
+                            label="Weight (kg)"
+                            icon={<Weight color="#4CAF50" size={20} />}
+                            keyboardType="numeric"
+                            onChange={onChange}
+                            value={value}
+                            error={errors.weight?.message}
+                        />
+                    )}
+                />
 
-                    </Animated.View>
-                </ScrollView>
-            </Pressable>
+                <Controller
+                    control={control}
+                    name="height"
+                    render={({ field: { onChange, value } }) => (
+                        <AnimatedInput
+                            label="Height (cm)"
+                            icon={<Ruler color="#4CAF50" size={20} />}
+                            keyboardType="numeric"
+                            onChange={onChange}
+                            value={value}
+                            error={errors.height?.message}
+                        />
+                    )}
+                />
+
+                <View style={editStyles.btnGroup}>
+                    <TouchableOpacity style={editStyles.cancelBtn} onPress={onCancel}>
+                        <Text style={editStyles.cancelBtnText}>Cancel</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={editStyles.saveBtn} onPress={handleSubmit(onSubmit)}>
+                        <Text style={editStyles.saveBtnText}>Save Changes</Text>
+                    </TouchableOpacity>
+                </View>
+            </ScrollView>
         </KeyboardAvoidingView>
     );
 }
 
-const formStyles = StyleSheet.create({
-    container: { flex: 1, backgroundColor: '#F8F9FA' },
-    content: { padding: 24, paddingTop: 80, paddingBottom: 40 },
-    header: { alignItems: 'center', marginBottom: 40 },
-    avatarCircle: {
-        width: 80, height: 80, borderRadius: 40,
-        backgroundColor: '#E8F5E9', alignItems: 'center', justifyContent: 'center', marginBottom: 16,
+// ── Main Export ───────────────────────────────────────────────────────────────
+export default function ProfileScreen() {
+    const [isEditing, setIsEditing] = useState(false);
+
+    return isEditing ? (
+        <ProfileEditor onCancel={() => setIsEditing(false)} />
+    ) : (
+        <ProfileDashboard onEdit={() => setIsEditing(true)} />
+    );
+}
+
+// ── Styles ────────────────────────────────────────────────────────────────────
+const inputStyles = StyleSheet.create({
+    wrapper: { marginBottom: 16 },
+    box: {
+        flexDirection: 'row', alignItems: 'center', borderWidth: 1.5,
+        borderRadius: 16, paddingHorizontal: 16, backgroundColor: '#FAFAFA', height: 64,
     },
-    title: { fontSize: 24, fontWeight: '800', color: '#1A1A1A', marginBottom: 8 },
-    subtitle: { fontSize: 14, color: '#888', textAlign: 'center', lineHeight: 20, paddingHorizontal: 20 },
-    button: {
-        backgroundColor: '#4CAF50', padding: 18, borderRadius: 16,
-        alignItems: 'center', marginTop: 12,
-        shadowColor: '#4CAF50', shadowOffset: { width: 0, height: 6 },
-        shadowOpacity: 0.35, shadowRadius: 12, elevation: 6,
+    iconWrap: { marginRight: 12 },
+    floatingLabel: { fontWeight: '600' },
+    input: { fontSize: 16, color: '#1A1A1A', paddingBottom: 4, height: 30 },
+    errorText: { color: '#FF5252', fontSize: 12, marginTop: 4, marginLeft: 16 },
+});
+
+const dashStyles = StyleSheet.create({
+    header: {
+        flexDirection: 'row', padding: 24, backgroundColor: '#FFF',
+        borderBottomWidth: 1, borderBottomColor: '#F1F1F1', paddingTop: Platform.OS === 'ios' ? 60 : 40,
     },
-    buttonText: { color: '#fff', fontSize: 17, fontWeight: '700' },
+    avatarWrap: { alignItems: 'center', position: 'relative' },
+    avatar: {
+        width: 80, height: 80, borderRadius: 40, backgroundColor: '#E8F5E9',
+        justifyContent: 'center', alignItems: 'center', borderWidth: 2, borderColor: '#4CAF50',
+    },
+    cameraBtn: {
+        position: 'absolute', bottom: 20, right: 0, backgroundColor: '#4CAF50',
+        width: 24, height: 24, borderRadius: 12, justifyContent: 'center', alignItems: 'center',
+        borderWidth: 2, borderColor: '#FFF',
+    },
+    editBtn: { color: '#4CAF50', fontWeight: '700', marginTop: 8, fontSize: 14 },
+    headerInfo: { flex: 1, marginLeft: 20, justifyContent: 'center' },
+    name: { fontSize: 22, fontWeight: '700', color: '#1A1A1A', marginBottom: 4 },
+    accountType: { fontSize: 13, color: '#777', marginBottom: 6 },
+    levelBadge: {
+        backgroundColor: '#FFF8E1', paddingHorizontal: 10, paddingVertical: 4,
+        borderRadius: 20, alignSelf: 'flex-start', borderWidth: 1, borderColor: '#FFE082',
+    },
+    levelText: { fontSize: 12, fontWeight: '600', color: '#FFB300' },
+    statsGrid: {
+        flexDirection: 'row', flexWrap: 'wrap', padding: 12,
+        justifyContent: 'space-between',
+    },
+    statCard: {
+        backgroundColor: '#FFF', width: '47%', padding: 16, borderRadius: 20,
+        marginBottom: 12, shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.05, shadowRadius: 8, elevation: 2,
+    },
+    statValue: { fontSize: 20, fontWeight: '700' },
+    statSub: { fontSize: 12, color: '#999', marginTop: 2, marginBottom: 8 },
+    statLabel: { fontSize: 13, fontWeight: '600', color: '#666' },
+    xpCard: {
+        backgroundColor: '#FFF', marginHorizontal: 16, padding: 16, borderRadius: 20,
+        shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.05,
+        shadowRadius: 8, elevation: 2, marginBottom: 16,
+    },
+    xpLabel: { fontSize: 13, fontWeight: '600', color: '#666' },
+    xpCount: { fontSize: 13, fontWeight: '700', color: '#4CAF50' },
+    xpTrack: { height: 8, backgroundColor: '#E8F5E9', borderRadius: 4, overflow: 'hidden' },
+    xpFill: { height: '100%', backgroundColor: '#4CAF50', borderRadius: 4 },
+    menuSection: {
+        backgroundColor: '#FFF', marginHorizontal: 16, borderRadius: 20,
+        paddingVertical: 8, shadowColor: '#000', shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.05, shadowRadius: 8, elevation: 2, marginBottom: 16,
+    },
+    menuItem: {
+        flexDirection: 'row', alignItems: 'center', paddingVertical: 12,
+        paddingHorizontal: 16,
+    },
+    menuIconBg: {
+        width: 36, height: 36, borderRadius: 12,
+        justifyContent: 'center', alignItems: 'center', marginRight: 14,
+    },
+    menuLabel: { flex: 1, fontSize: 15, fontWeight: '600', color: '#333' },
+    logoutBtn: {
+        flexDirection: 'row', alignItems: 'center', justifyContent: 'center',
+        marginHorizontal: 16, height: 56, borderRadius: 20, backgroundColor: '#FFF',
+        borderWidth: 1.5, borderColor: '#FFEBEE',
+    },
+    logoutText: { color: '#FF5252', fontSize: 16, fontWeight: '700', marginLeft: 8 },
+});
+
+const editStyles = StyleSheet.create({
+    header: { marginBottom: 24 },
+    title: { fontSize: 26, fontWeight: '700', color: '#1A1A1A', marginBottom: 6 },
+    subtitle: { fontSize: 14, color: '#666', lineHeight: 20 },
+    btnGroup: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 16 },
+    cancelBtn: {
+        flex: 1, marginRight: 12, height: 56, borderRadius: 16,
+        backgroundColor: '#F5F5F5', justifyContent: 'center', alignItems: 'center',
+    },
+    cancelBtnText: { color: '#666', fontSize: 16, fontWeight: '600' },
+    saveBtn: {
+        flex: 2, height: 56, borderRadius: 16,
+        backgroundColor: '#4CAF50', justifyContent: 'center', alignItems: 'center',
+    },
+    saveBtnText: { color: '#FFF', fontSize: 16, fontWeight: '700' },
 });
