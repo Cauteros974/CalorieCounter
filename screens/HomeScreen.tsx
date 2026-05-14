@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
 import { Colors, useUserStore } from '../store/useUserStore';
+import CameraScreen from './CameraScreen';
 
 // Animated SVG Circle wrapper
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
@@ -435,7 +436,7 @@ export default function HomeScreen() {
                     top: 0, left: 0, right: 0, bottom: 0,
                     zIndex: 999,
                 }}>
-                    
+                    <CameraScreen onClose={() => setShowCamera(false)} />
                 </View>
             )}
         </View>
