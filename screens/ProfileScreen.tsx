@@ -63,26 +63,31 @@ function AnimatedInput({ label, icon, keyboardType = 'default', error, onChange,
             <Animated.View style={[inputStyles.box, { borderColor }]}>
                 <View style={inputStyles.iconWrap}>{icon}</View>
                 <View style={{ flex: 1, height: 56, justifyContent: 'flex-end' }}>
-                    <Animated.Text
-                        pointerEvents="none"
-                        style={[inputStyles.floatingLabel, {
-                            color: labelColor, fontSize: labelSize,
-                            position: 'absolute', top: labelY, left: 0,
-                        }]}
-                    >
-                        {label}
-                    </Animated.Text>
-                    <TextInput
-                        style={inputStyles.input}
-                        keyboardType={keyboardType}
-                        onChangeText={onChange}
-                        value={value}
-                        onFocus={onFocus}
-                        onBlur={onBlur}
-                        autoCorrect={false}
-                        autoCapitalize="none"
-                    />
-                </View>
+                    <View pointerEvents="none" style={StyleSheet.absoluteFill}>
+                        <Animated.Text
+                            style={[inputStyles.floatingLabel, {
+                                color: labelColor, 
+                                fontSize: labelSize,
+                                position: 'absolute', 
+                                top: labelY, 
+                                left: 0,
+                            }]}
+                        >
+                            {label}
+                        </Animated.Text>
+                    </View>
+    <TextInput
+        style={inputStyles.input}
+        keyboardType={keyboardType}
+        onChangeText={onChange}
+        value={value}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        autoCorrect={false}
+        autoCapitalize="none"
+    />
+</View>
+
             </Animated.View>
             {error && <Text style={inputStyles.errorText}>{error}</Text>}
         </View>
