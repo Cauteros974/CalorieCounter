@@ -1,7 +1,9 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect } from 'react';
-import { Platform } from 'react-native'; // Добавляем проверку платформы
+import { Platform } from 'react-native';
+import 'react-native-gesture-handler';
 
 import AchievementPopup from '@/components/AchievementPopu';
 import AchievementsScreen from '@/screens/AchievementsScreen';
@@ -26,54 +28,59 @@ export default function App() {
   }, []);
 
   return (
-    <>
+    <NavigationContainer>
       <AchievementPopup />
       <StatusBar style={theme === 'dark' ? 'light' : 'dark'} />
 
-      <Tab.Navigator screenOptions={{
-        headerShown: false,
-        tabBarStyle: { 
-          height: 90, 
-          paddingTop: 10,
-          backgroundColor: currentColors.card,
-          borderTopColor: currentColors.border 
-        },
-        tabBarActiveTintColor: currentColors.primary,
-        tabBarInactiveTintColor: currentColors.subText,
-      }}>
-        <Tab.Screen 
-          name='Home'
+      <Tab.Navigator
+        screenOptions={{
+          headerShown: false,
+          tabBarStyle: {
+            height: 90,
+            paddingTop: 10,
+            backgroundColor: currentColors.card,
+            borderTopColor: currentColors.border,
+          },
+          tabBarActiveTintColor: currentColors.primary,
+          tabBarInactiveTintColor: currentColors.subText,
+        }}
+      >
+        <Tab.Screen
+          name="Home"
           component={HomeScreen}
-          options={{ 
+          options={{
             tabBarLabel: 'Home',
-            tabBarIcon: ({ color }) => <Home color={color} size={24} /> 
+            tabBarIcon: ({ color }) => <Home color={color} size={24} />,
           }}
         />
+
         <Tab.Screen
-          name='Graph'
+          name="Graph"
           component={StatisticsScreen}
-          options={{ 
+          options={{
             tabBarLabel: 'Statistics',
-            tabBarIcon: ({ color }) => <ChartColumn color={color} size={24} /> 
+            tabBarIcon: ({ color }) => <ChartColumn color={color} size={24} />,
           }}
         />
+
         <Tab.Screen
-          name='Achive'
+          name="Achive"
           component={AchievementsScreen}
-          options={{ 
+          options={{
             tabBarLabel: 'Awards',
-            tabBarIcon: ({ color }) => <Trophy color={color} size={24} /> 
+            tabBarIcon: ({ color }) => <Trophy color={color} size={24} />,
           }}
         />
-        <Tab.Screen 
-          name='Profile'
+
+        <Tab.Screen
+          name="Profile"
           component={ProfileScreen}
-          options={{ 
+          options={{
             tabBarLabel: 'Profile',
-            tabBarIcon: ({ color }) => <User color={color} size={24} /> 
+            tabBarIcon: ({ color }) => <User color={color} size={24} />,
           }}
         />
       </Tab.Navigator>
-    </>
+    </NavigationContainer>
   );
 }
