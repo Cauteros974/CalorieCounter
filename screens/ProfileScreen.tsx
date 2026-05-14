@@ -1,6 +1,6 @@
 import { useUserStore } from '@/store/useUserStore';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { router } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
 import {
     Album, Award, Bell,
     Camera, ChevronRight,
@@ -16,6 +16,8 @@ import {
     Text, TextInput, TouchableOpacity, View,
 } from 'react-native';
 import * as z from 'zod';
+
+const navigation = useNavigation<any>();
 
 const profileSchema = z.object({
     fullName: z.string().min(1, 'The name is too short'),
@@ -200,7 +202,7 @@ function ProfileDashboard({ onEdit }: { onEdit: () => void }) {
                                     i === menuItems.length - 1 && { borderBottomWidth: 0 }
                                 ]}
                                 activeOpacity={0.7}
-                                onPress={() => router.push(item.route as any)}
+                                onPress={() => navigation.navigate(item.route)}
                             >
                                 <View style={[dashStyles.menuIcon, { backgroundColor: item.bg }]}>
                                     {item.icon}
