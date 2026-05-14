@@ -5,7 +5,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import {
     Animated,
     Easing,
-    Modal,
     ScrollView,
     StyleSheet,
     Text,
@@ -14,7 +13,6 @@ import {
 } from 'react-native';
 import Svg, { Circle } from 'react-native-svg';
 import { Colors, useUserStore } from '../store/useUserStore';
-import CameraScreen from './CameraScreen';
 
 // Animated SVG Circle wrapper
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
@@ -431,9 +429,15 @@ export default function HomeScreen() {
 
             </ScrollView>
 
-            <Modal visible={showCamera} animationType="slide">
-                <CameraScreen onClose={() => setShowCamera(false)} />
-            </Modal>
+            {showCamera && (
+                <View style={{
+                    position: 'absolute',
+                    top: 0, left: 0, right: 0, bottom: 0,
+                    zIndex: 999,
+                }}>
+                    
+                </View>
+            )}
         </View>
     );
 }
