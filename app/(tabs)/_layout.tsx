@@ -1,22 +1,69 @@
-// Добавьте этот импорт в самый верх app/_layout.tsx, если его там нет:
-import { Colors } from '@/constants/Colors'; // Или где у вас лежат цвета
-import { useUserStore } from '@/store/useUserStore';
-import { Stack } from 'expo-router';
+import AchievementPopup from '@/components/AchievementPopu';
+import { requestPermissions } from '@/services/notificationService';
+import { Colors, useUserStore } from '@/store/useUserStore';
+import { Tabs } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { ChartColumn, Home, Trophy, User } from 'lucide-react-native';
+import React, { useEffect } from 'react';
+import { Platform } from 'react-native';
 
-function RootLayoutNav() {
-  // Перенесли строки 21-22 из старого App сюда:
+export default function TabsLayout() {
   const { theme } = useUserStore();
-  const currentColors = Colors[theme || 'light']; 
+  const currentColors = Colors[theme || 'light'];
+
+  useEffect(() => {
+    if (Platform.OS !== 'web') {
+      requestPermissions();
+    }
+  }, []);
 
   return (
-    // Ваша текущая разметка стека
-    <Stack screenOptions={{ contentStyle: { backgroundColor: currentColors?.background || '#FFF' } }}>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-      <Stack.Screen name="weight" options={{ headerShown: false }} />
-      <Stack.Screen name="achievements" options={{ headerShown: false }} />
-      <Stack.Screen name="reminders" options={{ headerShown: false }} />
-      <Stack.Screen name="album" options={{ headerShown: false }} />
-    </Stack>
+    <>
+      <AchievementPopup />
+      <StatusBar style={theme === 'dark' ? 'light' : 'dark'} />
+
+      <Tabs
+        screenOptions={{
+          headerShown: false,
+          tabBarActiveTintColor: currentColors.primary,
+          tabBarInactiveTintColor: currentColors.subText,
+          tabBarStyle: {
+            height: 90,
+            paddingTop: 10,
+            backgroundColor: currentColors.card,
+            borderTopColor: currentColors.border,
+          },
+        }}
+      >
+        <Tabs.Screen
+          name="index"
+          options={{
+            title: 'Home',
+            tabBarIcon: ({ color }) => <Home color={color} size={24} />,
+          }}
+        />
+        <Tabs.Screen
+          name="statistics"
+          options={{
+            title: 'Statistics',
+            tabBarIcon: ({ color }) => <ChartColumn color={color} size={24} />,
+          }}
+        />
+        <Tabs.Screen
+          name="achievements"
+          options={{
+            title: 'Awards',
+            tabBarIcon: ({ color }) => <Trophy color={color} size={24} />,
+          }}
+        />
+        <Tabs.Screen
+          name="profile"
+          options={{
+            title: 'Profile',
+            tabBarIcon: ({ color }) => <User color={color} size={24} />,
+          }}
+        />
+      </Tabs>
+    </>
   );
 }
