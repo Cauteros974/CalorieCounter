@@ -118,4 +118,6 @@ const styles = StyleSheet.create({
         borderRadius: 24, padding: 16, marginBottom: 20,
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 6,
     },
+    cardTitle: { fontSize: 15, fontWeight: '600', marginBottom: 12},
+    row: { flexDirection: 'row', gap: 15}
 })
