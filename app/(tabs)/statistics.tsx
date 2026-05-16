@@ -89,7 +89,12 @@ export default function StatisticsScreen() {
             contentContainerStyle={styles.container}
         >
             <Text style={[styles.title, { color: currentColors.text }]}>Weekly Statistics</Text>
-            
+
+            <View style={[styles.card, { backgroundColor: currentColors.card }]}>
+                <Text style={[styles.cardTitle, { color: currentColors.text }]}>Calorie Consumption</Text>
+                <SimpleLineChart color={currentColors.primary || '#4CAF50'} />
+            </View>
+
         </ScrollView>
     )
 }
