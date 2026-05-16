@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dimensions } from 'react-native';
-import Svg, { Line } from 'react-native-svg';
+import Svg, { Line, Text as SvgText } from 'react-native-svg';
 
 const W = Dimensions.get('window').width - 40;
 const H = 200;
@@ -50,6 +50,12 @@ function SimpleLineChart({color} : {color: string}) {
                             x2={W - PADDING.right} y2={y}
                             stroke="#F0F0F0" strokeWidth={1}
                         />
+                        <SvgText
+                            x={PADDING.left - 5} y={y + 4}
+                            fontSize={9} fill="#BBB" textAnchor="end"
+                        >
+                            {val}
+                        </SvgText>
                     </React.Fragment>
                 )
             })}
