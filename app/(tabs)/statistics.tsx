@@ -114,4 +114,8 @@ export default function StatisticsScreen() {
 const styles = StyleSheet.create({
     containter: {padding: 20, paddingTop: 60, paddingBottom: 120},
     title: {fontSize: 22, fontWeight: '700', marginBottom: 20},
+    card: {
+        borderRadius: 24, padding: 16, marginBottom: 20,
+        elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 6,
+    },
 })
