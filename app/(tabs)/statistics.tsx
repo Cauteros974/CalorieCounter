@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, ScrollView, Text, View } from 'react-native';
+import { Dimensions, ScrollView, StyleSheet, Text, View } from 'react-native';
 import Svg, { Circle, Line, Path, Text as SvgText } from 'react-native-svg';
 import { Colors, useUserStore } from '../../store/useUserStore';
 
@@ -110,3 +110,7 @@ export default function StatisticsScreen() {
         </ScrollView>
     );
 };
+
+const styles = StyleSheet.create({
+    containter: {padding: 20, paddingTop: 20}
+})
