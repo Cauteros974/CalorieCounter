@@ -1,4 +1,5 @@
 import { Dimensions } from 'react-native';
+import Svg from 'react-native-svg';
 
 const W = Dimensions.get('window').width - 40;
 const H = 200;
@@ -33,5 +34,14 @@ function SimpleLineChart({color} : {color: string}) {
         const prev = points[i - 1];
         const curr = points[i];
         const cpX = (prev.x + curr.x) / 2;
+        d += ` C ${cpX} ${prev.y}, ${cpX} ${curr.y}, ${curr.x} ${curr.y}`;
     }
+
+    return(
+        <Svg width={W} height={H}>
+            {[0, 0.25, 0.5, 0.75, 1].map((t, i) => {
+                const y = PADDING.top + t * chartH;
+            })}
+        </Svg>
+    )
 }
