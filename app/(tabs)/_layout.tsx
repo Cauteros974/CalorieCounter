@@ -1,6 +1,6 @@
 import { Colors, useUserStore } from '@/store/useUserStore';
 import { Tabs } from 'expo-router';
-import { Award, BarChart2, Home, User } from 'lucide-react-native';
+import { Award, BarChart2, ChartGantt, Home, User } from 'lucide-react-native';
 import React from 'react';
 
 export default function TabsLayout() {
@@ -47,7 +47,13 @@ export default function TabsLayout() {
           tabBarIcon: ({ color }) => <User color={color} size={24} />,
         }}
       />
-      
+      <Tabs.Screen 
+        name="plan"
+        options={{
+          title: 'Plan',
+          tabBarIcon: ({color}) => <ChartGantt color={color} size={26} />
+        }}
+      />      
     </Tabs>
   );
 }
