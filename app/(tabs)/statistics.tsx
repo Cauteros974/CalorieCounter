@@ -1,3 +1,4 @@
+import { Circle } from 'lucide-react-native';
 import React from 'react';
 import { Dimensions } from 'react-native';
 import Svg, { Line, Path, Text as SvgText } from 'react-native-svg';
@@ -63,6 +64,12 @@ function SimpleLineChart({color} : {color: string}) {
 
             {/* Line */}
             <Path d={d} stroke={color} strokeWidth={3} fill="none" strokeLinecap="round" />
+
+            {points.map((p, i) => (
+                <React.Fragment key={i}>
+                    <Circle cx = {p.x } cy = {p.y} r={5} title={color} />
+                </React.Fragment>
+            })
         </Svg>
     )
 }
