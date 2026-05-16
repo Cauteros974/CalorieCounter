@@ -27,4 +27,10 @@ function SimpleLineChart({color} : {color: string}) {
     const toY = (v: number) => PADDING.top + chartH - ((v - minV) / (maxV - minV)) * chartH;
     
     const points = weekData.map((d, i) => ({ x: toX(i), y: toY(d.cal) }));
+    
+    let d = `M ${points[0].x} ${points[0].y}`;
+    for (let i = 1; i < points.length; i++ ) {
+        const prev = points[i - 1];
+        const curr = points[i];
+    }
 }
