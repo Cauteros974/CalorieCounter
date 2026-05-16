@@ -32,5 +32,6 @@ function SimpleLineChart({color} : {color: string}) {
     for (let i = 1; i < points.length; i++ ) {
         const prev = points[i - 1];
         const curr = points[i];
+        const cpX = (prev.x + curr.x) / 2;
     }
 }
