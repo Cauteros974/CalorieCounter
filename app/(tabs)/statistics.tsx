@@ -107,7 +107,6 @@ export default function StatisticsScreen() {
                     <Text style={{ color: '#2196F3', fontSize: 12 }}>liters</Text>
                 </View>
              </View>
-
         </ScrollView>
-    )
-}
+    );
+};
