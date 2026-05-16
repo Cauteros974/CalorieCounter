@@ -30,7 +30,7 @@ export default function AchievementsScreen() {
 
             <FlatList
                 data={achievements}
-                numColumns={10}
+                numColumns={2}
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => (
                     <View style={[
