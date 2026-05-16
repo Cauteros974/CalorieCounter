@@ -67,12 +67,12 @@ function SimpleLineChart({color} : {color: string}) {
 
             {points.map((p, i) => (
                 <React.Fragment key={i}>
-                    <Circle cx = {p.x } cy = {p.y} r={5} title={color} />
-                     <SvgText x={p.x} y={H - 5} fontSize={10} fill="#999" textAnchor="middle">
+                    <Circle cx={p.x} cy={p.y} r={5} fill={color} />
+                    <SvgText x={p.x} y={H - 5} fontSize={10} fill="#999" textAnchor="middle">
                         {weekData[i].day}
                     </SvgText>
                 </React.Fragment>
-            })
+            ))}
         </Svg>
     )
 }
