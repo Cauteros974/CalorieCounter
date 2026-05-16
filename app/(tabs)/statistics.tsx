@@ -113,5 +113,5 @@ export default function StatisticsScreen() {
 
 const styles = StyleSheet.create({
     containter: {padding: 20, paddingTop: 60, paddingBottom: 120},
-    title: {fontSize: 22, fontWeight: '500', marginBottom: 20},
+    title: {fontSize: 22, fontWeight: '700', marginBottom: 20},
 })
