@@ -1,7 +1,7 @@
-import { Circle } from 'lucide-react-native';
 import React from 'react';
 import { Dimensions } from 'react-native';
-import Svg, { Line, Path, Text as SvgText } from 'react-native-svg';
+import Svg, { Circle, Line, Path, Text as SvgText } from 'react-native-svg';
+import { Colors, useUserStore } from '../../store/useUserStore';
 
 const W = Dimensions.get('window').width - 40;
 const H = 200;
@@ -74,5 +74,12 @@ function SimpleLineChart({color} : {color: string}) {
                 </React.Fragment>
             ))}
         </Svg>
-    )
+    );
+}
+
+export default function StatisticsScreen() {
+    const { theme } = useUserStore();
+    const currentColors = Colors[theme || 'light'];
+
+    const avg = Math.round(weekData.reduce((s, d) => s + d.cal, 0) / weekData.length);
 }
