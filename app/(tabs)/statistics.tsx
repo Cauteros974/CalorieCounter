@@ -101,6 +101,10 @@ export default function StatisticsScreen() {
                     <Text style={[styles.statValue, { color: currentColors.text }]}>{avg}</Text>
                     <Text style={{ color: '#4CAF50', fontSize: 12 }}>kcal/day</Text>
                 </View>
+                <View style={[styles.statBox, {backgroundColor: currentColors.card}]}>
+                     <Text style={{ color: currentColors.subText, fontSize: 13 }}>Total water</Text>
+                     <Text style={[styles.statValue, { color: currentColors.text }]}>15.4</Text>
+                </View>
              </View>
 
         </ScrollView>
