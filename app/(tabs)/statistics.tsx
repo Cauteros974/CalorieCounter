@@ -86,6 +86,7 @@ export default function StatisticsScreen() {
     return(
         <ScrollView
             style={{flex: 1, backgroundColor: currentColors.background}}
+            contentContainerStyle={styles.container}
         >
 
         </ScrollView>
