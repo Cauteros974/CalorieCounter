@@ -1,38 +1,14 @@
-import { Tabs } from 'expo-router';
-import { Home, User } from 'lucide-react-native';
+import { Stack } from 'expo-router';
 import React from 'react';
 
-export default function TabsLayout() {
+export default function RootLayout() {
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: '#4CAF50',
-        tabBarInactiveTintColor: '#888',
-        tabBarStyle: {
-          backgroundColor: '#FFF',
-          borderTopWidth: 1,
-          borderTopColor: '#F1F1F1',
-          height: 60,
-          paddingBottom: 8,
-        },
-        headerShown: false,
-      }}
-    >
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <Home color={color} size={24} />,
-        }}
-      />
-      
-      <Tabs.Screen
-        name="profile"
-        options={{
-          title: 'Profile',
-          tabBarIcon: ({ color }) => <User color={color} size={24} />,
-        }}
-      />
-    </Tabs>
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen name="weight" options={{ headerShown: false }} />
+      <Stack.Screen name="achievements" options={{ headerShown: false }} />
+      <Stack.Screen name="reminders" options={{ headerShown: false }} />
+      <Stack.Screen name="album" options={{ headerShown: false }} />
+    </Stack>
   );
 }
