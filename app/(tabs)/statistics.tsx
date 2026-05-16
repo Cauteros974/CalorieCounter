@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions } from 'react-native';
+import { Dimensions, ScrollView } from 'react-native';
 import Svg, { Circle, Line, Path, Text as SvgText } from 'react-native-svg';
 import { Colors, useUserStore } from '../../store/useUserStore';
 
@@ -82,4 +82,12 @@ export default function StatisticsScreen() {
     const currentColors = Colors[theme || 'light'];
 
     const avg = Math.round(weekData.reduce((s, d) => s + d.cal, 0) / weekData.length);
+
+    return(
+        <ScrollView
+            style={{flex: 1, backgroundColor: currentColors.background}}
+        >
+
+        </ScrollView>
+    )
 }
