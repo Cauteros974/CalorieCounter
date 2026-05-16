@@ -41,6 +41,7 @@ function SimpleLineChart({color} : {color: string}) {
         <Svg width={W} height={H}>
             {[0, 0.25, 0.5, 0.75, 1].map((t, i) => {
                 const y = PADDING.top + t * chartH;
+                const val = Math.round(maxV - t * (maxV - minV));
             })}
         </Svg>
     )
