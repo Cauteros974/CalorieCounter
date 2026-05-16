@@ -48,7 +48,7 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen 
-        name="plan"
+        name="planscreen"
         options={{
           title: 'Plan',
           tabBarIcon: ({color}) => <ChartGantt color={color} size={26} />
