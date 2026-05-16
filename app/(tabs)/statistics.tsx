@@ -122,6 +122,6 @@ const styles = StyleSheet.create({
     row: { flexDirection: 'row', gap: 15},
     statBox: {
         flex: 1, padding: 20, borderRadius: 20, alignItems: 'center',
-        elevation: 12, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8
+        elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 8
     }
 })
