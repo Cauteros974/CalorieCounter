@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dimensions } from 'react-native';
-import Svg, { Line, Text as SvgText } from 'react-native-svg';
+import Svg, { Line, Path, Text as SvgText } from 'react-native-svg';
 
 const W = Dimensions.get('window').width - 40;
 const H = 200;
@@ -29,7 +29,8 @@ function SimpleLineChart({color} : {color: string}) {
     const toY = (v: number) => PADDING.top + chartH - ((v - minV) / (maxV - minV)) * chartH;
     
     const points = weekData.map((d, i) => ({ x: toX(i), y: toY(d.cal) }));
-    
+
+    // Smooth path
     let d = `M ${points[0].x} ${points[0].y}`;
     for (let i = 1; i < points.length; i++ ) {
         const prev = points[i - 1];
@@ -57,8 +58,11 @@ function SimpleLineChart({color} : {color: string}) {
                             {val}
                         </SvgText>
                     </React.Fragment>
-                )
+                );
             })}
+
+            {/* Line */}
+            <Path d={d} stroke={color} strokeWidth={3} fill="none" strokeLinecap="round" />
         </Svg>
     )
 }
