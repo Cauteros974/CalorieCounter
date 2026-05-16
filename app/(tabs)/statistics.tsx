@@ -88,7 +88,8 @@ export default function StatisticsScreen() {
             style={{flex: 1, backgroundColor: currentColors.background}}
             contentContainerStyle={styles.container}
         >
-
+            <Text style={[styles.title, { color: currentColors.text }]}>Weekly Statistics</Text>
+            
         </ScrollView>
     )
 }
