@@ -119,5 +119,8 @@ const styles = StyleSheet.create({
         elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 6,
     },
     cardTitle: { fontSize: 15, fontWeight: '600', marginBottom: 12},
-    row: { flexDirection: 'row', gap: 15}
+    row: { flexDirection: 'row', gap: 15},
+    statBox: {
+        flex: 1, padding: 20, borderRadius: 20, alignItems: 'center'
+    }
 })
