@@ -22,4 +22,6 @@ function SimpleLineChart({color} : {color: string}) {
     const values = weekData.map(d => d.cal);
     const minV = Math.min(...values) - 200;
     const maxV = Math.max(...values) + 200;
+
+    const toX = (i: number) => PADDING.left + (i / (weekData.length - 1)) * chartW;
 }
