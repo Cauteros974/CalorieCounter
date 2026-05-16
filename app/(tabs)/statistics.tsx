@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, ScrollView } from 'react-native';
+import { Dimensions, ScrollView, Text, View } from 'react-native';
 import Svg, { Circle, Line, Path, Text as SvgText } from 'react-native-svg';
 import { Colors, useUserStore } from '../../store/useUserStore';
 
@@ -94,6 +94,13 @@ export default function StatisticsScreen() {
                 <Text style={[styles.cardTitle, { color: currentColors.text }]}>Calorie Consumption</Text>
                 <SimpleLineChart color={currentColors.primary || '#4CAF50'} />
             </View>
+
+             <View style={styles.row}>
+                <View style={[styles.statBox, { backgroundColor: currentColors.card }]}>
+                    <Text style={{ color: currentColors.subText, fontSize: 13 }}>Average</Text>
+                    <Text style={[styles.statValue, { color: currentColors.text }]}>{avg}</Text>
+                </View>
+             </View>
 
         </ScrollView>
     )
